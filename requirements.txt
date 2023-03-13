@@ -1,2 +1,3 @@
 pyobjc-framework-Cocoa; sys_platform == 'darwin'
+pywin32==304; sys_platform == 'win32'
 PySide6

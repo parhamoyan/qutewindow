@@ -1,0 +1,16 @@
+<RCC>
+  <qresource prefix="icons">
+    <file>title-bar/minimize@2x.png</file>
+    <file>title-bar/minimize.png</file>
+    <file>title-bar/minimize@3x.png</file>
+    <file>title-bar/maximize.png</file>
+    <file>title-bar/restore@2x.png</file>
+    <file>title-bar/restore@3x.png</file>
+    <file>title-bar/maximize@2x.png</file>
+    <file>title-bar/restore.png</file>
+    <file>title-bar/maximize@3x.png</file>
+    <file>title-bar/close@3x.png</file>
+    <file>title-bar/close@2x.png</file>
+    <file>title-bar/close.png</file>
+  </qresource>
+</RCC>
