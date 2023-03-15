@@ -13,8 +13,8 @@ from PySide6.QtWidgets import QDialog, QWidget, QPushButton, QVBoxLayout, QAppli
 from ctypes import c_int, cdll, byref
 
 from Icon import Icon
-from qutewindow.platforms.windows.c_structures import LPNCCALCSIZE_PARAMS, MARGINS
-from qutewindow.platforms.windows.title_bar.TitleBar import TitleBar, MaximizeButtonState
+from qute_frameless_window.platforms.windows.c_structures import LPNCCALCSIZE_PARAMS, MARGINS
+from qute_frameless_window.platforms.windows.title_bar.TitleBar import TitleBar, MaximizeButtonState
 
 
 class MaximizeButtonIcon(str, Enum):

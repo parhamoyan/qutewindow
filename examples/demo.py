@@ -1,7 +1,7 @@
 import sys
 
 from PySide6.QtWidgets import QApplication
-from qutewindow import QuteWindow
+from qute_frameless_window import QuteWindow
 
 
 if __name__ == "__main__":

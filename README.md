@@ -27,11 +27,12 @@ pip install qutewindow
 
 ## Usage
 Here is a minimal example:
+
 ```python
 from typing import Optional
 
 from PySide6.QtWidgets import QApplication, QWidget
-from qutewindow import QuteWindow
+from qute_frameless_window import QuteWindow
 import sys
 
 
