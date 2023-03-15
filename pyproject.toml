@@ -1,13 +1,19 @@
 [tool.poetry]
 name = "qutewindow"
-version = "0.0.0"
+version = "0.1.0"
 description = "Cross-platform frameless window based on Python and Qt"
-authors = [
-    "Parham Oyan <parhamoyan@yahoo.com>",
-]
-
+authors = ["Parham Oyan <parhamoyan@yahoo.com>"]
 license = "MIT"
-
 readme = "README.md"
 repository = "https://github.com/parhamoyan/qute-window"
 keywords = ["qt", "pyqt", "pyqt6", "pyqt5", "pyside", "pyside2", "pyside6", "frameless-window", "cross-platform"]
+
+[tool.poetry.dependencies]
+python = ">=3.0"
+pyobjc-framework-Cocoa = { version = "9.0.1", markers = "sys_platform == 'darwin'" }
+#pywin32 = { version = "304", markers = "sys_platform == 'win32'"}
+PySide6 = "*"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
