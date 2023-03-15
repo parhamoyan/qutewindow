@@ -1,10 +1,13 @@
-name = "qute-window"
+[tool.poetry]
+name = "qutewindow"
 version = "0.0.0"
 description = "Cross-platform frameless window based on Python and Qt"
-license = "MIT"
 authors = [
     "Parham Oyan <parhamoyan@yahoo.com>",
 ]
+
+license = "MIT"
+
 readme = "README.md"
 repository = "https://github.com/parhamoyan/qute-window"
 keywords = ["qt", "pyqt", "pyqt6", "pyqt5", "pyside", "pyside2", "pyside6", "frameless-window", "cross-platform"]

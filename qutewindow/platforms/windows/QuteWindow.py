@@ -22,9 +22,9 @@ class MaximizeButtonIcon(str, Enum):
     MAXIMIZE = "maximize"
 
 
-class FramelessWindow(QWidget):
+class QuteWindow(QWidget):
     def __init__(self, parent: Optional[QWidget] = None):
-        super(FramelessWindow, self).__init__(parent)
+        super(QuteWindow, self).__init__(parent)
         self.setWindowFlags(Qt.WindowType.Window)
         self.setAttribute(Qt.WA_TranslucentBackground)
         self.setStyleSheet("background-color: #333333;")
@@ -195,4 +195,4 @@ class FramelessWindow(QWidget):
                 self.set_maximize_button_icon(MaximizeButtonIcon.MAXIMIZE)
             else:
                 self.set_maximize_button_icon(MaximizeButtonIcon.RESTORE)
-        super(FramelessWindow, self).changeEvent(event)
+        super(QuteWindow, self).changeEvent(event)

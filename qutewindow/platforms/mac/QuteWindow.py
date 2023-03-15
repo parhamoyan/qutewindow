@@ -7,19 +7,18 @@ from functools import reduce
 import Cocoa
 import objc
 
-
 from PySide6.QtCore import Qt, QPoint, QSize
-from PySide6.QtGui import QMouseEvent
-from PySide6.QtWidgets import QWidget
+from PySide6.QtGui import QMouseEvent, QColor, QPalette
+from PySide6.QtWidgets import QWidget, QHBoxLayout
 
 
-class FramelessWindow(QWidget):
+class QuteWindow(QWidget):
     def __init__(self, parent: Optional[QWidget] = None) -> None:
         QWidget.__init__(self, parent)
         self.setWindowFlags(Qt.Window)
         self.setAttribute(Qt.WA_TranslucentBackground)
-        FramelessWindow.merge_content_area_and_title_bar(self.winId())
-        FramelessWindow.setTrafficLightsPosition(self.winId(), QPoint(0, 0))
+        QuteWindow.merge_content_area_and_title_bar(self.winId())
+        QuteWindow.setTrafficLightsPosition(self.winId(), QPoint(0, 0))
 
     @staticmethod
     def merge_content_area_and_title_bar(win_id: int) -> None:
