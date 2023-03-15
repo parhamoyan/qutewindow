@@ -13,8 +13,8 @@ from PySide6.QtWidgets import QDialog, QWidget, QPushButton, QVBoxLayout, QAppli
 from ctypes import c_int, cdll, byref
 
 from Icon import Icon
-from platforms.windows.c_structures import LPNCCALCSIZE_PARAMS, MARGINS
-from platforms.windows.title_bar.TitleBar import TitleBar, MaximizeButtonState
+from qutewindow.platforms.windows.c_structures import LPNCCALCSIZE_PARAMS, MARGINS
+from qutewindow.platforms.windows.title_bar.TitleBar import TitleBar, MaximizeButtonState
 
 
 class MaximizeButtonIcon(str, Enum):
@@ -26,7 +26,6 @@ class QuteWindow(QWidget):
     def __init__(self, parent: Optional[QWidget] = None):
         super(QuteWindow, self).__init__(parent)
         self.setWindowFlags(Qt.WindowType.Window)
-        self.setAttribute(Qt.WA_TranslucentBackground)
         self.setStyleSheet("background-color: #333333;")
 
         style = win32gui.GetWindowLong(int(self.winId()), win32con.GWL_STYLE)
@@ -35,14 +34,15 @@ class QuteWindow(QWidget):
 
         self.addShadowEffect(self.winId())
 
-        self.setup()
-        self.resize(800, 800)
-
         self.BORDER_WIDTH = 10
 
+        self.title_bar = TitleBar(self)
         self.title_bar.minimize_button.clicked.connect(self.on_minimize_button_clicked)
         self.title_bar.maximize_button.clicked.connect(self.on_maximize_button_clicked)
         self.title_bar.close_button.clicked.connect(self.on_close_button_clicked)
+
+        self.resize(800, 800)
+        self.title_bar.raise_()
 
     @staticmethod
     def addShadowEffect(hWnd):
@@ -158,14 +158,10 @@ class QuteWindow(QWidget):
         monitorRect = monitorInfo["Monitor"]
         return all(i == j for i, j in zip(winRect, monitorRect))
 
-    def setup(self):
-        self.verticalLayout = QVBoxLayout(self)
-        self.verticalLayout.setContentsMargins(0, 0, 0, 0)
-        self.verticalLayout.setSpacing(0)
-        self.title_bar = TitleBar(self)
-        self.verticalLayout.addWidget(self.title_bar)
-        self.client_widget = QWidget(self)
-        self.verticalLayout.addWidget(self.client_widget)
+    def resizeEvent(self, e):
+        super().resizeEvent(e)
+        if hasattr(self, "title_bar"):
+            self.title_bar.resize(self.width(), self.title_bar.height())
 
     def on_close_button_clicked(self) -> None:
         self.close()

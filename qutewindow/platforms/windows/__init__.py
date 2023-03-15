@@ -1,1 +1,1 @@
-from .FramelessWindow import QuteWindow
+from .QuteWindow import QuteWindow
