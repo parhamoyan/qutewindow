@@ -32,7 +32,7 @@ Here is a minimal example:
 from typing import Optional
 
 from PySide6.QtWidgets import QApplication, QWidget
-from qute_frameless_window import QuteWindow
+from qutewindow import QuteWindow
 import sys
 
 

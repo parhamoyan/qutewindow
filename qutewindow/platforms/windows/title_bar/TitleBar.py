@@ -10,7 +10,7 @@ from PySide6.QtCore import QSize
 from PySide6.QtGui import QIcon, QPixmap, QImage
 from PySide6.QtWidgets import QWidget, QPushButton, QFrame, QHBoxLayout, QSpacerItem, QSizePolicy, QStyleFactory, QStyle
 
-import qute_frameless_window.platforms.windows.title_bar.resources_rc
+import qutewindow.platforms.windows.title_bar.resources_rc
 from Icon import Icon
 
 
