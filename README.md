@@ -1,4 +1,4 @@
-# qute-window
+# Qute Window
 Cross-platform frameless window based on Python and Qt
 
 ## Examples
