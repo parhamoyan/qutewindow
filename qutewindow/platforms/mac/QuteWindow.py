@@ -8,8 +8,8 @@ import Cocoa
 import objc
 
 from PySide6.QtCore import Qt, QPoint, QSize
-from PySide6.QtGui import QMouseEvent, QColor, QPalette
-from PySide6.QtWidgets import QWidget, QHBoxLayout
+from PySide6.QtGui import QMouseEvent
+from PySide6.QtWidgets import QWidget
 
 
 class QuteWindow(QWidget):
@@ -25,12 +25,10 @@ class QuteWindow(QWidget):
         viewPtr = c_void_p(win_id)
         nsview = objc.objc_object(c_void_p=viewPtr)
 
-        # get NSView's NSWindow for styling
         nswin = nsview.window()
 
-        # set frameless but enable buttons
         styleMasks = (
-            nswin.styleMask(),  # retain default flags
+            nswin.styleMask(),
             Cocoa.NSWindowStyleMaskFullSizeContentView,
             Cocoa.NSWindowTitleHidden,
             Cocoa.NSWindowStyleMaskClosable,
