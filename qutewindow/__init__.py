@@ -1,1 +1,1 @@
-from .platforms import QuteWindow
+from .platforms import QuteWindow, QuteMainWindow

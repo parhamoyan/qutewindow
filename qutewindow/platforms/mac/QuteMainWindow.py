@@ -2,14 +2,14 @@ from typing import Optional
 
 from PySide6.QtCore import Qt, QPoint
 from PySide6.QtGui import QMouseEvent
-from PySide6.QtWidgets import QWidget
+from PySide6.QtWidgets import QMainWindow, QWidget
 
-from qutewindow.platforms.mac.utils import merge_content_area_and_title_bar, setTrafficLightsPosition
+from qutewindow.platforms.mac.utils import merge_content_area_and_title_bar
 
 
-class QuteWindow(QWidget):
+class QuteMainWindow(QMainWindow):
     def __init__(self, parent: Optional[QWidget] = None) -> None:
-        QWidget.__init__(self, parent)
+        super().__init__(parent)
         self.setWindowFlags(Qt.Window)
         self.setAttribute(Qt.WA_TranslucentBackground)
         merge_content_area_and_title_bar(self.winId())
