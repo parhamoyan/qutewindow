@@ -1,17 +1,21 @@
 import ctypes
 from ctypes import wintypes
-from enum import IntEnum, auto
+from enum import IntEnum, auto, Enum
 from typing import Optional
 
 import win32con
 import win32gui
 
-from PySide6.QtCore import QSize
+from PySide6.QtCore import QSize, QEvent
 from PySide6.QtGui import QIcon, QPixmap, QImage
 from PySide6.QtWidgets import QWidget, QPushButton, QFrame, QHBoxLayout, QSpacerItem, QSizePolicy, QStyleFactory, QStyle
 
 import qutewindow.platforms.windows.title_bar.resources_rc
 from Icon import Icon
+
+class MaximizeButtonIcon(str, Enum):
+    RESTORE = "restore"
+    MAXIMIZE = "maximize"
 
 
 class TitleBarButton(QPushButton):
@@ -133,3 +137,41 @@ class TitleBar(QFrame):
 
         self.horizontalLayout.addSpacerItem(self.horizontalSpacer)
         self.horizontalLayout.addWidget(self.button_box)
+
+        self.minimize_button.clicked.connect(self.on_minimize_button_clicked)
+        self.maximize_button.clicked.connect(self.on_maximize_button_clicked)
+        self.close_button.clicked.connect(self.on_close_button_clicked)
+
+        self.window().installEventFilter(self)
+
+    def on_close_button_clicked(self) -> None:
+        self.window().close()
+
+    def on_maximize_button_clicked(self):
+        status = self.topLevelWidget().isMaximized()
+        if status:
+            self.window().showNormal()
+            self.set_maximize_button_icon(MaximizeButtonIcon.MAXIMIZE)
+        else:
+            self.window().showMaximized()
+            self.set_maximize_button_icon(MaximizeButtonIcon.RESTORE)
+
+    def on_minimize_button_clicked(self) -> None:
+        self.window().showMinimized()
+
+    def set_maximize_button_icon(self, icon) -> None:
+        if icon == MaximizeButtonIcon.MAXIMIZE:
+            self.maximize_button.setIcon(Icon(u":/icons/title-bar/maximize.png"))
+        elif icon == MaximizeButtonIcon.RESTORE:
+            self.maximize_button.setIcon(Icon(u":/icons/title-bar/restore.png"))
+
+    def eventFilter(self, obj, e):
+        if obj is self.window():
+            if e.type() == QEvent.WindowStateChange:
+                status = self.window().isMaximized()
+                if not status:
+                    self.set_maximize_button_icon(MaximizeButtonIcon.MAXIMIZE)
+                else:
+                    self.set_maximize_button_icon(MaximizeButtonIcon.RESTORE)
+
+        return super().eventFilter(obj, e)
