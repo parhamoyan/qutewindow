@@ -29,23 +29,15 @@ pip install qutewindow
 Here is a minimal example:
 
 ```python
-from typing import Optional
-
-from PySide6.QtWidgets import QApplication, QWidget
-from qutewindow import QuteWindow
 import sys
 
-
-class Window(QuteWindow):
-    def __init__(self, parent: Optional[QWidget] = None) -> None:
-        super().__init__(parent)
-        self.setWindowTitle("Qute Window")
+from PySide6.QtWidgets import QApplication
+from qutewindow import QuteWindow
 
 
 if __name__ == "__main__":
     app = QApplication(sys.argv)
-    demo = Window()
+    demo = QuteWindow()
     demo.show()
     sys.exit(app.exec())
-
 ```
