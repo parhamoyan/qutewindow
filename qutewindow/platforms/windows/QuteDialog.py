@@ -1,14 +1,14 @@
 from typing import Optional
 
 from PySide6.QtCore import Qt, QByteArray
-from PySide6.QtWidgets import QWidget, QMainWindow
+from PySide6.QtWidgets import QWidget, QDialog
 
 from qutewindow.platforms.windows.native_event import _nativeEvent
 from qutewindow.platforms.windows.title_bar.TitleBar import TitleBar
 from qutewindow.platforms.windows.utils import addShadowEffect, addWindowAnimation
 
 
-class QuteMainWindow(QMainWindow):
+class QuteDialog(QDialog):
     def __init__(self, parent: Optional[QWidget] = None) -> None:
         super().__init__(parent)
         self.setWindowFlags(Qt.WindowType.Window | Qt.FramelessWindowHint)
