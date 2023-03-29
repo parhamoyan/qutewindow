@@ -3,7 +3,7 @@ from typing import Optional
 from PySide6.QtCore import QSize, QEvent
 from PySide6.QtWidgets import QWidget, QPushButton, QFrame, QHBoxLayout, QSpacerItem, QSizePolicy
 
-from Icon import Icon
+from qutewindow.Icon import Icon
 
 # Never remove the following resources_rc import, it is used to load title bar icons
 import qutewindow.platforms.windows.title_bar.resources_rc
