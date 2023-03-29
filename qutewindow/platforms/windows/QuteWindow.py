@@ -13,7 +13,6 @@ class QuteWindow(QWidget):
     def __init__(self, parent: Optional[QWidget] = None):
         super(QuteWindow, self).__init__(parent)
         self.setWindowFlags(Qt.WindowType.Window | Qt.FramelessWindowHint)
-        self.setStyleSheet("background-color: #333333;")
 
         addShadowEffect(self.winId())
         addWindowAnimation(self.winId())
