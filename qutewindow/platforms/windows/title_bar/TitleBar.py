@@ -1,17 +1,13 @@
-import ctypes
-from ctypes import wintypes
 from enum import IntEnum, auto, Enum
 from typing import Optional
-
-import win32con
-import win32gui
-
 from PySide6.QtCore import QSize, QEvent
-from PySide6.QtGui import QIcon, QPixmap, QImage
-from PySide6.QtWidgets import QWidget, QPushButton, QFrame, QHBoxLayout, QSpacerItem, QSizePolicy, QStyleFactory, QStyle
+from PySide6.QtWidgets import QWidget, QPushButton, QFrame, QHBoxLayout, QSpacerItem, QSizePolicy
 
-import qutewindow.platforms.windows.title_bar.resources_rc
 from Icon import Icon
+
+# Never remove the following resources_rc import, it is used to load title bar icons
+import qutewindow.platforms.windows.title_bar.resources_rc
+
 
 class MaximizeButtonIcon(str, Enum):
     RESTORE = "restore"
