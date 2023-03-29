@@ -1,6 +1,7 @@
 from typing import Optional
 
 from PySide6.QtCore import Qt, QByteArray
+from PySide6.QtGui import QShowEvent
 from PySide6.QtWidgets import QWidget, QDialog
 
 from qutewindow.platforms.windows.native_event import _nativeEvent
@@ -20,7 +21,10 @@ class QuteDialog(QDialog):
         self.title_bar = TitleBar(self)
 
         self.resize(800, 800)
+
+    def showEvent(self, event: QShowEvent) -> None:
         self.title_bar.raise_()
+        super(QDialog, self).showEvent(event)
 
     def nativeEvent(self, event_type: QByteArray, message: int):
         ret_tuple = _nativeEvent(self, event_type, message)

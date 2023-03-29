@@ -1,6 +1,6 @@
 import sys
 
-from PySide6.QtWidgets import QApplication
+from PySide6.QtWidgets import QApplication, QWidget
 from qutewindow import QuteWindow
 
 
