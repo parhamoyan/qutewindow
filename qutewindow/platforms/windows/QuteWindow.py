@@ -25,7 +25,7 @@ class MaximizeButtonIcon(str, Enum):
 class QuteWindow(QWidget):
     def __init__(self, parent: Optional[QWidget] = None):
         super(QuteWindow, self).__init__(parent)
-        self.setWindowFlags(Qt.WindowType.Window)
+        self.setWindowFlags(Qt.WindowType.Window | Qt.FramelessWindowHint)
         self.setStyleSheet("background-color: #333333;")
 
         style = win32gui.GetWindowLong(int(self.winId()), win32con.GWL_STYLE)
@@ -33,8 +33,6 @@ class QuteWindow(QWidget):
                                style | win32con.WS_THICKFRAME)
 
         self.addShadowEffect(self.winId())
-
-        self.BORDER_WIDTH = 10
 
         self.title_bar = TitleBar(self)
         self.title_bar.minimize_button.clicked.connect(self.on_minimize_button_clicked)
@@ -52,7 +50,6 @@ class QuteWindow(QWidget):
         dwmapi.DwmExtendFrameIntoClientArea(hWnd, byref(margins))
 
     def nativeEvent(self, event_type: QByteArray, message: int):
-        retval, result = super().nativeEvent(event_type, message)
         msg = ctypes.wintypes.MSG.from_address(message.__int__())
         if not msg.hWnd:
             return super().nativeEvent(event_type, message)
@@ -60,21 +57,22 @@ class QuteWindow(QWidget):
         pt = POINT()
         ctypes.windll.user32.GetCursorPos(ctypes.byref(pt))
         r = self.devicePixelRatioF()
-        x = pt.x - self.x() * r
-        y = pt.y - self.y() * r
+        x = pt.x - self.x()
+        y = pt.y - self.y()
 
-        pt = POINT()
-        ctypes.windll.user32.GetCursorPos(ctypes.byref(pt))
-        r = self.devicePixelRatioF()
-        x = pt.x / r - self.x()
-        y = pt.y / r - self.y()
+        user32 = ctypes.windll.user32
+        dpi = user32.GetDpiForWindow(msg.hWnd)
+        borderWidth = user32.GetSystemMetricsForDpi(win32con.SM_CXSIZEFRAME, dpi) + user32.GetSystemMetricsForDpi(
+            92, dpi)
+        borderHeight = user32.GetSystemMetricsForDpi(win32con.SM_CYSIZEFRAME, dpi) + user32.GetSystemMetricsForDpi(
+            92, dpi)
 
         if msg.message == win32con.WM_NCHITTEST:
             w, h = self.width(), self.height()
-            lx = x < self.BORDER_WIDTH
-            rx = x > w - 2 * self.BORDER_WIDTH
-            ty = y < self.BORDER_WIDTH
-            by = y > h - self.BORDER_WIDTH
+            lx = x < borderWidth
+            rx = x > w - 2 * borderWidth
+            ty = y < borderHeight
+            by = y > h - borderHeight
 
             if lx and ty:
                 return True, win32con.HTTOPLEFT
@@ -97,7 +95,7 @@ class QuteWindow(QWidget):
                 return True, win32con.HTMAXBUTTON
 
             if self.childAt(x, y) not in self.title_bar.findChildren(QPushButton):
-                if self.BORDER_WIDTH < y < self.title_bar.height():
+                if borderHeight < y < self.title_bar.height():
                     return True, win32con.HTCAPTION
 
         elif msg.message in [0x2A2, win32con.WM_MOUSELEAVE]:
@@ -118,13 +116,6 @@ class QuteWindow(QWidget):
             isMax = self._isMaximized(msg.hWnd)
             isFull = self._isFullScreen(msg.hWnd)
 
-            user32 = ctypes.windll.user32
-            dpi = user32.GetDpiForWindow(msg.hWnd)
-            borderWidth = user32.GetSystemMetricsForDpi(win32con.SM_CXSIZEFRAME, dpi) + user32.GetSystemMetricsForDpi(
-                92, dpi)
-            borderHeight = user32.GetSystemMetricsForDpi(win32con.SM_CYSIZEFRAME, dpi) + user32.GetSystemMetricsForDpi(
-                92, dpi)
-
             # adjust the size of client rect
             if isMax and not isFull:
                 rect.top += borderHeight
@@ -132,8 +123,7 @@ class QuteWindow(QWidget):
                 rect.right -= borderWidth
                 rect.bottom -= borderHeight
 
-            result = 0 if not msg.wParam else win32con.WVR_REDRAW
-            return True, result
+            return True, win32con.WVR_REDRAW
 
         return super().nativeEvent(event_type, message)
 
