@@ -35,7 +35,6 @@ class QuteWindow(QWidget):
         self.addShadowEffect(self.winId())
 
         self.title_bar = TitleBar(self)
-        self.title_bar.setStyleSheet("background-color: green;")
         self.title_bar.minimize_button.clicked.connect(self.on_minimize_button_clicked)
         self.title_bar.maximize_button.clicked.connect(self.on_maximize_button_clicked)
         self.title_bar.close_button.clicked.connect(self.on_close_button_clicked)
