@@ -2,7 +2,7 @@ from typing import Optional
 
 from PySide6.QtCore import Qt, QPoint
 from PySide6.QtGui import QMouseEvent
-from PySide6.QtWidgets import QMainWindow, QWidget, QDialog
+from PySide6.QtWidgets import QWidget, QDialog
 
 from qutewindow.platforms.mac.utils import merge_content_area_and_title_bar
 

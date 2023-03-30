@@ -1,6 +1,6 @@
 from typing import Optional
 
-from PySide6.QtCore import Qt, QByteArray, QSize
+from PySide6.QtCore import Qt, QByteArray
 from PySide6.QtGui import QShowEvent
 from PySide6.QtWidgets import QWidget, QMainWindow
 
@@ -20,7 +20,7 @@ class QuteMainWindow(QMainWindow):
 
         self.title_bar = TitleBar(self)
 
-        self.setFixedSize(800, 800)
+        self.resize(800, 800)
 
     def setFixedSize(self, w, h) -> None:
         super(QuteMainWindow, self).setFixedSize(w, h)
