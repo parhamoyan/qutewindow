@@ -22,11 +22,6 @@ class QuteDialog(QDialog):
 
         self.resize(800, 800)
 
-    def setFixedSize(self, w, h) -> None:
-        super(QuteDialog, self).setFixedSize(w, h)
-        self.setNonResizable()
-        self.title_bar.maximize_button.hide()
-
     def setNonResizable(self):
         setWindowNonResizable(self.winId())
         self.title_bar.maximize_button.hide()

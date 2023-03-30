@@ -22,15 +22,9 @@ class QuteWindow(QWidget):
 
         self.resize(800, 800)
 
-    def setFixedSize(self, w, h) -> None:
-        super(QuteWindow, self).setFixedSize(w, h)
-        self.setNonResizable()
-        self.title_bar.maximize_button.hide()
-
     def setNonResizable(self):
         setWindowNonResizable(self.winId())
         self.title_bar.maximize_button.hide()
-
 
     def showEvent(self, event: QShowEvent) -> None:
         self.title_bar.raise_()
