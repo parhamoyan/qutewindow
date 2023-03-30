@@ -1,6 +1,6 @@
 from ctypes import c_void_p
 from functools import reduce
-from AppKit import NSView, NSMakeRect, NSWindow, NSWindowCloseButton, NSWindowMiniaturizeButton, NSWindowZoomButton
+from AppKit import (NSView, NSMakeRect, NSWindow, NSWindowCloseButton, NSWindowMiniaturizeButton, NSWindowZoomButton)
 import Cocoa
 import objc
 from PySide6.QtCore import QPoint, QSize
@@ -49,3 +49,17 @@ def setTrafficLightsPosition(win_id: int, pos = QPoint(0, 0)) -> None:
     trafficLightsView.addSubview_(closeButton)
     trafficLightsView.addSubview_(minimizeButton)
     trafficLightsView.addSubview_(maximizeButton)
+
+
+def setWindowNonResizable(win_id: int) -> None:
+    viewPtr = c_void_p(win_id)
+    nsview = objc.objc_object(c_void_p=viewPtr)
+
+    nswin = nsview.window()
+
+    styleMasks = nswin.styleMask()
+    styleMasks &= ~Cocoa.NSWindowStyleMaskResizable
+    nswin.setStyleMask_(styleMasks)
+
+    nswin.standardWindowButton_(Cocoa.NSWindowZoomButton).setEnabled_(False)
+

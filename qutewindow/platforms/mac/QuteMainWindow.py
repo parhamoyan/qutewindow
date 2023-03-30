@@ -4,7 +4,7 @@ from PySide6.QtCore import Qt, QPoint
 from PySide6.QtGui import QMouseEvent
 from PySide6.QtWidgets import QMainWindow, QWidget
 
-from qutewindow.platforms.mac.utils import merge_content_area_and_title_bar
+from qutewindow.platforms.mac.utils import merge_content_area_and_title_bar, setWindowNonResizable
 
 
 class QuteMainWindow(QMainWindow):
@@ -13,6 +13,9 @@ class QuteMainWindow(QMainWindow):
         self.setWindowFlags(Qt.Window)
         self.setAttribute(Qt.WA_TranslucentBackground)
         merge_content_area_and_title_bar(self.winId())
+
+    def setNonResizable(self):
+        setWindowNonResizable(self.winId())
 
     def mouseDoubleClickEvent(self, event: QMouseEvent) -> None:
         if not self.isFullScreen() and self.isTitleBarArea(event.pos()):
