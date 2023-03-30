@@ -31,6 +31,9 @@ class QuteDialog(QDialog):
         setWindowNonResizable(self.winId())
         self.title_bar.maximize_button.hide()
 
+    def isResizable(self) -> None:
+        return isWindowResizable(self.winId())
+
     def showEvent(self, event: QShowEvent) -> None:
         self.title_bar.raise_()
         super(QuteDialog, self).showEvent(event)
