@@ -1,12 +1,13 @@
 from typing import Optional
 
-from PySide6.QtCore import Qt, QByteArray
+from PySide6.QtCore import Qt, QByteArray, QSize
 from PySide6.QtGui import QShowEvent
 from PySide6.QtWidgets import QWidget, QMainWindow
 
 from qutewindow.platforms.windows.native_event import _nativeEvent
 from qutewindow.platforms.windows.title_bar.TitleBar import TitleBar
-from qutewindow.platforms.windows.utils import addShadowEffect, addWindowAnimation
+from qutewindow.platforms.windows.utils import addShadowEffect, addWindowAnimation, setWindowNonResizable, \
+    isWindowResizable
 
 
 class QuteMainWindow(QMainWindow):
@@ -19,7 +20,19 @@ class QuteMainWindow(QMainWindow):
 
         self.title_bar = TitleBar(self)
 
-        self.resize(800, 800)
+        self.setFixedSize(800, 800)
+
+    def setFixedSize(self, w, h) -> None:
+        super(QuteMainWindow, self).setFixedSize(w, h)
+        self.setNonResizable()
+        self.title_bar.maximize_button.hide()
+
+    def setNonResizable(self):
+        setWindowNonResizable(self.winId())
+        self.title_bar.maximize_button.hide()
+
+    def isResizable(self) -> None:
+        return isWindowResizable(self.winId())
 
     def showEvent(self, event: QShowEvent) -> None:
         self.title_bar.raise_()

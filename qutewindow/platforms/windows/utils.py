@@ -29,12 +29,26 @@ def addWindowAnimation(hWnd):
     )
 
 
+def setWindowNonResizable(hwnd):
+    style = win32gui.GetWindowLong(hwnd, win32con.GWL_STYLE)
+    style &= ~win32con.WS_SIZEBOX
+    style &= ~win32con.WS_THICKFRAME
+    style &= ~win32con.WS_MAXIMIZEBOX
+    win32gui.SetWindowLong(hwnd, win32con.GWL_STYLE, style)
+
+
+def isWindowResizable(hwnd):
+    style = win32api.GetWindowLong(hwnd, win32con.GWL_STYLE)
+    return style & win32con.WS_SIZEBOX != 0
+
+
 def isMaximized(hWnd) -> bool:
     windowPlacement = win32gui.GetWindowPlacement(hWnd)
     if not windowPlacement:
         return False
 
     return windowPlacement[1] == win32con.SW_MAXIMIZE
+
 
 def isFullScreen(hWnd) -> bool:
     hWnd = int(hWnd)
@@ -49,5 +63,3 @@ def isFullScreen(hWnd) -> bool:
 
     monitorRect = monitorInfo["Monitor"]
     return all(i == j for i, j in zip(winRect, monitorRect))
-
-

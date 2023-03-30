@@ -28,29 +28,31 @@ def _nativeEvent(widget: QWidget, event_type: QByteArray, message: int):
         92, dpi)
 
     if msg.message == win32con.WM_NCHITTEST:
-        w, h = widget.width(), widget.height()
-        lx = x < borderWidth
-        rx = x > w - 2 * borderWidth
-        ty = y < borderHeight
-        by = y > h - borderHeight
+        if widget.isResizable():
+            w, h = widget.width(), widget.height()
+            lx = x < borderWidth
+            rx = x > w - 2 * borderWidth
+            ty = y < borderHeight
+            by = y > h - borderHeight
 
-        if lx and ty:
-            return True, win32con.HTTOPLEFT
-        if rx and by:
-            return True, win32con.HTBOTTOMRIGHT
-        if rx and ty:
-            return True, win32con.HTTOPRIGHT
-        if lx and by:
-            return True, win32con.HTBOTTOMLEFT
-        if ty:
-            return True, win32con.HTTOP
-        if by:
-            return True, win32con.HTBOTTOM
-        if lx:
-            return True, win32con.HTLEFT
-        if rx:
-            return True, win32con.HTRIGHT
-        elif widget.childAt(QPoint(x, y)) is widget.title_bar.maximize_button:
+            if lx and ty:
+                return True, win32con.HTTOPLEFT
+            if rx and by:
+                return True, win32con.HTBOTTOMRIGHT
+            if rx and ty:
+                return True, win32con.HTTOPRIGHT
+            if lx and by:
+                return True, win32con.HTBOTTOMLEFT
+            if ty:
+                return True, win32con.HTTOP
+            if by:
+                return True, win32con.HTBOTTOM
+            if lx:
+                return True, win32con.HTLEFT
+            if rx:
+                return True, win32con.HTRIGHT
+
+        if widget.childAt(QPoint(x, y)) is widget.title_bar.maximize_button:
             widget.title_bar.maximize_button.setState(MaximizeButtonState.HOVER)
             return True, win32con.HTMAXBUTTON
 
