@@ -1,9 +1,12 @@
 from ctypes import c_void_p
 from functools import reduce
 from AppKit import (NSView, NSMakeRect, NSWindow, NSWindowCloseButton, NSWindowMiniaturizeButton, NSWindowZoomButton)
+from Quartz.CoreGraphics import (CGEventCreateMouseEvent,
+                                 kCGEventLeftMouseDown, kCGMouseButtonLeft)
 import Cocoa
 import objc
 from PySide6.QtCore import QPoint, QSize
+from PySide6.QtWidgets import QWidget
 
 
 def merge_content_area_and_title_bar(win_id: int) -> None:
@@ -63,3 +66,15 @@ def setWindowNonResizable(win_id: int) -> None:
 
     nswin.standardWindowButton_(Cocoa.NSWindowZoomButton).setEnabled_(False)
 
+def startSystemMove(widget: QWidget, pos: QPoint):
+    viewPtr = c_void_p(widget.winId())
+    nsview = objc.objc_object(c_void_p=viewPtr)
+
+    nswin = nsview.window()
+
+    cgEvent = CGEventCreateMouseEvent(None, kCGEventLeftMouseDown, pos.toTuple(), kCGMouseButtonLeft)
+    clickEvent = Cocoa.NSEvent.eventWithCGEvent_(cgEvent)
+
+    if not clickEvent:
+        return
+    nswin.performWindowDragWithEvent_(clickEvent)
