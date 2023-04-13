@@ -5,6 +5,7 @@ from PySide6.QtGui import QMouseEvent
 from PySide6.QtWidgets import QMainWindow, QWidget
 
 from qutewindow.platforms.mac.utils import merge_content_area_and_title_bar, setWindowNonResizable
+from qutewindow.platforms.windows.utils import isWindowResizable
 
 
 class QuteMainWindow(QMainWindow):
@@ -16,6 +17,9 @@ class QuteMainWindow(QMainWindow):
 
     def setNonResizable(self):
         setWindowNonResizable(self.winId())
+
+    def isResizable(self) -> None:
+        return isWindowResizable(self.winId())
 
     def mouseDoubleClickEvent(self, event: QMouseEvent) -> None:
         if not self.isFullScreen() and self.isTitleBarArea(event.pos()):

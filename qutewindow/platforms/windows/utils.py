@@ -3,6 +3,8 @@ from ctypes import cdll, byref
 import win32api
 import win32con
 import win32gui
+from PySide6.QtCore import QPoint
+from PySide6.QtWidgets import QWidget
 
 from qutewindow.platforms.windows.c_structures import MARGINS
 
@@ -63,3 +65,13 @@ def isFullScreen(hWnd) -> bool:
 
     monitorRect = monitorInfo["Monitor"]
     return all(i == j for i, j in zip(winRect, monitorRect))
+
+
+def startSystemMove(widget: QWidget, pos: QPoint) -> None:
+    win32gui.ReleaseCapture()
+    win32api.SendMessage(
+        int(widget.winId()),
+        win32con.WM_SYSCOMMAND,
+        win32con.SC_MOVE | win32con.HTCAPTION,
+        0
+    )

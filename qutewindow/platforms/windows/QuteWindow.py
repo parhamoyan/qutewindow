@@ -1,6 +1,6 @@
 from typing import Optional
 
-from PySide6.QtCore import Qt, QByteArray, QEvent
+from PySide6.QtCore import Qt, QByteArray
 from PySide6.QtGui import QShowEvent
 from PySide6.QtWidgets import QWidget
 
@@ -26,14 +26,11 @@ class QuteWindow(QWidget):
         setWindowNonResizable(self.winId())
         self.title_bar.maximize_button.hide()
 
+    def isResizable(self) -> None:
+        return isWindowResizable(self.winId())
+
     def showEvent(self, event: QShowEvent) -> None:
         self.title_bar.raise_()
-        if not self.windowFlags() & Qt.WindowMaximizeButtonHint:
-            self.title_bar.maximize_button.hide()
-        if not self.windowFlags() & Qt.WindowMinimizeButtonHint:
-            self.title_bar.maximize_button.hide()
-        if not self.windowFlags() & Qt.WindowCloseButtonHint:
-            self.title_bar.maximize_button.hide()
         super(QuteWindow, self).showEvent(event)
 
     def nativeEvent(self, event_type: QByteArray, message: int):

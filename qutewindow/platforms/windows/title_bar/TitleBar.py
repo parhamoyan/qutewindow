@@ -1,12 +1,14 @@
 from enum import IntEnum, auto, Enum
 from typing import Optional
 from PySide6.QtCore import QSize, QEvent
+from PySide6.QtGui import QMouseEvent
 from PySide6.QtWidgets import QWidget, QPushButton, QFrame, QHBoxLayout, QSpacerItem, QSizePolicy
 
 from qutewindow.Icon import Icon
 
 # Never remove the following resources_rc import, it is used to load title bar icons
 import qutewindow.platforms.windows.title_bar.resources_rc
+from qutewindow.platforms.windows.utils import startSystemMove
 
 
 class MaximizeButtonIcon(str, Enum):
@@ -171,3 +173,6 @@ class TitleBar(QFrame):
                     self.set_maximize_button_icon(MaximizeButtonIcon.RESTORE)
 
         return super().eventFilter(obj, e)
+
+    def mouseMoveEvent(self, event: QMouseEvent) -> None:
+        startSystemMove(self.window(), event.globalPos())
