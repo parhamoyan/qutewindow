@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "qutewindow"
-version = "0.1.17"
+version = "0.1.18"
 description = "Cross-platform frameless window based on Python and Qt"
 authors = ["Parham Oyan <parhamoyan@yahoo.com>"]
 license = "MIT"
