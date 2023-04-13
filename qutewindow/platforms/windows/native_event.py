@@ -17,15 +17,13 @@ def _nativeEvent(widget: QWidget, event_type: QByteArray, message: int):
     pt = POINT()
     ctypes.windll.user32.GetCursorPos(ctypes.byref(pt))
     r = widget.devicePixelRatioF()
-    x = pt.x - widget.x()
-    y = pt.y - widget.y()
+    x = pt.x / r - widget.x()
+    y = pt.y / r - widget.y()
 
     user32 = ctypes.windll.user32
     dpi = user32.GetDpiForWindow(msg.hWnd)
-    borderWidth = user32.GetSystemMetricsForDpi(win32con.SM_CXSIZEFRAME, dpi) + user32.GetSystemMetricsForDpi(
-        92, dpi)
-    borderHeight = user32.GetSystemMetricsForDpi(win32con.SM_CYSIZEFRAME, dpi) + user32.GetSystemMetricsForDpi(
-        92, dpi)
+    borderWidth = user32.GetSystemMetricsForDpi(win32con.SM_CXSIZEFRAME, dpi) + user32.GetSystemMetricsForDpi(92, dpi)
+    borderHeight = user32.GetSystemMetricsForDpi(win32con.SM_CYSIZEFRAME, dpi) + user32.GetSystemMetricsForDpi(92, dpi)
 
     if msg.message == win32con.WM_NCHITTEST:
         if widget.isResizable():
