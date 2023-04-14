@@ -48,8 +48,7 @@ class MaximizeButton(TitleBarButton):
         self.setIcon(Icon(u":/icons/title-bar/maximize.png"))
 
     def setState(self, state: MaximizeButtonState) -> None:
-        match state:
-            case MaximizeButtonState.HOVER:
+        if state == MaximizeButtonState.HOVER:
                 self.setStyleSheet("""
                     QPushButton {
                         background-position: center;
@@ -60,7 +59,7 @@ class MaximizeButton(TitleBarButton):
                         background-color: #1D1D24;
                     }
                     """)
-            case MaximizeButtonState.NORMAL:
+        elif state == MaximizeButtonState.NORMAL:
                  self.setStyleSheet("""
                     QPushButton {
                         background-position: center;
