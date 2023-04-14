@@ -1,5 +1,7 @@
 from ctypes import c_void_p
 from functools import reduce
+
+import Quartz
 from AppKit import (NSView, NSMakeRect, NSWindow, NSWindowCloseButton, NSWindowMiniaturizeButton, NSWindowZoomButton)
 from Quartz.CoreGraphics import (CGEventCreateMouseEvent,
                                  kCGEventLeftMouseDown, kCGMouseButtonLeft)
@@ -78,3 +80,11 @@ def startSystemMove(widget: QWidget, pos: QPoint):
     if not clickEvent:
         return
     nswin.performWindowDragWithEvent_(clickEvent)
+
+def isWindowResizable(hwnd):
+    viewPtr = c_void_p(hwnd)
+    nsview = objc.objc_object(c_void_p=viewPtr)
+
+    nswin = nsview.window()
+    style_mask = nswin.styleMask()
+    return style_mask & Cocoa.NSWindowStyleMaskResizable == Cocoa.NSWindowStyleMaskResizable
