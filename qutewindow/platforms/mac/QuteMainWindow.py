@@ -26,7 +26,7 @@ class QuteMainWindow(QMainWindow):
             self.toggleMaximized()
 
     def mouseMoveEvent(self, event: QMouseEvent) -> None:
-        if not self.isFullScreen() and self.isTitleBarArea(event.pos()) and self.isResizable():
+        if not self.isFullScreen() and self.isTitleBarArea(event.pos()):
             startSystemMove(self.window(), event.globalPos())
 
     def isTitleBarArea(self, pos: QPoint) -> bool:
