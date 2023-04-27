@@ -13,7 +13,6 @@ from qutewindow.platforms.windows.utils import addShadowEffect, addWindowAnimati
 class QuteMainWindow(QMainWindow):
     def __init__(self, parent: Optional[QWidget] = None) -> None:
         super().__init__(parent)
-        self.setWindowFlags(Qt.WindowType.Window | Qt.FramelessWindowHint)
 
         addShadowEffect(self.winId())
         addWindowAnimation(self.winId())
@@ -34,12 +33,7 @@ class QuteMainWindow(QMainWindow):
         super(QuteMainWindow, self).showEvent(event)
 
     def nativeEvent(self, event_type: QByteArray, message: int):
-        ret_tuple = _nativeEvent(self, event_type, message)
-        if ret_tuple is not None:
-            ret, value = ret_tuple
-            if ret:
-                return ret, value
-        super().nativeEvent(event_type, message)
+        return _nativeEvent(self, event_type, message)
 
     def resizeEvent(self, e):
         super().resizeEvent(e)

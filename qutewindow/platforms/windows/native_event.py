@@ -26,10 +26,10 @@ def _nativeEvent(widget: QWidget, event_type: QByteArray, message: int):
     borderHeight = user32.GetSystemMetricsForDpi(win32con.SM_CYSIZEFRAME, dpi) + user32.GetSystemMetricsForDpi(92, dpi)
 
     if msg.message == win32con.WM_NCHITTEST:
-        if widget.isResizable():
+        if widget.isResizable() and not isMaximized(msg.hWnd):
             w, h = widget.width(), widget.height()
             lx = x < borderWidth
-            rx = x > w - 2 * borderWidth
+            rx = x > w - borderWidth
             ty = y < borderHeight
             by = y > h - borderHeight
 
@@ -84,3 +84,5 @@ def _nativeEvent(widget: QWidget, event_type: QByteArray, message: int):
             rect.bottom -= borderHeight
 
         return True, win32con.WVR_REDRAW
+
+    return False, 0
