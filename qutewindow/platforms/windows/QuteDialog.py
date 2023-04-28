@@ -13,9 +13,9 @@ from qutewindow.platforms.windows.utils import addShadowEffect, addWindowAnimati
 class QuteDialog(QDialog):
     def __init__(self, parent: Optional[QWidget] = None) -> None:
         super().__init__(parent)
-        self.createWinId()
-
         self._title_bar = TitleBar(self)
+
+        self.createWinId()
 
         addShadowEffect(self.winId())
         addWindowAnimation(self.winId())

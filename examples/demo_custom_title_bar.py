@@ -4,7 +4,7 @@ from typing import Optional
 from PySide6.QtWidgets import QApplication, QWidget
 
 from examples.LoginDialog import LoginDialog
-from qutewindow.platforms.mac.title_bar.TitleBar import TitleBar
+from qutewindow import TitleBar
 
 
 class CustomTitleBar(TitleBar):
