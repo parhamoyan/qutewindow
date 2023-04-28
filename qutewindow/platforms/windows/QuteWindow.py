@@ -14,11 +14,12 @@ class QuteWindow(QWidget):
     def __init__(self, parent: Optional[QWidget] = None):
         super(QuteWindow, self).__init__(parent)
 
+        self._title_bar = TitleBar(self)
+
         addShadowEffect(self.winId())
         addWindowAnimation(self.winId())
 
         self.resize(800, 800)
-        self._title_bar = TitleBar(self)
 
     def titleBar(self) -> QWidget:
         return self._title_bar

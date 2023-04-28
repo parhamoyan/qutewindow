@@ -50,24 +50,24 @@ def _nativeEvent(widget: QWidget, event_type: QByteArray, message: int):
             if rx:
                 return True, win32con.HTRIGHT
 
-        if widget.childAt(QPoint(x, y)) is widget.title_bar.maximize_button:
-            widget.title_bar.maximize_button.setState(MaximizeButtonState.HOVER)
+        if widget.childAt(QPoint(x, y)) is widget._title_bar.maximize_button:
+            widget._title_bar.maximize_button.setState(MaximizeButtonState.HOVER)
             return True, win32con.HTMAXBUTTON
 
-        if widget.childAt(x, y) not in widget.title_bar.findChildren(QPushButton):
-            if borderHeight < y < widget.title_bar.height():
+        if widget.childAt(x, y) not in widget._title_bar.findChildren(QPushButton):
+            if borderHeight < y < widget._title_bar.height():
                 return True, win32con.HTCAPTION
 
     elif msg.message in [0x2A2, win32con.WM_MOUSELEAVE]:
-        widget.title_bar.maximize_button.setState(MaximizeButtonState.NORMAL)
+        widget._title_bar.maximize_button.setState(MaximizeButtonState.NORMAL)
     elif msg.message in [win32con.WM_NCLBUTTONDOWN, win32con.WM_NCLBUTTONDBLCLK]:
-        if widget.childAt(QPoint(x, y)) is widget.title_bar.maximize_button:
-            QApplication.sendEvent(widget.title_bar.maximize_button, QMouseEvent(
+        if widget.childAt(QPoint(x, y)) is widget._title_bar.maximize_button:
+            QApplication.sendEvent(widget._title_bar.maximize_button, QMouseEvent(
                 QEvent.MouseButtonPress, QPoint(), Qt.LeftButton, Qt.LeftButton, Qt.NoModifier))
             return True, 0
     elif msg.message in [win32con.WM_NCLBUTTONUP, win32con.WM_NCRBUTTONUP]:
-        if widget.childAt(QPoint(x, y)) is widget.title_bar.maximize_button:
-            QApplication.sendEvent(widget.title_bar.maximize_button, QMouseEvent(
+        if widget.childAt(QPoint(x, y)) is widget._title_bar.maximize_button:
+            QApplication.sendEvent(widget._title_bar.maximize_button, QMouseEvent(
                 QEvent.MouseButtonRelease, QPoint(), Qt.LeftButton, Qt.LeftButton, Qt.NoModifier))
 
     elif msg.message == win32con.WM_NCCALCSIZE:

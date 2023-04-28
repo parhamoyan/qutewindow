@@ -15,11 +15,12 @@ class QuteDialog(QDialog):
         super().__init__(parent)
         self.createWinId()
 
+        self._title_bar = TitleBar(self)
+
         addShadowEffect(self.winId())
         addWindowAnimation(self.winId())
 
         self.resize(800, 800)
-        self._title_bar = TitleBar(self)
 
     def titleBar(self) -> QWidget:
         return self._title_bar

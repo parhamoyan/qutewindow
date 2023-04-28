@@ -5,7 +5,7 @@ from PySide6.QtGui import QShowEvent
 from PySide6.QtWidgets import QWidget, QMainWindow
 
 from qutewindow.platforms.windows.native_event import _nativeEvent
-from qutewindow.platforms.windows._title_bar.TitleBar import TitleBar
+from qutewindow.platforms.windows.title_bar.TitleBar import TitleBar
 from qutewindow.platforms.windows.utils import addShadowEffect, addWindowAnimation, setWindowNonResizable, \
     isWindowResizable
 
@@ -14,11 +14,12 @@ class QuteMainWindow(QMainWindow):
     def __init__(self, parent: Optional[QWidget] = None) -> None:
         super().__init__(parent)
 
+        self._title_bar = TitleBar(self)
+
         addShadowEffect(self.winId())
         addWindowAnimation(self.winId())
 
         self.resize(800, 800)
-        self._title_bar = TitleBar(self)
 
     def titleBar(self) -> QWidget:
         return self._title_bar
