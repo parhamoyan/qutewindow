@@ -12,7 +12,6 @@ from qutewindow.platforms.mac.utils import merge_content_area_and_title_bar, set
 class QuteMainWindow(QMainWindow):
     def __init__(self, parent: Optional[QWidget] = None) -> None:
         super().__init__(parent)
-        self.setWindowFlags(Qt.Window)
         merge_content_area_and_title_bar(self.winId())
         self.resize(800, 800)
         self._title_bar = TitleBar(self)
