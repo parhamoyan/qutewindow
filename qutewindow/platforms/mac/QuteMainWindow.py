@@ -1,7 +1,7 @@
 from typing import Optional
 
 from PySide6.QtCore import Qt
-from PySide6.QtGui import QResizeEvent
+from PySide6.QtGui import QResizeEvent, QShowEvent
 from PySide6.QtWidgets import QMainWindow, QWidget
 
 from qutewindow.platforms.mac.title_bar.TitleBar import TitleBar
@@ -29,6 +29,10 @@ class QuteMainWindow(QMainWindow):
 
     def isResizable(self) -> None:
         return isWindowResizable(self.winId())
+
+    def showEvent(self, event: QShowEvent) -> None:
+        self._title_bar.raise_()
+        super().showEvent(event)
 
     def resizeEvent(self, e: QResizeEvent) -> None:
         super().resizeEvent(e)
