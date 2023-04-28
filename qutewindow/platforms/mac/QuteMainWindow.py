@@ -32,4 +32,4 @@ class QuteMainWindow(QMainWindow):
 
     def resizeEvent(self, e: QResizeEvent) -> None:
         super().resizeEvent(e)
-        self.title_bar.resize(self.width(), self.title_bar.height())
+        self._title_bar.resize(self.width(), self._title_bar.height())
