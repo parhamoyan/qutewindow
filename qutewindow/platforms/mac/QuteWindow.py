@@ -1,11 +1,11 @@
 from typing import Optional
 
-from PySide6.QtCore import Qt, QPoint
-from PySide6.QtGui import QMouseEvent
+from PySide6.QtCore import Qt
+from PySide6.QtGui import QResizeEvent
 from PySide6.QtWidgets import QWidget
 
-from qutewindow.platforms.mac.utils import merge_content_area_and_title_bar, setWindowNonResizable, startSystemMove, \
-    isWindowResizable
+from qutewindow.platforms.mac.title_bar.TitleBar import TitleBar
+from qutewindow.platforms.mac.utils import merge_content_area_and_title_bar, setWindowNonResizable, isWindowResizable
 
 
 class QuteWindow(QWidget):
@@ -14,30 +14,21 @@ class QuteWindow(QWidget):
         self.setWindowFlags(Qt.Window)
         merge_content_area_and_title_bar(self.winId())
         self.resize(800, 800)
+        self._title_bar = TitleBar(self)
 
-    def setNonResizable(self):
+    def titleBar(self) -> QWidget:
+        return self._title_bar
+
+    def setTitleBar(self, titleBar: QWidget) -> None:
+        self._title_bar = titleBar
+        self.update()
+
+    def setNonResizable(self) -> None:
         setWindowNonResizable(self.winId())
 
     def isResizable(self) -> None:
         return isWindowResizable(self.winId())
 
-    def mouseDoubleClickEvent(self, event: QMouseEvent) -> None:
-        if not self.isFullScreen() and self.isTitleBarArea(event.pos()) and self.isResizable():
-            self.toggleMaximized()
-
-    def mouseMoveEvent(self, event: QMouseEvent) -> None:
-        if not self.isFullScreen() and self.isTitleBarArea(event.pos()):
-            startSystemMove(self.window(), event.globalPos())
-
-    def isTitleBarArea(self, pos: QPoint) -> bool:
-        return pos.y() <= 30
-
-    def toggleMaximized(self) -> None:
-        if self.isMaximized():
-            self.showNormal()
-        else:
-            self.showMaximized()
-
-    def mouseMoveEvent(self, event: QMouseEvent) -> None:
-        if self.isTitleBarArea(event.pos()):
-            startSystemMove(self.window(), event.globalPos())
+    def resizeEvent(self, e: QResizeEvent) -> None:
+        super().resizeEvent(e)
+        self._title_bar.resize(self.width(), self._title_bar.height())

@@ -17,19 +17,25 @@ class QuteWindow(QWidget):
         addShadowEffect(self.winId())
         addWindowAnimation(self.winId())
 
-        self.title_bar = TitleBar(self)
-
         self.resize(800, 800)
+        self._title_bar = TitleBar(self)
+
+    def titleBar(self) -> QWidget:
+        return self._title_bar
+
+    def setTitleBar(self, titleBar: QWidget) -> None:
+        self._title_bar = titleBar
+        self.update()
 
     def setNonResizable(self):
         setWindowNonResizable(self.winId())
-        self.title_bar.maximize_button.hide()
+        self._title_bar.maximize_button.hide()
 
     def isResizable(self) -> None:
         return isWindowResizable(self.winId())
 
     def showEvent(self, event: QShowEvent) -> None:
-        self.title_bar.raise_()
+        self._title_bar.raise_()
         super(QuteWindow, self).showEvent(event)
 
     def nativeEvent(self, event_type: QByteArray, message: int):
@@ -37,5 +43,4 @@ class QuteWindow(QWidget):
 
     def resizeEvent(self, e):
         super().resizeEvent(e)
-        if hasattr(self, "title_bar"):
-            self.title_bar.resize(self.width(), self.title_bar.height())
+        self._title_bar.resize(self.width(), self._title_bar.height())
