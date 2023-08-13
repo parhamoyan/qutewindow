@@ -29,7 +29,19 @@ def merge_content_area_and_title_bar(win_id: int) -> None:
     nswin.setStyleMask_(reduce(lambda a, b: a | b, styleMasks, 0))
 
     nswin.setTitlebarAppearsTransparent_(True)
-    nswin.setMovableByWindowBackground_(False)
+
+
+def hideTrafficLights(win_id: int) -> None:
+    viewPtr = c_void_p(win_id)
+    nsview = objc.objc_object(c_void_p=viewPtr)
+
+    nswin = nsview.window()
+    styleMasks = (
+        Cocoa.NSWindowTitleHidden,
+        Cocoa.NSWindowStyleMaskFullSizeContentView,
+    )
+    nswin.setStyleMask_(reduce(lambda a, b: a | b, styleMasks, 0))
+    nswin.setTitlebarAppearsTransparent_(True)
 
 
 def setTrafficLightsPosition(win_id: int, pos = QPoint(0, 0)) -> None:

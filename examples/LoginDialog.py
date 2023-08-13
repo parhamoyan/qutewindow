@@ -10,4 +10,3 @@ class LoginDialog(Ui_LoginDialog, QuteDialog):
     def __init__(self, parent: Optional[QWidget] = None) -> None:
         super().__init__(parent)
         self.setupUi(self)
-        # self.setNonResizable()
