@@ -2,6 +2,7 @@ import ctypes
 from ctypes.wintypes import POINT
 
 import win32con
+import win32gui
 from PySide6.QtCore import QByteArray, QPoint, Qt, QEvent
 from PySide6.QtGui import QMouseEvent
 from PySide6.QtWidgets import QWidget, QPushButton, QApplication
@@ -58,6 +59,10 @@ def _nativeEvent(widget: QWidget, event_type: QByteArray, message: int):
             if borderHeight < y < widget._title_bar.height():
                 return True, win32con.HTCAPTION
 
+    elif msg.message == win32con.WM_MOVE:
+        win32gui.SetWindowPos(msg.hWnd, None, 0, 0, 0, 0, win32con.SWP_NOMOVE |
+                              win32con.SWP_NOSIZE | win32con.SWP_FRAMECHANGED)
+
     elif msg.message in [0x2A2, win32con.WM_MOUSELEAVE]:
         widget._title_bar.maximize_button.setState(MaximizeButtonState.NORMAL)
     elif msg.message in [win32con.WM_NCLBUTTONDOWN, win32con.WM_NCLBUTTONDBLCLK]:
@@ -83,6 +88,7 @@ def _nativeEvent(widget: QWidget, event_type: QByteArray, message: int):
             rect.right -= borderWidth
             rect.bottom -= borderHeight
 
+        result = 0 if not msg.wParam else win32con.WVR_REDRAW
         return True, win32con.WVR_REDRAW
 
     return False, 0
