@@ -26,7 +26,7 @@ class QuteMainWindow(QMainWindow):
     def setNonResizable(self) -> None:
         setWindowNonResizable(self.winId())
 
-    def isResizable(self) -> None:
+    def isResizable(self) -> bool:
         return isWindowResizable(self.winId())
 
     def showEvent(self, event: QShowEvent) -> None:

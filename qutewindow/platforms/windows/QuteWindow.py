@@ -32,7 +32,7 @@ class QuteWindow(QWidget):
         setWindowNonResizable(self.winId())
         self._title_bar.maximize_button.hide()
 
-    def isResizable(self) -> None:
+    def isResizable(self) -> bool:
         return isWindowResizable(self.winId())
 
     def showEvent(self, event: QShowEvent) -> None:

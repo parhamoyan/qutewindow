@@ -1,20 +1,83 @@
 [tool.poetry]
 name = "qutewindow"
-version = "0.1.27"
+version = "0.2.0"
 description = "Cross-platform frameless window based on Python and Qt"
 authors = ["Parham Oyan <parhamoyan@yahoo.com>"]
 license = "MIT"
 readme = "README.md"
 repository = "https://github.com/parhamoyan/qutewindow"
-keywords = ["qt", "pyqt", "pyqt6", "pyqt5", "pyside", "pyside2", "pyside6", "frameless-window", "cross-platform"]
+keywords = ["qt", "pyqt", "pyqt6", "pyqt5", "pyside", "pyside2", "pyside6", "frameless-window", "cross-platform", "gui"]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Software Development :: Libraries :: Python Modules",
+    "Topic :: Software Development :: User Interfaces",
+    "Framework :: PySide6",
+    "Framework :: PyQt6"
+]
 
 [tool.poetry.dependencies]
-python = ">=3.0"
-pyobjc-framework-Cocoa = { version = "9.0.1", markers = "sys_platform == 'darwin'" }
+python = ">=3.8"
+pyobjc-framework-Cocoa = { version = ">=9.0.1", markers = "sys_platform == 'darwin'" }
 pyobjc-framework-Quartz = { version = "*", markers = "sys_platform == 'darwin'" }
-pywin32 = { version = "304", markers = "sys_platform == 'win32'"}
-PySide6 = "*"
+pywin32 = { version = ">=304", markers = "sys_platform == 'win32'"}
+PySide6 = ">=6.0.0"
+
+[tool.poetry.group.dev.dependencies]
+black = "^23.0.0"
+isort = "^5.12.0"
+flake8 = "^6.0.0"
+mypy = "^1.0.0"
+sphinx = "^6.0.0"
+sphinx-rtd-theme = "^1.2.0"
 
 [build-system]
 requires = ["poetry-core"]
 build-backend = "poetry.core.masonry.api"
+
+[tool.black]
+line-length = 88
+target-version = ['py38']
+include = '\.pyi?$'
+extend-exclude = '''
+/(
+  # directories
+  \.eggs
+  | \.git
+  | \.hg
+  | \.mypy_cache
+  | \.tox
+  | \.venv
+  | build
+  | dist
+)/
+'''
+
+[tool.isort]
+profile = "black"
+multi_line_output = 3
+line_length = 88
+known_first_party = ["qutewindow"]
+
+[tool.mypy]
+python_version = "3.8"
+warn_return_any = true
+warn_unused_configs = true
+disallow_untyped_defs = true
+disallow_incomplete_defs = true
+check_untyped_defs = true
+disallow_untyped_decorators = true
+no_implicit_optional = true
+warn_redundant_casts = true
+warn_unused_ignores = true
+warn_no_return = true
+warn_unreachable = true
+strict_equality = true
