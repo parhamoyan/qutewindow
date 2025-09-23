@@ -2,30 +2,61 @@
 Platform factory for creating platform-specific QuteWindow components.
 
 This module provides a factory pattern to create the appropriate platform-specific
-implementations based on the current operating system.
+implementations based on the current operating system. It abstracts away the
+platform detection and import logic, providing a unified interface for creating
+QuteWindow components regardless of the underlying platform.
+
+Supported Platforms:
+    - macOS (darwin): Uses native macOS window management and styling
+    - Windows: Uses native Windows window management and styling
+    - Linux: Currently not supported (raises NotImplementedError)
+
+Example:
+    >>> from qutewindow.platform_factory import get_qute_window_class
+    >>> QuteWindow = get_qute_window_class()
+    >>> window = QuteWindow()
 """
 
 import platform
-from typing import Type
+from typing import Type, Union
 
 from .base import BaseQuteWindow, BaseTitleBar
 
 
 def get_platform_name() -> str:
-    """Get the current platform name."""
+    """
+    Get the current platform name in a standardized format.
+    
+    Returns:
+        str: The platform name ('mac', 'windows', or 'linux').
+        
+    Raises:
+        NotImplementedError: If the platform is not supported.
+    """
     system = platform.system().lower()
-    if system == "darwin":
-        return "mac"
-    elif system == "windows":
-        return "windows"
-    elif system == "linux":
-        return "linux"
+    
+    platform_mapping = {
+        "darwin": "mac",
+        "windows": "windows",
+        "linux": "linux"
+    }
+    
+    if system in platform_mapping:
+        return platform_mapping[system]
     else:
         raise NotImplementedError(f"Platform {system} is not supported")
 
 
 def get_qute_window_class() -> Type[BaseQuteWindow]:
-    """Get the appropriate QuteWindow class for the current platform."""
+    """
+    Get the appropriate QuteWindow class for the current platform.
+    
+    Returns:
+        Type[BaseQuteWindow]: The platform-specific QuteWindow class.
+        
+    Raises:
+        NotImplementedError: If the current platform is not supported.
+    """
     platform_name = get_platform_name()
     
     if platform_name == "mac":
@@ -35,11 +66,19 @@ def get_qute_window_class() -> Type[BaseQuteWindow]:
     else:
         raise NotImplementedError(f"QuteWindow is not supported on {platform_name}")
     
-    return QuteWindow
+    return QuteWindow  # type: ignore
 
 
 def get_qute_main_window_class() -> Type[BaseQuteWindow]:
-    """Get the appropriate QuteMainWindow class for the current platform."""
+    """
+    Get the appropriate QuteMainWindow class for the current platform.
+    
+    Returns:
+        Type[BaseQuteWindow]: The platform-specific QuteMainWindow class.
+        
+    Raises:
+        NotImplementedError: If the current platform is not supported.
+    """
     platform_name = get_platform_name()
     
     if platform_name == "mac":
@@ -49,11 +88,19 @@ def get_qute_main_window_class() -> Type[BaseQuteWindow]:
     else:
         raise NotImplementedError(f"QuteMainWindow is not supported on {platform_name}")
     
-    return QuteMainWindow
+    return QuteMainWindow  # type: ignore
 
 
 def get_qute_dialog_class() -> Type[BaseQuteWindow]:
-    """Get the appropriate QuteDialog class for the current platform."""
+    """
+    Get the appropriate QuteDialog class for the current platform.
+    
+    Returns:
+        Type[BaseQuteWindow]: The platform-specific QuteDialog class.
+        
+    Raises:
+        NotImplementedError: If the current platform is not supported.
+    """
     platform_name = get_platform_name()
     
     if platform_name == "mac":
@@ -63,11 +110,19 @@ def get_qute_dialog_class() -> Type[BaseQuteWindow]:
     else:
         raise NotImplementedError(f"QuteDialog is not supported on {platform_name}")
     
-    return QuteDialog
+    return QuteDialog  # type: ignore
 
 
 def get_title_bar_class() -> Type[BaseTitleBar]:
-    """Get the appropriate TitleBar class for the current platform."""
+    """
+    Get the appropriate TitleBar class for the current platform.
+    
+    Returns:
+        Type[BaseTitleBar]: The platform-specific TitleBar class.
+        
+    Raises:
+        NotImplementedError: If the current platform is not supported.
+    """
     platform_name = get_platform_name()
     
     if platform_name == "mac":
@@ -77,4 +132,4 @@ def get_title_bar_class() -> Type[BaseTitleBar]:
     else:
         raise NotImplementedError(f"TitleBar is not supported on {platform_name}")
     
-    return TitleBar
+    return TitleBar  # type: ignore
