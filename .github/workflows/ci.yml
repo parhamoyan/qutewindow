@@ -68,7 +68,7 @@ jobs:
 
     - name: Test installation
       run: |
-        poetry run pip install dist/*.whl || poetry run pip install (Get-ChildItem -Path dist -Filter *.whl | Select-Object -First 1).FullName
+        poetry run pip install dist/*.whl || poetry run pip install $(ls dist/*.whl | head -1)
         poetry run python -c "import qutewindow; print('QuteWindow imported successfully')"
 
   build-and-publish:
