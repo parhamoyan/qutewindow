@@ -1,7 +1,3 @@
-import platform
-import sys
-
-
 def test_import_qutewindow():
     """Test that qutewindow can be imported successfully."""
     try:
