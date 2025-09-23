@@ -38,6 +38,8 @@ flake8 = "^6.0.0"
 mypy = "^1.0.0"
 sphinx = "^6.0.0"
 sphinx-rtd-theme = "^1.2.0"
+pytest = "^7.0.0"
+pytest-cov = "^4.0.0"
 
 [build-system]
 requires = ["poetry-core"]

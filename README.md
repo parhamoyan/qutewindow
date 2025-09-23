@@ -4,6 +4,8 @@
 [![Python Support](https://img.shields.io/pypi/pyversions/qutewindow.svg)](https://pypi.org/project/qutewindow/)
 [![License](https://img.shields.io/github/license/parhamoyan/qutewindow.svg)](https://github.com/parhamoyan/qutewindow/blob/main/LICENSE)
 [![Code Style](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/psf/black)
+[![CI](https://github.com/parhamoyan/qutewindow/workflows/CI/badge.svg)](https://github.com/parhamoyan/qutewindow/actions/workflows/ci.yml)
+[![Documentation](https://github.com/parhamoyan/qutewindow/workflows/Documentation/badge.svg)](https://github.com/parhamoyan/qutewindow/actions/workflows/docs.yml)
 
 **QuteWindow** is a modern, cross-platform frameless window library for Python and Qt that provides native window controls and behaviors across different platforms. Create beautiful, frameless applications with ease!
 
@@ -262,6 +264,32 @@ qutewindow/
 - Full-screen support
 - Native window shadows
 - Mission Control integration
+
+## 🔄 CI/CD
+
+QuteWindow uses GitHub Actions for continuous integration and deployment:
+
+- **CI Pipeline**: Runs on every push and pull request to ensure code quality
+  - Tests across multiple Python versions (3.8-3.12) and platforms (Windows, macOS, Linux)
+  - Code formatting checks (Black, isort)
+  - Linting (flake8)
+  - Type checking (mypy)
+  - Security scanning (safety, bandit)
+  - Package building and installation testing
+
+- **Documentation**: Automatically builds and deploys documentation to GitHub Pages
+- **Code Coverage**: Tracks test coverage with Codecov integration
+- **Automated Publishing**: Publishes to PyPI when new tags are created
+
+### Quality Checks
+
+The CI pipeline enforces the following quality standards:
+
+- **Code Style**: Black formatting and isort import sorting
+- **Type Safety**: Mypy static type checking
+- **Code Quality**: Flake8 linting with strict rules
+- **Security**: Dependency and code security scanning
+- **Testing**: Comprehensive test suite with coverage reporting
 
 ## 🤝 Contributing
 
