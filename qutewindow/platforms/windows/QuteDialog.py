@@ -9,26 +9,30 @@ and native window management integration.
 
 from typing import Optional
 
-from PySide6.QtCore import Qt, QByteArray
+from PySide6.QtCore import QByteArray, Qt
 from PySide6.QtGui import QShowEvent
-from PySide6.QtWidgets import QWidget, QDialog
+from PySide6.QtWidgets import QDialog, QWidget
 
 from qutewindow.base import QuteWindowMixin
 from qutewindow.platforms.windows.native_event import _nativeEvent
 from qutewindow.platforms.windows.title_bar.TitleBar import TitleBar
-from qutewindow.platforms.windows.utils import addShadowEffect, addWindowAnimation, setWindowNonResizable, \
-    isWindowResizable
+from qutewindow.platforms.windows.utils import (
+    addShadowEffect,
+    addWindowAnimation,
+    isWindowResizable,
+    setWindowNonResizable,
+)
 
 
 class QuteDialog(QuteWindowMixin, QDialog):
     """
     Windows-specific frameless dialog implementation.
-    
+
     This class provides a frameless dialog for Windows with native styling and
     window management integration. It extends QDialog to support modal dialogs,
     input forms, and other dialog windows while maintaining a frameless
     appearance with custom title bar.
-    
+
     The dialog automatically handles:
     - Native window shadows and animations
     - Proper window layering and z-ordering
@@ -36,10 +40,10 @@ class QuteDialog(QuteWindowMixin, QDialog):
     - Custom title bar with window controls (close, minimize, maximize)
     - QDialog features (modal execution, result codes, etc.)
     - Native event handling for window operations
-    
+
     Attributes:
         _title_bar (TitleBar): The custom title bar widget.
-    
+
     Example:
         >>> dialog = QuteDialog()
         >>> dialog.setWindowTitle("Settings")
@@ -47,16 +51,16 @@ class QuteDialog(QuteWindowMixin, QDialog):
         >>> if result == QDialog.Accepted:
         ...     print("Dialog accepted")
     """
-    
+
     def __init__(self, parent: Optional[QWidget] = None) -> None:
         """
         Initialize the Windows QuteDialog.
-        
+
         Args:
             parent (Optional[QWidget]): The parent widget, defaults to None.
         """
         super().__init__(parent)
-        
+
         self._title_bar = TitleBar(self)
         self.createWinId()
         addShadowEffect(self.winId())
@@ -66,19 +70,19 @@ class QuteDialog(QuteWindowMixin, QDialog):
     def setNonResizable(self):
         """
         Make the dialog non-resizable.
-        
+
         This method disables dialog resizing functionality by modifying the
         window style and hiding the maximize button from the title bar.
         """
         setWindowNonResizable(self.winId())
         # Hide maximize button if it exists on the title bar
-        if hasattr(self._title_bar, 'maximize_button'):
+        if hasattr(self._title_bar, "maximize_button"):
             self._title_bar.maximize_button.hide()  # type: ignore
 
     def isResizable(self) -> bool:
         """
         Check if the dialog is resizable.
-        
+
         Returns:
             bool: True if the dialog is resizable, False otherwise.
         """
@@ -87,15 +91,15 @@ class QuteDialog(QuteWindowMixin, QDialog):
     def nativeEvent(self, event_type: QByteArray, message: int):  # type: ignore
         """
         Handle native Windows events.
-        
+
         This method processes native Windows messages to enable proper
         dialog behavior, including resizing, moving, and other system
         interactions that require native event handling.
-        
+
         Args:
             event_type (QByteArray): The type of the native event.
             message (int): The native event message.
-            
+
         Returns:
             Tuple[bool, int]: A tuple containing a boolean indicating if the
                              event was handled and an optional result value.

@@ -1,4 +1,4 @@
-from ctypes import cdll, byref
+from ctypes import byref, cdll
 
 import win32api
 import win32con
@@ -73,5 +73,5 @@ def startSystemMove(widget: QWidget, pos: QPoint) -> None:
         int(widget.winId()),
         win32con.WM_SYSCOMMAND,
         win32con.SC_MOVE | win32con.HTCAPTION,
-        0
+        0,
     )

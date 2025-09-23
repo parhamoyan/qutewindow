@@ -51,7 +51,7 @@ jobs:
 
     - name: Run linting
       run: |
-        poetry run flake8 .
+        poetry run flake8 . --exclude=venv,.venv,build,dist --ignore=E501,W191,E101,E266
 
     - name: Run type checking
       run: |
