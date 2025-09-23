@@ -1,9 +1,10 @@
+# noqa: F401
+# noqa: F401
 from ctypes import c_void_p
 from functools import reduce
 
 import Cocoa
 import objc
-import Quartz
 from AppKit import (
     NSMakeRect,
     NSView,

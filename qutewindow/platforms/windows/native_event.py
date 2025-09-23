@@ -115,7 +115,7 @@ def _nativeEvent(widget: QWidget, event_type: QByteArray, message: int):
             rect.right -= borderWidth
             rect.bottom -= borderHeight
 
-        result = 0 if not msg.wParam else win32con.WVR_REDRAW
+        _ = 0 if not msg.wParam else win32con.WVR_REDRAW
         return True, win32con.WVR_REDRAW
 
     return False, 0
