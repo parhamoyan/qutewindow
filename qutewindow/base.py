@@ -16,8 +16,6 @@ from PySide6.QtGui import QResizeEvent, QShowEvent
 from PySide6.QtWidgets import QWidget
 
 
-
-
 class BaseQuteWindow(QWidget):
     """
     Abstract base class for all QuteWindow implementations.
@@ -185,11 +183,13 @@ class QuteWindowMixin:
         """Make the window non-resizable."""
         if hasattr(self, "winId"):
             from qutewindow.platforms.mac.utils import setWindowNonResizable
+
             setWindowNonResizable(self.winId())  # type: ignore[attr-defined]
 
     def isResizable(self) -> bool:
         """Check if the window is resizable."""
         if hasattr(self, "winId"):
             from qutewindow.platforms.mac.utils import isWindowResizable
+
             return isWindowResizable(self.winId())  # type: ignore[attr-defined]
         return False
