@@ -108,8 +108,17 @@ jobs:
         name: dist
         path: dist/
 
+    - name: Debug - Check dist contents
+      run: |
+        echo "=== Distribution files ==="
+        ls -la dist/
+        echo "=== Checking package names ==="
+        find dist/ -name "*.whl" -o -name "*.tar.gz" | head -5
+
     - name: Publish to PyPI
       uses: pypa/gh-action-pypi-publish@release/v1
+      with:
+        verbose: true
 
   create-release:
     needs: [build, publish-pypi]
