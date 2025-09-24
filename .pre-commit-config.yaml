@@ -43,3 +43,4 @@ repos:
       - id: bandit
         additional_dependencies: [pbr]
         args: [-r, qutewindow/, --skip=B101]
+        exclude: ^(venv|\.venv|build|dist|docs|examples|scripts|.*_rc\.py|compile_rcc\.py|conf\.py)$

@@ -199,7 +199,7 @@ poetry install
 poetry install --with dev
 
 # Set up pre-commit hooks
-./setup-precommit.sh
+poetry run python scripts/setup_precommit.py
 ```
 
 ### From Source with pip
@@ -323,11 +323,11 @@ We welcome contributions! Please see our [Contributing Guide](CONTRIBUTING.md) f
 2. Clone your fork: `git clone https://github.com/your-username/qutewindow.git`
 3. Navigate to the project: `cd qutewindow`
 4. Install dependencies with Poetry: `poetry install --with dev`
-5. Set up pre-commit hooks: `./setup-precommit.sh`
+5. Set up pre-commit hooks: `poetry run python scripts/setup_precommit.py`
 6. Create your feature branch: `git checkout -b feature/amazing-feature`
 7. Make your changes and ensure they pass tests: `poetry run pytest`
-8. Run quality checks: `./scripts/quality_check.sh`
-9. Format your code: `./format-code.sh` or `poetry run black . && poetry run isort .`
+8. Run quality checks: `poetry run python scripts/quality_check.py`
+9. Format your code: `poetry run python scripts/format_code.py` or `poetry run black . && poetry run isort .`
 10. Commit your changes: `git commit -m 'feat: add amazing feature'`
 11. Push to the branch: `git push origin feature/amazing-feature`
 12. Open a Pull Request
@@ -348,16 +348,16 @@ The project includes several convenience scripts:
 
 ```bash
 # Run comprehensive quality checks
-./scripts/quality_check.sh
+poetry run python scripts/quality_check.py
 
 # Run all tests
-./scripts/run_tests.sh
+poetry run python scripts/run_tests.py
 
 # Auto-format code
-./format-code.sh
+poetry run python scripts/format_code.py
 
 # Set up pre-commit hooks
-./setup-precommit.sh
+poetry run python scripts/setup_precommit.py
 ```
 
 ## 📄 License

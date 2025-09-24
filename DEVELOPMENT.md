@@ -25,7 +25,7 @@ curl -sSL https://install.python-poetry.org | python3 -
 poetry install
 
 # Set up pre-commit hooks
-./setup-precommit.sh
+poetry run python scripts/setup_precommit.py
 
 # Verify installation
 poetry run python -c "import qutewindow; print('QuteWindow installed successfully')"
@@ -104,7 +104,7 @@ poetry run black .
 poetry run isort .
 
 # Using convenience script
-./format-code.sh
+poetry run python scripts/format_code.py
 ```
 
 ## 🧪 Testing
@@ -134,7 +134,7 @@ poetry run pytest -m "not slow"    # Exclude slow tests
 
 ```bash
 # Comprehensive test runner (recommended)
-./scripts/run_tests.sh
+poetry run python scripts/run_tests.py
 
 # Quick test run
 poetry run pytest tests/ -v
@@ -179,7 +179,7 @@ def test_window_creation(qapp):
 Run comprehensive quality checks:
 
 ```bash
-./scripts/quality_check.sh
+poetry run python scripts/quality_check.py
 ```
 
 This script runs:

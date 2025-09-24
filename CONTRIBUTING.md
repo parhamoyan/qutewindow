@@ -38,11 +38,11 @@ We welcome contributions to QuteWindow! This guide will help you get started wit
 4. **Set Up Git Hooks**
 
    ```bash
-   # Use the provided setup script
-   ./setup-precommit.sh
+# Use the provided setup script
+poetry run python scripts/setup_precommit.py
 
-   # Or install manually
-   poetry run pre-commit install
+# Or install manually
+poetry run pre-commit install
    ```
 
 5. **Set Up Upstream Remote**
@@ -68,7 +68,7 @@ poetry run black .
 poetry run isort .
 
 # Or use the convenience script
-./format-code.sh
+poetry run python scripts/format_code.py
 ```
 
 ### Linting
@@ -144,7 +144,7 @@ Before committing, run quality checks:
 
 ```bash
 # Run comprehensive quality checks
-./scripts/quality_check.sh
+poetry run python scripts/quality_check.py
 
 # Or run individual checks
 poetry run black --check .
@@ -198,7 +198,7 @@ Run the test suite:
 poetry run pytest
 
 # Or use the convenience script
-./scripts/run_tests.sh
+poetry run python scripts/run_tests.py
 ```
 
 ### Running Tests with Coverage
@@ -416,7 +416,7 @@ poetry install
 poetry run pre-commit run --all-files
 
 # Auto-fix formatting issues
-./format-code.sh
+poetry run python scripts/format_code.py
 
 # Update hooks to latest versions
 poetry run pre-commit autoupdate

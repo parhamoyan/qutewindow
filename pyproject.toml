@@ -45,6 +45,24 @@ safety = "^2.0.0"
 bandit = "^1.7.0"
 pre-commit = "^4.3.0"
 
+[tool.poetry.extras]
+dev = [
+    "black",
+    "isort",
+    "flake8",
+    "mypy",
+    "sphinx",
+    "sphinx-rtd-theme",
+    "pytest",
+    "pytest-cov",
+    "pytest-mock",
+    "safety",
+    "bandit",
+    "pre-commit"
+]
+
+
+
 [build-system]
 requires = ["poetry-core"]
 build-backend = "poetry.core.masonry.api"
