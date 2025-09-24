@@ -8,7 +8,7 @@ with native window controls and behaviors across different platforms.
 
 from .platforms import CuteDialog, CuteMainWindow, CuteWindow, TitleBar
 
-__version__ = "0.2.0"
+__version__ = "0.1.0"
 __author__ = "Parham Oyan"
 __email__ = "parhamoyan@yahoo.com"
 __license__ = "MIT"

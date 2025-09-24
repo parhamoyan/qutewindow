@@ -7,20 +7,22 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.1.0] - 2024-09-24
+
 ### Added
-- Initial pre-commit hooks setup
-- Code quality and linting tools
-- Comprehensive CI/CD pipeline
-- Automated release workflow with GitHub Actions
-- PyPI publishing automation
-- GitHub release automation
+- Cross-platform customizable window support
+- Windows-specific implementation with native controls
+- macOS-specific implementation with native traffic lights
+- Custom title bar functionality
+- High-DPI support
+- Native window animations
+- Windows 11 snap layout support
+- Updated package description and terminology from frameless to customizable
 
 ### Changed
-- Improved development workflow
-- Enhanced documentation
-- Updated release process
-
-## [0.1.0-alpha.1] - 2024-09-24
+- Modular architecture with platform-specific implementations
+- Improved API design
+- Enhanced documentation with consistent terminology
 
 ### Added
 - Cross-platform customizable window support

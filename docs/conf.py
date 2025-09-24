@@ -10,7 +10,7 @@ sys.path.insert(0, os.path.abspath(".."))
 project = "QuteWindow"
 copyright = "2024, Parham Oyan"
 author = "Parham Oyan"
-release = "0.2.0"
+release = "0.1.0"
 
 # General configuration
 extensions = [
