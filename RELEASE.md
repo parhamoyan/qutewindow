@@ -216,7 +216,7 @@ poetry publish
 ### 1. Verify Installation
 ```bash
 # Test installation from PyPI
-pip install cutewindow
+pip install pyside6-cutewindow
 
 # Test import
 python -c "import cutewindow; print('Success!')"

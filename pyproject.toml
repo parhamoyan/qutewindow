@@ -1,13 +1,13 @@
 [tool.poetry]
-name = "cutewindow"
+name = "pyside6-cutewindow"
 version = "0.1.0"
 description = "Cross-platform customizable window library based on PySide6 with enhanced control"
 authors = ["Parham Oyan <parhamoyan@yahoo.com>"]
 license = "MIT"
 readme = "README.md"
 repository = "https://github.com/parhamoyan/qutewindow"
-documentation = "https://cutewindow.readthedocs.io"
-keywords = ["qt", "pyqt", "pyqt6", "pyqt5", "pyside", "pyside2", "pyside6", "customizable-window", "cross-platform", "gui", "window-customization"]
+documentation = "https://pyside6-cutewindow.readthedocs.io"
+keywords = ["qt", "pyqt", "pyqt6", "pyqt5", "pyside", "pyside2", "pyside6", "customizable-window", "cross-platform", "gui", "window-customization", "pyside6-cutewindow"]
 packages = [{include = "cutewindow"}]
 include = ["CHANGELOG.md", "LICENSE", "README.md"]
 classifiers = [
@@ -73,7 +73,7 @@ build-backend = "poetry.core.masonry.api"
 [tool.poetry.urls]
 "Bug Tracker" = "https://github.com/parhamoyan/qutewindow/issues"
 "Changelog" = "https://github.com/parhamoyan/qutewindow/blob/main/CHANGELOG.md"
-"Documentation" = "https://cutewindow.readthedocs.io"
+"Documentation" = "https://pyside6-cutewindow.readthedocs.io"
 "Source" = "https://github.com/parhamoyan/qutewindow"
 
 [tool.black]

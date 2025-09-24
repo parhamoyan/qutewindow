@@ -7,7 +7,7 @@ import sys
 sys.path.insert(0, os.path.abspath(".."))
 
 # Project information
-project = "QuteWindow"
+project = "PySide6 CuteWindow"
 copyright = "2024, Parham Oyan"
 author = "Parham Oyan"
 release = "0.1.0"

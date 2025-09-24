@@ -11,7 +11,7 @@ From PyPI
 
 Install CuteWindow with a single command::
 
-    pip install cutewindow
+    pip install pyside6-cutewindow
 
 From Source
 ~~~~~~~~~~~
