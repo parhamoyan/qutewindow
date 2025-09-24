@@ -5,7 +5,7 @@
 [![License](https://img.shields.io/github/license/parhamoyan/qutewindow.svg)](https://github.com/parhamoyan/qutewindow/blob/main/LICENSE)
 [![Code Style](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/psf/black)
 [![CI](https://github.com/parhamoyan/qutewindow/workflows/CI/badge.svg)](https://github.com/parhamoyan/qutewindow/actions/workflows/ci.yml)
-[![Documentation](https://github.com/parhamoyan/qutewindow/workflows/Documentation/badge.svg)](https://github.com/parhamoyan/qutewindow/actions/workflows/docs.yml)
+[![Documentation](https://readthedocs.org/projects/qutewindow/badge/?version=latest)](https://qutewindow.readthedocs.io/en/latest/)
 
 **QuteWindow** is a modern, cross-platform frameless window library for Python and Qt that provides native window controls and behaviors across different platforms. Create beautiful, frameless applications with ease!
 
@@ -299,7 +299,7 @@ QuteWindow uses GitHub Actions for continuous integration and deployment:
   - Security scanning (safety, bandit)
   - Package building and installation testing
 
-- **Documentation**: Automatically builds and deploys documentation to GitHub Pages
+- **Documentation**: Automatically builds and deploys documentation to Read the Docs
 - **Code Coverage**: Tracks test coverage with Codecov integration
 - **Automated Publishing**: Publishes to PyPI when new tags are created
 
