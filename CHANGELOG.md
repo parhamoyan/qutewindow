@@ -23,7 +23,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [0.1.0-alpha.1] - 2024-09-24
 
 ### Added
-- Cross-platform frameless window support
+- Cross-platform customizable window support
 - Windows-specific implementation with native controls
 - macOS-specific implementation with native traffic lights
 - Custom title bar functionality

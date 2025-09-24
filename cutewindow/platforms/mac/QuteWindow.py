@@ -2,7 +2,7 @@
 macOS-specific CuteWindow implementation.
 
 This module provides the macOS-specific implementation of the CuteWindow class,
-which creates a frameless window with native macOS styling and behavior.
+which creates a customizable window with native macOS styling and behavior.
 It integrates seamlessly with macOS window management while providing
 a customizable title bar.
 """
@@ -18,9 +18,9 @@ from cutewindow.platforms.mac.title_bar.TitleBar import TitleBar
 
 class CuteWindow(CuteWindowMixin, QWidget):
     """
-    macOS-specific frameless window implementation.
+    macOS-specific customizable window implementation.
 
-    This class provides a frameless window for macOS with native styling and
+    This class provides a customizable window for macOS with native styling and
     window management integration. It uses Qt's window flags to achieve
     native appearance while maintaining the ability to customize the title bar.
 

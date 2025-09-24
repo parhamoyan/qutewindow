@@ -2,7 +2,7 @@
 Windows-specific TitleBar implementation.
 
 This module provides the Windows-specific implementation of the TitleBar class,
-which creates a native-looking title bar for frameless windows on Windows.
+which creates a native-looking title bar for customizable windows on Windows.
 Unlike the macOS version, the Windows title bar includes custom window controls
 (close, minimize, maximize) that match the Windows visual style.
 """
@@ -280,7 +280,7 @@ class TitleBar(QFrame):
     """
     Windows-specific title bar implementation with custom window controls.
 
-    This class provides a complete title bar for Windows frameless windows,
+    This class provides a complete title bar for Windows customizable windows,
     including custom window controls (close, minimize, maximize) that match
     the Windows visual style and behavior. The title bar is laid out with
     buttons on the right side and a spacer that takes up the remaining space.

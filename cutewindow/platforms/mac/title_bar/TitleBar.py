@@ -2,7 +2,7 @@
 macOS-specific TitleBar implementation.
 
 This module provides the macOS-specific implementation of the TitleBar class,
-which creates a native-looking title bar for frameless windows on macOS.
+which creates a native-looking title bar for customizable windows on macOS.
 Unlike the Windows version, the macOS title bar is minimal and relies on
 macOS's native window controls and behavior.
 """
@@ -19,7 +19,7 @@ class TitleBar(QFrame):
     """
     macOS-specific title bar implementation.
 
-    This class provides a minimal title bar for macOS frameless windows.
+    This class provides a minimal title bar for macOS customizable windows.
     On macOS, the title bar primarily serves as a drag area for window movement
     and handles double-click events for window maximization/restoration.
 

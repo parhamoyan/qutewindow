@@ -2,15 +2,14 @@
 Windows-specific CuteWindow implementation.
 
 This module provides the Windows-specific implementation of the CuteWindow class,
-which creates a frameless window with native Windows styling and behavior.
+which creates a customizable window with native Windows styling and behavior.
 It integrates seamlessly with Windows window management while providing
 a customizable title bar with native window controls.
 """
 
 from typing import Optional
 
-from PySide6.QtCore import QByteArray, Qt
-from PySide6.QtGui import QShowEvent
+from PySide6.QtCore import QByteArray
 from PySide6.QtWidgets import QWidget
 
 from cutewindow.base import CuteWindowMixin
@@ -26,9 +25,9 @@ from cutewindow.platforms.windows.utils import (
 
 class CuteWindow(CuteWindowMixin, QWidget):
     """
-    Windows-specific frameless window implementation.
+    Windows-specific customizable window implementation.
 
-    This class provides a frameless window for Windows with native styling and
+    This class provides a customizable window for Windows with native styling and
     window management integration. It uses Windows API calls to achieve
     native appearance while maintaining the ability to customize the title bar.
 

@@ -1,7 +1,7 @@
 Customization
 =============
 
-CuteWindow provides several ways to customize the appearance and behavior of your frameless windows.
+CuteWindow provides several ways to customize the appearance and behavior of your customizable windows.
 
 Styling the Title Bar
 ---------------------

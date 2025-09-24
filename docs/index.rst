@@ -1,12 +1,12 @@
 CuteWindow
 ===========
 
-CuteWindow is a modern, cross-platform frameless window library for Python and Qt that provides native window controls and behaviors across different platforms.
+CuteWindow is a modern, cross-platform window library for Python and Qt that provides enhanced control and customization with native window controls and behaviors across different platforms.
 
 **Features:**
 
 * **Cross-platform**: Works seamlessly on Windows and macOS
-* **Frameless design**: Clean, modern window appearance without system chrome
+* **Enhanced control**: Customizable window appearance with flexible styling options
 * **Native controls**: Platform-specific window buttons and behaviors
 * **Customizable**: Easy to customize title bar appearance and functionality
 * **High-DPI support**: Automatic scaling for high-resolution displays

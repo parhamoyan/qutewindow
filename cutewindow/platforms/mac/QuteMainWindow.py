@@ -2,7 +2,7 @@
 macOS-specific CuteMainWindow implementation.
 
 This module provides the macOS-specific implementation of the CuteMainWindow class,
-which creates a frameless main window with native macOS styling and behavior.
+which creates a customizable main window with native macOS styling and behavior.
 It extends QMainWindow functionality while providing a customizable title bar
 and native window management integration.
 """
@@ -18,11 +18,11 @@ from cutewindow.platforms.mac.title_bar.TitleBar import TitleBar
 
 class CuteMainWindow(CuteWindowMixin, QMainWindow):
     """
-    macOS-specific frameless main window implementation.
+    macOS-specific customizable main window implementation.
 
-    This class provides a frameless main window for macOS with native styling and
+    This class provides a customizable main window for macOS with native styling and
     window management integration. It extends QMainWindow to support menus,
-    toolbars, status bars, and central widgets while maintaining a frameless
+    toolbars, status bars, and central widgets while maintaining a customizable
     appearance with custom title bar.
 
     The window automatically handles:

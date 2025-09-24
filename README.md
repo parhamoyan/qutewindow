@@ -7,12 +7,12 @@
 [![CI](https://github.com/parhamoyan/cutewindow/workflows/CI/badge.svg)](https://github.com/parhamoyan/cutewindow/actions/workflows/ci.yml)
 [![Documentation](https://readthedocs.org/projects/cutewindow/badge/?version=latest)](https://cutewindow.readthedocs.io/en/latest/)
 
-**CuteWindow** is a modern, cross-platform frameless window library for Python and Qt that provides native window controls and behaviors across different platforms. Create beautiful, frameless applications with ease!
+**CuteWindow** is a modern, cross-platform window library for Python and Qt that provides enhanced control and customization with native window controls and behaviors across different platforms. Create beautiful, customizable applications with ease!
 
 ## ✨ Features
 
 - 🖥️ **Cross-platform**: Works seamlessly on Windows and macOS
-- 🎨 **Frameless design**: Clean, modern window appearance without system chrome
+- 🎨 **Enhanced control**: Customizable window appearance with flexible styling options
 - 🎛️ **Native controls**: Platform-specific window buttons and behaviors
 - 🎯 **Customizable**: Easy to customize title bar appearance and functionality
 - 📱 **High-DPI support**: Automatic scaling for high-resolution displays
@@ -32,7 +32,7 @@ pip install cutewindow
 
 ### Basic Usage
 
-Creating a frameless window is as simple as:
+Creating a customizable window is as simple as:
 
 ```python
 import sys
@@ -42,7 +42,7 @@ from cutewindow import CuteWindow
 if __name__ == "__main__":
     app = QApplication(sys.argv)
     window = CuteWindow()
-    window.setWindowTitle("My Frameless App")
+    window.setWindowTitle("My Customizable App")
     window.resize(800, 600)
     window.show()
     sys.exit(app.exec())

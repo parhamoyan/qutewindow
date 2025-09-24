@@ -9,7 +9,7 @@ Core Classes
 CuteWindow
 ~~~~~~~~~
 
-The main frameless window class that provides a modern, borderless window with native window controls.
+The main customizable window class that provides a modern, borderless window with native window controls.
 
 **Constructor:**
 
@@ -38,7 +38,7 @@ The main frameless window class that provides a modern, borderless window with n
 QuteMainWindow
 ~~~~~~~~~~~~~~
 
-An advanced frameless window that supports menu bars and additional features typically found in main application windows.
+An advanced customizable window that supports menu bars and additional features typically found in main application windows.
 
 **Constructor:**
 
@@ -75,7 +75,7 @@ An advanced frameless window that supports menu bars and additional features typ
 QuteDialog
 ~~~~~~~~~~
 
-A frameless dialog window with modal support, perfect for dialogs, forms, and popup windows.
+A customizable dialog window with modal support, perfect for dialogs, forms, and popup windows.
 
 **Constructor:**
 

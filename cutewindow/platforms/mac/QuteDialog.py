@@ -2,7 +2,7 @@
 macOS-specific CuteDialog implementation.
 
 This module provides the macOS-specific implementation of the CuteDialog class,
-which creates a frameless dialog with native macOS styling and behavior.
+which creates a customizable dialog with native macOS styling and behavior.
 It extends QDialog functionality while providing a customizable title bar
 and native window management integration.
 """
@@ -18,11 +18,11 @@ from cutewindow.platforms.mac.title_bar.TitleBar import TitleBar
 
 class CuteDialog(CuteWindowMixin, QDialog):
     """
-    macOS-specific frameless dialog implementation.
+    macOS-specific customizable dialog implementation.
 
-    This class provides a frameless dialog for macOS with native styling and
+    This class provides a customizable dialog for macOS with native styling and
     window management integration. It extends QDialog to support modal dialogs,
-    input forms, and other dialog windows while maintaining a frameless
+    input forms, and other dialog windows while maintaining a customizable
     appearance with custom title bar.
 
     The dialog automatically handles:

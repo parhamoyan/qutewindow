@@ -1,7 +1,7 @@
 Getting Started
 ===============
 
-CuteWindow is a modern, cross-platform frameless window library for Python and Qt that provides native window controls and behaviors across different platforms.
+CuteWindow is a modern, cross-platform window library for Python and Qt that provides enhanced control and customization with native window controls and behaviors across different platforms.
 
 Installation
 ------------
@@ -25,7 +25,7 @@ From Source
 Basic Usage
 -----------
 
-Creating a frameless window is as simple as:
+Creating a customizable window is as simple as:
 
 .. code-block:: python
 
@@ -36,7 +36,7 @@ Creating a frameless window is as simple as:
     if __name__ == "__main__":
         app = QApplication(sys.argv)
         window = CuteWindow()
-        window.setWindowTitle("My Frameless App")
+        window.setWindowTitle("My Customizable App")
         window.resize(800, 600)
         window.show()
         sys.exit(app.exec())
@@ -49,7 +49,7 @@ CuteWindow provides three main window types for different use cases.
 CuteWindow (Basic)
 ~~~~~~~~~~~~~~~~~~
 
-The basic frameless window with native window controls.
+The basic customizable window with native window controls.
 
 .. code-block:: python
 
@@ -85,7 +85,7 @@ Advanced window with menu bar support and additional features.
 QuteDialog (Dialogs)
 ~~~~~~~~~~~~~~~~~~~~
 
-Frameless dialog windows with modal support.
+Customizable dialog windows with modal support.
 
 .. code-block:: python
 
