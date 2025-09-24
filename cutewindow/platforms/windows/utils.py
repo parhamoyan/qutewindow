@@ -6,7 +6,7 @@ import win32gui
 from PySide6.QtCore import QPoint
 from PySide6.QtWidgets import QWidget
 
-from qutewindow.platforms.windows.c_structures import MARGINS
+from cutewindow.platforms.windows.c_structures import MARGINS
 
 
 def addShadowEffect(hWnd):

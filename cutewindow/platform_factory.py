@@ -12,7 +12,7 @@ Supported Platforms:
     - Linux: Currently not supported (raises NotImplementedError)
 
 Example:
-    >>> from qutewindow.platform_factory import get_qute_window_class
+    >>> from cutewindow.platform_factory import get_qute_window_class
     >>> QuteWindow = get_qute_window_class()
     >>> window = QuteWindow()
 """

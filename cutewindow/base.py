@@ -181,14 +181,14 @@ class CuteWindowMixin:
     def setNonResizable(self) -> None:
         """Make the window non-resizable."""
         if hasattr(self, "winId"):
-            from qutewindow.platforms.mac.utils import setWindowNonResizable
+            from cutewindow.platforms.mac.utils import setWindowNonResizable
 
             setWindowNonResizable(self.winId())  # type: ignore[attr-defined]
 
     def isResizable(self) -> bool:
         """Check if the window is resizable."""
         if hasattr(self, "winId"):
-            from qutewindow.platforms.mac.utils import isWindowResizable
+            from cutewindow.platforms.mac.utils import isWindowResizable
 
             return isWindowResizable(self.winId())  # type: ignore[attr-defined]
         return False

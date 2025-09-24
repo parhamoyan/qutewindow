@@ -12,8 +12,8 @@ from typing import Optional
 from PySide6.QtGui import Qt
 from PySide6.QtWidgets import QMainWindow, QWidget
 
-from qutewindow.base import CuteWindowMixin
-from qutewindow.platforms.mac.title_bar.TitleBar import TitleBar
+from cutewindow.base import CuteWindowMixin
+from cutewindow.platforms.mac.title_bar.TitleBar import TitleBar
 
 
 class CuteMainWindow(CuteWindowMixin, QMainWindow):

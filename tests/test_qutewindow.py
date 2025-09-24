@@ -14,9 +14,9 @@ class TestCuteWindowBasic:
     def test_cutewindow_import(self):
         """Test that cutewindow can be imported successfully."""
         try:
-            import qutewindow
+            import cutewindow
 
-            assert qutewindow is not None
+            assert cutewindow is not None
         except ImportError as e:
             pytest.skip(f"Cannot import cutewindow: {e}")
 
@@ -75,7 +75,7 @@ class TestQuteWindowCreation:
     def test_window_creation(self, app):
         """Test basic window creation."""
         try:
-            from qutewindow import CuteWindow
+            from cutewindow import CuteWindow
 
             window = CuteWindow()
             assert window is not None
@@ -91,7 +91,7 @@ class TestQuteWindowCreation:
     def test_window_title(self, app):
         """Test window title functionality."""
         try:
-            from qutewindow import CuteWindow
+            from cutewindow import CuteWindow
 
             window = CuteWindow()
             test_title = "Test Window"
@@ -109,7 +109,7 @@ class TestQuteWindowCreation:
     def test_window_resize(self, app):
         """Test window resize functionality."""
         try:
-            from qutewindow import CuteWindow
+            from cutewindow import CuteWindow
 
             window = CuteWindow()
             test_size = (800, 600)
@@ -140,7 +140,7 @@ class TestCuteMainWindow:
     def test_main_window_creation(self, app):
         """Test main window creation."""
         try:
-            from qutewindow import CuteMainWindow
+            from cutewindow import CuteMainWindow
 
             window = CuteMainWindow()
             assert window is not None
@@ -167,7 +167,7 @@ class TestCuteDialog:
     def test_dialog_creation(self, app):
         """Test dialog creation."""
         try:
-            from qutewindow import CuteDialog
+            from cutewindow import CuteDialog
 
             dialog = CuteDialog()
             assert dialog is not None
@@ -231,11 +231,11 @@ class TestErrorHandling:
         # This would require more complex mocking to test properly
         # For now, we'll just ensure the imports work
         try:
-            import qutewindow
+            import cutewindow
 
-            assert qutewindow is not None
+            assert cutewindow is not None
         except ImportError:
-            pytest.skip("qutewindow not available")
+            pytest.skip("cutewindow not available")
 
 
 if __name__ == "__main__":

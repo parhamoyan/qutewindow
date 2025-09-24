@@ -10,7 +10,7 @@ You can style the title bar using CSS stylesheets:
 
 .. code-block:: python
 
-    from qutewindow import CuteWindow
+    from cutewindow import CuteWindow
 
     window = CuteWindow()
 
@@ -36,7 +36,7 @@ You can create a completely custom title bar by subclassing the TitleBar class:
 .. code-block:: python
 
     from PySide6.QtWidgets import QLabel, QPushButton, QHBoxLayout, QWidget
-    from qutewindow import CuteWindow, TitleBar
+    from cutewindow import CuteWindow, TitleBar
 
     class CustomTitleBar(TitleBar):
         def __init__(self, parent=None):
@@ -73,7 +73,7 @@ Control whether the window can be resized:
 
 .. code-block:: python
 
-    from qutewindow import CuteWindow
+    from cutewindow import CuteWindow
 
     window = CuteWindow()
 
@@ -98,7 +98,7 @@ On Windows, you can access additional Windows-specific features:
 
 .. code-block:: python
 
-    from qutewindow import CuteWindow
+    from cutewindow import CuteWindow
 
     window = CuteWindow()
 
@@ -120,7 +120,7 @@ On macOS, you can customize the traffic light buttons:
 
 .. code-block:: python
 
-    from qutewindow import CuteWindow
+    from cutewindow import CuteWindow
 
     window = CuteWindow()
 
@@ -143,7 +143,7 @@ Set custom window icons:
 .. code-block:: python
 
     from PySide6.QtGui import QIcon
-    from qutewindow import CuteWindow, Icon
+    from cutewindow import CuteWindow, Icon
 
     window = CuteWindow()
 

@@ -1,11 +1,11 @@
-def test_import_qutewindow():
-    """Test that qutewindow can be imported successfully."""
+def test_import_cutewindow():
+    """Test that cutewindow can be imported successfully."""
     try:
-        import qutewindow
+        import cutewindow
 
-        assert qutewindow is not None
+        assert cutewindow is not None
     except ImportError as e:
-        print(f"Cannot import qutewindow: {e}")
+        print(f"Cannot import cutewindow: {e}")
         # Don't fail the test, just note the issue
         assert True
 
@@ -13,7 +13,7 @@ def test_import_qutewindow():
 def test_platform_detection():
     """Test that platform detection works."""
     try:
-        from qutewindow.platform_factory import get_platform_name
+        from cutewindow.platform_factory import get_platform_name
 
         platform_name = get_platform_name()
         assert platform_name in ["windows", "mac", "linux"]
@@ -28,7 +28,7 @@ def test_platform_detection():
 def test_base_classes_exist():
     """Test that base classes can be imported."""
     try:
-        from qutewindow.base import BaseCuteWindow, BaseTitleBar
+        from cutewindow.base import BaseCuteWindow, BaseTitleBar
 
         assert BaseCuteWindow is not None
         assert BaseTitleBar is not None
@@ -40,7 +40,7 @@ def test_base_classes_exist():
 def test_platform_factory_functions():
     """Test that platform factory functions exist."""
     try:
-        from qutewindow.platform_factory import (
+        from cutewindow.platform_factory import (
             get_qute_dialog_class,
             get_qute_main_window_class,
             get_qute_window_class,

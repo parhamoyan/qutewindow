@@ -12,7 +12,7 @@ from typing import Optional
 from PySide6.QtGui import QMouseEvent
 from PySide6.QtWidgets import QFrame, QWidget
 
-from qutewindow.platforms.mac.utils import isWindowResizable, startSystemMove
+from cutewindow.platforms.mac.utils import isWindowResizable, startSystemMove
 
 
 class TitleBar(QFrame):

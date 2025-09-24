@@ -28,7 +28,7 @@ poetry install
 poetry run python scripts/setup_precommit.py
 
 # Verify installation
-poetry run python -c "import qutewindow; print('CuteWindow installed successfully')"
+poetry run python -c "import cutewindow; print('CuteWindow installed successfully')"
 ```
 
 ## 🪝 Pre-commit Setup
@@ -165,7 +165,7 @@ Example:
 ```python
 def test_window_creation(qapp):
     """Test basic window creation."""
-    from qutewindow import CuteWindow
+    from cutewindow import CuteWindow
 
     window = CuteWindow()
     assert window is not None
@@ -287,7 +287,7 @@ git commit -m "Your message"
 poetry install
 
 # Check Python path
-poetry run python -c "import qutewindow"
+poetry run python -c "import cutewindow"
 ```
 
 **Test Failures**:

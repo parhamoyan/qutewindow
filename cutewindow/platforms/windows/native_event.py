@@ -7,9 +7,9 @@ from PySide6.QtCore import QByteArray, QEvent, QPoint, Qt
 from PySide6.QtGui import QMouseEvent
 from PySide6.QtWidgets import QApplication, QPushButton, QWidget
 
-from qutewindow.platforms.windows.c_structures import LPNCCALCSIZE_PARAMS
-from qutewindow.platforms.windows.title_bar.TitleBar import MaximizeButtonState
-from qutewindow.platforms.windows.utils import isFullScreen, isMaximized
+from cutewindow.platforms.windows.c_structures import LPNCCALCSIZE_PARAMS
+from cutewindow.platforms.windows.title_bar.TitleBar import MaximizeButtonState
+from cutewindow.platforms.windows.utils import isFullScreen, isMaximized
 
 
 def _nativeEvent(widget: QWidget, event_type: QByteArray, message: int):

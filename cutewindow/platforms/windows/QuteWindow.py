@@ -13,10 +13,10 @@ from PySide6.QtCore import QByteArray, Qt
 from PySide6.QtGui import QShowEvent
 from PySide6.QtWidgets import QWidget
 
-from qutewindow.base import CuteWindowMixin
-from qutewindow.platforms.windows.native_event import _nativeEvent
-from qutewindow.platforms.windows.title_bar.TitleBar import TitleBar
-from qutewindow.platforms.windows.utils import (
+from cutewindow.base import CuteWindowMixin
+from cutewindow.platforms.windows.native_event import _nativeEvent
+from cutewindow.platforms.windows.title_bar.TitleBar import TitleBar
+from cutewindow.platforms.windows.utils import (
     addShadowEffect,
     addWindowAnimation,
     isWindowResizable,

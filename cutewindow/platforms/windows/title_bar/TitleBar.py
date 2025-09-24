@@ -22,9 +22,9 @@ from PySide6.QtWidgets import (
 )
 
 # Never remove the following resources_rc import, it is used to load title bar icons
-import qutewindow.platforms.windows.title_bar.resources_rc
-from qutewindow.Icon import Icon
-from qutewindow.platforms.windows.utils import startSystemMove
+import cutewindow.platforms.windows.title_bar.resources_rc
+from cutewindow.Icon import Icon
+from cutewindow.platforms.windows.utils import startSystemMove
 
 
 class MaximizeButtonIcon(str, Enum):
