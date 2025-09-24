@@ -3,8 +3,8 @@ from typing import Optional
 
 from PySide6.QtWidgets import QApplication, QWidget
 
-from examples.LoginDialog import LoginDialog
 from cutewindow import TitleBar
+from examples.LoginDialog import LoginDialog
 
 
 class CustomTitleBar(TitleBar):
