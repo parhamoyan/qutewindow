@@ -1,13 +1,15 @@
 [tool.poetry]
 name = "cutewindow"
-version = "0.2.0"
+version = "0.1.0-alpha.1"
 description = "Cross-platform frameless window based on Python and Qt"
 authors = ["Parham Oyan <parhamoyan@yahoo.com>"]
 license = "MIT"
 readme = "README.md"
 repository = "https://github.com/parhamoyan/qutewindow"
+documentation = "https://cutewindow.readthedocs.io"
 keywords = ["qt", "pyqt", "pyqt6", "pyqt5", "pyside", "pyside2", "pyside6", "frameless-window", "cross-platform", "gui"]
 packages = [{include = "cutewindow"}]
+include = ["CHANGELOG.md", "LICENSE", "README.md"]
 classifiers = [
     "Development Status :: 4 - Beta",
     "Intended Audience :: Developers",
@@ -67,6 +69,12 @@ dev = [
 [build-system]
 requires = ["poetry-core"]
 build-backend = "poetry.core.masonry.api"
+
+[tool.poetry.urls]
+"Bug Tracker" = "https://github.com/parhamoyan/qutewindow/issues"
+"Changelog" = "https://github.com/parhamoyan/qutewindow/blob/main/CHANGELOG.md"
+"Documentation" = "https://cutewindow.readthedocs.io"
+"Source" = "https://github.com/parhamoyan/qutewindow"
 
 [tool.black]
 line-length = 88
