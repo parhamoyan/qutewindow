@@ -96,7 +96,7 @@ jobs:
     needs: build
     runs-on: ubuntu-latest
     environment:
-      name: release
+      name: pyside6-cutewindow
       url: https://pypi.org/p/pyside6-cutewindow
     permissions:
       id-token: write
