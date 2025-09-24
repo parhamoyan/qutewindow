@@ -7,17 +7,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
-## [0.2.0] - 2025-09-25
-
-### Added
-- Automated release workflow configuration
-- PyPI API token authentication setup
-- GitHub Actions release automation
-
-### Changed
-- Updated release process documentation
-- Improved workflow configuration for reliable publishing
-
 ## [0.1.0] - 2024-09-24
 
 ### Added

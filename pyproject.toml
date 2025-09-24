@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "pyside6-cutewindow"
-version = "0.2.0"
+version = "0.1.0"
 description = "Cross-platform customizable window library based on PySide6 with enhanced control"
 authors = ["Parham Oyan <parhamoyan@yahoo.com>"]
 license = "MIT"
