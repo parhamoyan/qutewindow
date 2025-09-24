@@ -5,7 +5,7 @@ description = "Cross-platform customizable window library based on PySide6 with 
 authors = ["Parham Oyan <parhamoyan@yahoo.com>"]
 license = "MIT"
 readme = "README.md"
-repository = "https://github.com/parhamoyan/qutewindow"
+repository = "https://github.com/parhamoyan/cutewindow"
 documentation = "https://pyside6-cutewindow.readthedocs.io"
 keywords = ["qt", "pyqt", "pyqt6", "pyqt5", "pyside", "pyside2", "pyside6", "customizable-window", "cross-platform", "gui", "window-customization", "pyside6-cutewindow"]
 packages = [{include = "cutewindow"}]
