@@ -40,8 +40,10 @@ sphinx = "^6.0.0"
 sphinx-rtd-theme = "^1.2.0"
 pytest = "^7.0.0"
 pytest-cov = "^4.0.0"
+pytest-mock = "^3.10.0"
 safety = "^2.0.0"
 bandit = "^1.7.0"
+pre-commit = "^4.3.0"
 
 [build-system]
 requires = ["poetry-core"]
@@ -49,7 +51,7 @@ build-backend = "poetry.core.masonry.api"
 
 [tool.black]
 line-length = 88
-target-version = ['py38']
+target-version = ['py39']
 include = '\.pyi?$'
 extend-exclude = '''
 /(
@@ -62,6 +64,7 @@ extend-exclude = '''
   | \.venv
   | build
   | dist
+  | docs/_build
 )/
 '''
 
@@ -70,9 +73,10 @@ profile = "black"
 multi_line_output = 3
 line_length = 88
 known_first_party = ["qutewindow"]
+known_third_party = ["PySide6", "pytest"]
 
 [tool.mypy]
-python_version = "3.8"
+python_version = "3.9"
 warn_return_any = true
 warn_unused_configs = true
 disallow_untyped_defs = true
@@ -85,3 +89,20 @@ warn_unused_ignores = true
 warn_no_return = true
 warn_unreachable = true
 strict_equality = true
+
+[[tool.mypy.overrides]]
+module = [
+    "PySide6.*",
+    "pyobjc.*",
+    "win32.*",
+]
+ignore_missing_imports = true
+
+[[tool.mypy.overrides]]
+module = [
+    "tests.*",
+    "examples.*",
+    "compile_rcc",
+    "conf",
+]
+ignore_errors = true
