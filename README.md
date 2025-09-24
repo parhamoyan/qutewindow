@@ -167,7 +167,8 @@ window.show()
 
 ## 📋 Requirements
 
-- **Python**: 3.8 or higher
+- **Python**: 3.9 or higher
+- **Poetry**: Dependency management (recommended)
 - **PySide6**: Qt6 bindings for Python
 - **Platform-specific dependencies**:
   - **macOS**: pyobjc-framework-Cocoa, pyobjc-framework-Quartz
@@ -181,7 +182,27 @@ window.show()
 pip install qutewindow
 ```
 
-### From Source
+### From Source with Poetry (Recommended for Development)
+
+```bash
+# Clone the repository
+git clone https://github.com/parhamoyan/qutewindow.git
+cd qutewindow
+
+# Install Poetry (if not already installed)
+curl -sSL https://install.python-poetry.org | python3 -
+
+# Install dependencies
+poetry install
+
+# Set up development environment
+poetry install --with dev
+
+# Set up pre-commit hooks
+./setup-precommit.sh
+```
+
+### From Source with pip
 
 ```bash
 git clone https://github.com/parhamoyan/qutewindow.git
@@ -189,12 +210,13 @@ cd qutewindow
 pip install -e .
 ```
 
-### Development Installation
+### Development Installation with pip
 
 ```bash
 git clone https://github.com/parhamoyan/qutewindow.git
 cd qutewindow
 pip install -e ".[dev]"
+pre-commit install
 ```
 
 ## 📚 Documentation
@@ -298,18 +320,17 @@ We welcome contributions! Please see our [Contributing Guide](CONTRIBUTING.md) f
 ### Development Setup
 
 1. Fork the repository
-2. Create a virtual environment: `python -m venv venv`
-3. Activate it:
-   - Windows: `venv\Scripts\activate`
-   - macOS: `source venv/bin/activate`
-4. Install in development mode: `pip install -e ".[dev]"`
-5. Install pre-commit hooks: `pre-commit install`
+2. Clone your fork: `git clone https://github.com/your-username/qutewindow.git`
+3. Navigate to the project: `cd qutewindow`
+4. Install dependencies with Poetry: `poetry install --with dev`
+5. Set up pre-commit hooks: `./setup-precommit.sh`
 6. Create your feature branch: `git checkout -b feature/amazing-feature`
-7. Make your changes and ensure they pass tests: `pytest`
-8. Format your code: `black . && isort .`
-9. Commit your changes: `git commit -m 'Add amazing feature'`
-10. Push to the branch: `git push origin feature/amazing-feature`
-11. Open a Pull Request
+7. Make your changes and ensure they pass tests: `poetry run pytest`
+8. Run quality checks: `./scripts/quality_check.sh`
+9. Format your code: `./format-code.sh` or `poetry run black . && poetry run isort .`
+10. Commit your changes: `git commit -m 'feat: add amazing feature'`
+11. Push to the branch: `git push origin feature/amazing-feature`
+12. Open a Pull Request
 
 ### Code Style
 
@@ -318,6 +339,26 @@ We use:
 - **isort** for import sorting
 - **flake8** for linting
 - **mypy** for type checking
+- **bandit** for security scanning
+- **safety** for dependency safety
+
+### Development Tools
+
+The project includes several convenience scripts:
+
+```bash
+# Run comprehensive quality checks
+./scripts/quality_check.sh
+
+# Run all tests
+./scripts/run_tests.sh
+
+# Auto-format code
+./format-code.sh
+
+# Set up pre-commit hooks
+./setup-precommit.sh
+```
 
 ## 📄 License
 

@@ -6,7 +6,8 @@ We welcome contributions to QuteWindow! This guide will help you get started wit
 
 ### Prerequisites
 
-- Python 3.8 or higher
+- Python 3.9 or higher
+- Poetry (dependency management)
 - Git
 - A GitHub account
 
@@ -24,31 +25,27 @@ We welcome contributions to QuteWindow! This guide will help you get started wit
    cd qutewindow
    ```
 
-3. **Set Up Virtual Environment**
+3. **Install Dependencies with Poetry**
 
    ```bash
-   python -m venv venv
+   # Install all dependencies including development dependencies
+   poetry install
 
-   # On Windows
-   venv\Scripts\activate
-
-   # On macOS/Linux
-   source venv/bin/activate
+   # Or install with development dependencies explicitly
+   poetry install --with dev
    ```
 
-4. **Install Development Dependencies**
+4. **Set Up Git Hooks**
 
    ```bash
-   pip install -e ".[dev]"
+   # Use the provided setup script
+   ./setup-precommit.sh
+
+   # Or install manually
+   poetry run pre-commit install
    ```
 
-5. **Set Up Git Hooks**
-
-   ```bash
-   pre-commit install
-   ```
-
-6. **Set Up Upstream Remote**
+5. **Set Up Upstream Remote**
 
    ```bash
    git remote add upstream https://github.com/parhamoyan/qutewindow.git
@@ -66,8 +63,12 @@ We maintain high code quality standards using several tools:
 Format your code before committing:
 
 ```bash
-black .
-isort .
+# Using Poetry
+poetry run black .
+poetry run isort .
+
+# Or use the convenience script
+./format-code.sh
 ```
 
 ### Linting
@@ -77,7 +78,7 @@ isort .
 Check your code for issues:
 
 ```bash
-flake8 qutewindow/
+poetry run flake8 qutewindow/
 ```
 
 ### Type Checking
@@ -87,7 +88,19 @@ flake8 qutewindow/
 Run type checking:
 
 ```bash
-mypy qutewindow/
+poetry run mypy qutewindow/
+```
+
+### Security Scanning
+
+- **bandit**: Security linter
+- **safety**: Dependency safety checker
+
+Run security checks:
+
+```bash
+poetry run bandit -r qutewindow/
+poetry run safety check
 ```
 
 ### Pre-commit Hooks
@@ -96,10 +109,13 @@ We use pre-commit hooks to ensure code quality:
 
 ```bash
 # Run all hooks manually
-pre-commit run --all-files
+poetry run pre-commit run --all-files
 
 # Run specific hook
-pre-commit run black --all-files
+poetry run pre-commit run black --all-files
+
+# Update hooks to latest versions
+poetry run pre-commit autoupdate
 ```
 
 ## Making Changes
@@ -121,6 +137,21 @@ git checkout -b fix/your-fix-name
 2. **Add Tests**: Write tests for your changes
 3. **Update Documentation**: Update relevant documentation
 4. **Follow Code Style**: Ensure your code follows our style guidelines
+
+### Quality Checks
+
+Before committing, run quality checks:
+
+```bash
+# Run comprehensive quality checks
+./scripts/quality_check.sh
+
+# Or run individual checks
+poetry run black --check .
+poetry run isort --check-only .
+poetry run flake8 qutewindow/
+poetry run mypy qutewindow/
+```
 
 ### Committing Your Changes
 
@@ -148,6 +179,8 @@ git checkout -b fix/your-fix-name
    - `test:`: Test changes
    - `chore:`: Maintenance tasks
 
+   **Note**: Pre-commit hooks will run automatically and may fix formatting issues or report problems.
+
 3. **Push to Your Fork**
 
    ```bash
@@ -161,13 +194,30 @@ git checkout -b fix/your-fix-name
 Run the test suite:
 
 ```bash
-pytest
+# Using Poetry
+poetry run pytest
+
+# Or use the convenience script
+./scripts/run_tests.sh
 ```
 
 ### Running Tests with Coverage
 
 ```bash
-pytest --cov=qutewindow
+poetry run pytest --cov=qutewindow --cov-report=term-missing
+```
+
+### Running Specific Tests
+
+```bash
+# Run specific test file
+poetry run pytest tests/test_qutewindow.py
+
+# Run with verbose output
+poetry run pytest -v
+
+# Run specific test function
+poetry run pytest tests/test_qutewindow.py::test_window_creation
 ```
 
 ### Writing Tests
@@ -180,22 +230,27 @@ from qutewindow import QuteWindow
 from PySide6.QtWidgets import QApplication
 
 @pytest.fixture
-def app():
+def qapp():
+    """Fixture to provide QApplication instance."""
     app = QApplication.instance()
     if app is None:
         app = QApplication([])
     yield app
     app.quit()
 
-def test_qute_window_creation(app):
+def test_window_creation(qapp):
+    """Test basic window creation."""
     window = QuteWindow()
     assert window is not None
     assert window.windowTitle() == ""
+    window.close()
 
-def test_qute_window_title(app):
+def test_window_title(qapp):
+    """Test window title setting."""
     window = QuteWindow()
     window.setWindowTitle("Test Window")
     assert window.windowTitle() == "Test Window"
+    window.close()
 ```
 
 ## Documentation
@@ -325,6 +380,108 @@ Be respectful and inclusive:
 - **GitHub Discussions**: For general questions and discussions
 - **Documentation**: Check the docs first
 - **Existing Issues**: Search before creating new issues
+
+## Troubleshooting
+
+### Common Issues and Solutions
+
+#### Poetry Installation Issues
+
+**Problem**: Poetry is not installed or not found
+```bash
+# Install Poetry using the official installer
+curl -sSL https://install.python-poetry.org | python3 -
+
+# Or using pip
+pip install poetry
+```
+
+**Problem**: Dependencies fail to install
+```bash
+# Update Poetry and try again
+poetry self update
+poetry lock
+poetry install
+
+# Clear cache and reinstall
+poetry cache clear --all pypi
+poetry install
+```
+
+#### Pre-commit Hook Issues
+
+**Problem**: Pre-commit hooks fail
+```bash
+# Run hooks manually to see specific errors
+poetry run pre-commit run --all-files
+
+# Auto-fix formatting issues
+./format-code.sh
+
+# Update hooks to latest versions
+poetry run pre-commit autoupdate
+```
+
+**Problem**: Want to skip hooks (not recommended)
+```bash
+git commit --no-verify
+```
+
+#### Test Failures
+
+**Problem**: Tests fail with import errors
+```bash
+# Ensure dependencies are installed
+poetry install
+
+# Check if qutewindow can be imported
+poetry run python -c "import qutewindow; print('Import successful')"
+```
+
+**Problem**: Tests fail with Qt/display issues
+```bash
+# Run tests without display (for CI environments)
+export QT_QPA_PLATFORM=offscreen
+poetry run pytest
+
+# Or run with virtual display on Linux
+sudo apt-get install xvfb
+xvfb-run -a poetry run pytest
+```
+
+#### Type Checking Issues
+
+**Problem**: MyPy reports type errors
+```bash
+# Run MyPy with detailed output
+poetry run mypy qutewindow/ --show-error-codes --pretty
+
+# Check specific file
+poetry run mypy qutewindow/windows/QuteWindow.py
+```
+
+#### Code Quality Issues
+
+**Problem**: Quality checks fail
+```bash
+# Run comprehensive quality check
+./scripts/quality_check.sh
+
+# Fix formatting automatically
+./format-code.sh
+
+# Check specific issues
+poetry run flake8 qutewindow/ --statistics
+```
+
+### Getting Help
+
+If you encounter issues not covered here:
+
+1. **Check existing issues**: Search GitHub Issues for similar problems
+2. **Create a new issue**: Provide detailed information about your problem
+3. **Join discussions**: Ask questions in GitHub Discussions
+4. **Check documentation**: Review the latest documentation
 
 ## Recognition
 

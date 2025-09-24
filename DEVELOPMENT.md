@@ -7,7 +7,7 @@ This project follows modern Python development best practices with comprehensive
 ### 📋 Prerequisites
 
 - **Python**: 3.9 or higher
-- **Poetry**: Dependency management
+- **Poetry**: Dependency management (version 1.2+ recommended)
 - **Git**: Version control
 - **GitHub Account**: For contributions
 
@@ -18,14 +18,17 @@ This project follows modern Python development best practices with comprehensive
 git clone https://github.com/parhamoyan/qutewindow.git
 cd qutewindow
 
-# Install dependencies
-poetry install
+# Install Poetry (if not already installed)
+curl -sSL https://install.python-poetry.org | python3 -
 
-# Set up development environment
-poetry install --with dev
+# Install all dependencies including development dependencies
+poetry install
 
 # Set up pre-commit hooks
 ./setup-precommit.sh
+
+# Verify installation
+poetry run python -c "import qutewindow; print('QuteWindow installed successfully')"
 ```
 
 ## 🪝 Pre-commit Setup
@@ -61,7 +64,16 @@ The following hooks are configured:
 - **Flake8**: Linter (Python) - Checks for style issues and unused imports
 - **MyPy**: Type checker (Python) - Validates type annotations
 - **Bandit**: Security linter (Python) - Checks for security issues
-- **Basic hooks**: Trailing whitespace, YAML validation, file size checks, etc.
+- **Basic hooks**: Trailing whitespace, YAML validation, file size checks, debug statements, etc.
+
+### 🎯 Hook Configuration
+
+Hooks are configured in `.pre-commit-config.yaml` with the following settings:
+- Black: Line length 88, Python 3
+- isort: Black profile, line length 88
+- Flake8: Max line length 88, ignores E203 and W503
+- MyPy: Ignores missing imports, no strict optional
+- Bandit: Skips B101 (assert statements)
 
 ### 🚀 Usage
 
@@ -104,24 +116,42 @@ poetry run isort .
 poetry run pytest
 
 # Run tests with coverage
-poetry run pytest --cov=qutewindow --cov-report=term-missing
+poetry run pytest --cov=qutewindow --cov-report=term-missing --cov-report=html
 
 # Run specific test file
 poetry run pytest tests/test_qutewindow.py
 
 # Run tests with verbose output
 poetry run pytest -v
+
+# Run tests with markers
+poetry run pytest -m unit          # Unit tests only
+poetry run pytest -m integration   # Integration tests only
+poetry run pytest -m "not slow"    # Exclude slow tests
 ```
 
 ### Test Scripts
 
 ```bash
-# Comprehensive test runner
+# Comprehensive test runner (recommended)
 ./scripts/run_tests.sh
 
 # Quick test run
 poetry run pytest tests/ -v
+
+# Run tests with coverage report
+poetry run pytest --cov=qutewindow --cov-report=html
+open htmlcov/index.html  # View coverage report
 ```
+
+### Test Configuration
+
+Tests are configured in `pytest.ini` with the following settings:
+- Test paths: `tests/`
+- Python files: `test_*.py`
+- Verbose output with short tracebacks
+- Color output and duration reporting
+- Custom markers: `slow`, `integration`, `unit`
 
 ### Writing Tests
 
@@ -159,6 +189,13 @@ This script runs:
 - ✅ Type checking (MyPy)
 - ✅ Security scanning (Bandit)
 - ✅ Dependency safety (Safety)
+
+The script provides:
+- Colored output for easy reading
+- Detailed error messages
+- Specific fix commands for each type of issue
+- Automatic dependency checking and installation
+- Overall success/failure summary
 
 ### Individual Quality Checks
 
