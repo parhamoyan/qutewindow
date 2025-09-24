@@ -7,6 +7,7 @@ license = "MIT"
 readme = "README.md"
 repository = "https://github.com/parhamoyan/qutewindow"
 keywords = ["qt", "pyqt", "pyqt6", "pyqt5", "pyside", "pyside2", "pyside6", "frameless-window", "cross-platform", "gui"]
+packages = [{include = "qutewindow"}]
 classifiers = [
     "Development Status :: 4 - Beta",
     "Intended Audience :: Developers",
