@@ -1,7 +1,7 @@
 """
-macOS-specific QuteMainWindow implementation.
+macOS-specific CuteMainWindow implementation.
 
-This module provides the macOS-specific implementation of the QuteMainWindow class,
+This module provides the macOS-specific implementation of the CuteMainWindow class,
 which creates a frameless main window with native macOS styling and behavior.
 It extends QMainWindow functionality while providing a customizable title bar
 and native window management integration.
@@ -12,11 +12,11 @@ from typing import Optional
 from PySide6.QtGui import Qt
 from PySide6.QtWidgets import QMainWindow, QWidget
 
-from qutewindow.base import QuteWindowMixin
+from qutewindow.base import CuteWindowMixin
 from qutewindow.platforms.mac.title_bar.TitleBar import TitleBar
 
 
-class QuteMainWindow(QuteWindowMixin, QMainWindow):
+class CuteMainWindow(CuteWindowMixin, QMainWindow):
     """
     macOS-specific frameless main window implementation.
 

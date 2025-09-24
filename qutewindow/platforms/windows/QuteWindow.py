@@ -1,7 +1,7 @@
 """
-Windows-specific QuteWindow implementation.
+Windows-specific CuteWindow implementation.
 
-This module provides the Windows-specific implementation of the QuteWindow class,
+This module provides the Windows-specific implementation of the CuteWindow class,
 which creates a frameless window with native Windows styling and behavior.
 It integrates seamlessly with Windows window management while providing
 a customizable title bar with native window controls.
@@ -13,7 +13,7 @@ from PySide6.QtCore import QByteArray, Qt
 from PySide6.QtGui import QShowEvent
 from PySide6.QtWidgets import QWidget
 
-from qutewindow.base import QuteWindowMixin
+from qutewindow.base import CuteWindowMixin
 from qutewindow.platforms.windows.native_event import _nativeEvent
 from qutewindow.platforms.windows.title_bar.TitleBar import TitleBar
 from qutewindow.platforms.windows.utils import (
@@ -24,7 +24,7 @@ from qutewindow.platforms.windows.utils import (
 )
 
 
-class QuteWindow(QuteWindowMixin, QWidget):
+class CuteWindow(CuteWindowMixin, QWidget):
     """
     Windows-specific frameless window implementation.
 
@@ -43,7 +43,7 @@ class QuteWindow(QuteWindowMixin, QWidget):
         _title_bar (TitleBar): The custom title bar widget.
 
     Example:
-        >>> window = QuteWindow()
+        >>> window = CuteWindow()
         >>> window.setWindowTitle("My Application")
         >>> window.show()
     """
@@ -55,7 +55,7 @@ class QuteWindow(QuteWindowMixin, QWidget):
         Args:
             parent (Optional[QWidget]): The parent widget, defaults to None.
         """
-        super(QuteWindow, self).__init__(parent)
+        super(CuteWindow, self).__init__(parent)
 
         self._title_bar = TitleBar(self)
         addShadowEffect(self.winId())

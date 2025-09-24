@@ -1,7 +1,7 @@
 """
-macOS-specific QuteDialog implementation.
+macOS-specific CuteDialog implementation.
 
-This module provides the macOS-specific implementation of the QuteDialog class,
+This module provides the macOS-specific implementation of the CuteDialog class,
 which creates a frameless dialog with native macOS styling and behavior.
 It extends QDialog functionality while providing a customizable title bar
 and native window management integration.
@@ -12,11 +12,11 @@ from typing import Optional
 from PySide6.QtGui import Qt
 from PySide6.QtWidgets import QDialog, QWidget
 
-from qutewindow.base import QuteWindowMixin
+from qutewindow.base import CuteWindowMixin
 from qutewindow.platforms.mac.title_bar.TitleBar import TitleBar
 
 
-class QuteDialog(QuteWindowMixin, QDialog):
+class CuteDialog(CuteWindowMixin, QDialog):
     """
     macOS-specific frameless dialog implementation.
 

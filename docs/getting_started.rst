@@ -1,7 +1,7 @@
 Getting Started
 ===============
 
-QuteWindow is a modern, cross-platform frameless window library for Python and Qt that provides native window controls and behaviors across different platforms.
+CuteWindow is a modern, cross-platform frameless window library for Python and Qt that provides native window controls and behaviors across different platforms.
 
 Installation
 ------------
@@ -9,17 +9,17 @@ Installation
 From PyPI
 ~~~~~~~~~
 
-Install QuteWindow with a single command::
+Install CuteWindow with a single command::
 
-    pip install qutewindow
+    pip install cutewindow
 
 From Source
 ~~~~~~~~~~~
 
 .. code-block:: bash
 
-    git clone https://github.com/parhamoyan/qutewindow.git
-    cd qutewindow
+    git clone https://github.com/parhamoyan/cutewindow.git
+    cd cutewindow
     pip install -e .
 
 Basic Usage
@@ -31,11 +31,11 @@ Creating a frameless window is as simple as:
 
     import sys
     from PySide6.QtWidgets import QApplication
-    from qutewindow import QuteWindow
+    from cutewindow import CuteWindow
 
     if __name__ == "__main__":
         app = QApplication(sys.argv)
-        window = QuteWindow()
+        window = CuteWindow()
         window.setWindowTitle("My Frameless App")
         window.resize(800, 600)
         window.show()
@@ -44,18 +44,18 @@ Creating a frameless window is as simple as:
 Window Types
 ------------
 
-QuteWindow provides three main window types for different use cases.
+CuteWindow provides three main window types for different use cases.
 
-QuteWindow (Basic)
+CuteWindow (Basic)
 ~~~~~~~~~~~~~~~~~~
 
 The basic frameless window with native window controls.
 
 .. code-block:: python
 
-    from qutewindow import QuteWindow
+    from cutewindow import CuteWindow
 
-    window = QuteWindow()
+    window = CuteWindow()
     window.setWindowTitle("Basic Window")
     window.show()
 
@@ -66,7 +66,7 @@ Advanced window with menu bar support and additional features.
 
 .. code-block:: python
 
-    from qutewindow import QuteMainWindow
+    from cutewindow import QuteMainWindow
     from PySide6.QtWidgets import QMenuBar, QMenu, QAction
 
     window = QuteMainWindow()
@@ -89,7 +89,7 @@ Frameless dialog windows with modal support.
 
 .. code-block:: python
 
-    from qutewindow import QuteDialog
+    from cutewindow import QuteDialog
     from PySide6.QtWidgets import QPushButton, QVBoxLayout, QWidget
 
     dialog = QuteDialog()

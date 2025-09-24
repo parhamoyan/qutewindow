@@ -1,4 +1,4 @@
-from .QuteDialog import QuteDialog
-from .QuteMainWindow import QuteMainWindow
-from .QuteWindow import QuteWindow
+from .QuteDialog import CuteDialog
+from .QuteMainWindow import CuteMainWindow
+from .QuteWindow import CuteWindow
 from .title_bar.TitleBar import TitleBar

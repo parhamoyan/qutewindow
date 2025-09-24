@@ -1,7 +1,7 @@
 """
-macOS-specific QuteWindow implementation.
+macOS-specific CuteWindow implementation.
 
-This module provides the macOS-specific implementation of the QuteWindow class,
+This module provides the macOS-specific implementation of the CuteWindow class,
 which creates a frameless window with native macOS styling and behavior.
 It integrates seamlessly with macOS window management while providing
 a customizable title bar.
@@ -12,11 +12,11 @@ from typing import Optional
 from PySide6.QtGui import Qt
 from PySide6.QtWidgets import QWidget
 
-from qutewindow.base import QuteWindowMixin
+from qutewindow.base import CuteWindowMixin
 from qutewindow.platforms.mac.title_bar.TitleBar import TitleBar
 
 
-class QuteWindow(QuteWindowMixin, QWidget):
+class CuteWindow(CuteWindowMixin, QWidget):
     """
     macOS-specific frameless window implementation.
 
@@ -34,7 +34,7 @@ class QuteWindow(QuteWindowMixin, QWidget):
         _title_bar (TitleBar): The custom title bar widget.
 
     Example:
-        >>> window = QuteWindow()
+        >>> window = CuteWindow()
         >>> window.setWindowTitle("My Application")
         >>> window.show()
     """

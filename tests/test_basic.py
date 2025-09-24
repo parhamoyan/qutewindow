@@ -28,9 +28,9 @@ def test_platform_detection():
 def test_base_classes_exist():
     """Test that base classes can be imported."""
     try:
-        from qutewindow.base import BaseQuteWindow, BaseTitleBar
+        from qutewindow.base import BaseCuteWindow, BaseTitleBar
 
-        assert BaseQuteWindow is not None
+        assert BaseCuteWindow is not None
         assert BaseTitleBar is not None
     except ImportError:
         print("Cannot import base classes")

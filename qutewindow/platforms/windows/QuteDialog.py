@@ -1,7 +1,7 @@
 """
-Windows-specific QuteDialog implementation.
+Windows-specific CuteDialog implementation.
 
-This module provides the Windows-specific implementation of the QuteDialog class,
+This module provides the Windows-specific implementation of the CuteDialog class,
 which creates a frameless dialog with native Windows styling and behavior.
 It extends QDialog functionality while providing a customizable title bar
 and native window management integration.
@@ -13,7 +13,7 @@ from PySide6.QtCore import QByteArray, Qt
 from PySide6.QtGui import QShowEvent
 from PySide6.QtWidgets import QDialog, QWidget
 
-from qutewindow.base import QuteWindowMixin
+from qutewindow.base import CuteWindowMixin
 from qutewindow.platforms.windows.native_event import _nativeEvent
 from qutewindow.platforms.windows.title_bar.TitleBar import TitleBar
 from qutewindow.platforms.windows.utils import (
@@ -24,7 +24,7 @@ from qutewindow.platforms.windows.utils import (
 )
 
 
-class QuteDialog(QuteWindowMixin, QDialog):
+class CuteDialog(CuteWindowMixin, QDialog):
     """
     Windows-specific frameless dialog implementation.
 

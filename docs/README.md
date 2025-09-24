@@ -1,6 +1,6 @@
-# QuteWindow Documentation
+# CuteWindow Documentation
 
-This directory contains the Sphinx configuration and source files for generating QuteWindow documentation.
+This directory contains the Sphinx configuration and source files for generating CuteWindow documentation.
 
 ## Building Documentation
 

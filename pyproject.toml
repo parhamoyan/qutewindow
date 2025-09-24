@@ -1,5 +1,5 @@
 [tool.poetry]
-name = "qutewindow"
+name = "cutewindow"
 version = "0.2.0"
 description = "Cross-platform frameless window based on Python and Qt"
 authors = ["Parham Oyan <parhamoyan@yahoo.com>"]
@@ -90,7 +90,7 @@ extend-exclude = '''
 profile = "black"
 multi_line_output = 3
 line_length = 88
-known_first_party = ["qutewindow"]
+known_first_party = ["cutewindow"]
 known_third_party = ["PySide6", "pytest"]
 
 [tool.mypy]

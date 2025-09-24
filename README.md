@@ -1,13 +1,13 @@
-# QuteWindow
+# CuteWindow
 
-[![PyPI version](https://badge.fury.io/py/qutewindow.svg)](https://badge.fury.io/py/qutewindow)
-[![Python Support](https://img.shields.io/pypi/pyversions/qutewindow.svg)](https://pypi.org/project/qutewindow/)
-[![License](https://img.shields.io/github/license/parhamoyan/qutewindow.svg)](https://github.com/parhamoyan/qutewindow/blob/main/LICENSE)
+[![PyPI version](https://badge.fury.io/py/cutewindow.svg)](https://badge.fury.io/py/cutewindow)
+[![Python Support](https://img.shields.io/pypi/pyversions/cutewindow.svg)](https://pypi.org/project/cutewindow/)
+[![License](https://img.shields.io/github/license/parhamoyan/cutewindow.svg)](https://github.com/parhamoyan/cutewindow/blob/main/LICENSE)
 [![Code Style](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/psf/black)
-[![CI](https://github.com/parhamoyan/qutewindow/workflows/CI/badge.svg)](https://github.com/parhamoyan/qutewindow/actions/workflows/ci.yml)
-[![Documentation](https://readthedocs.org/projects/qutewindow/badge/?version=latest)](https://qutewindow.readthedocs.io/en/latest/)
+[![CI](https://github.com/parhamoyan/cutewindow/workflows/CI/badge.svg)](https://github.com/parhamoyan/cutewindow/actions/workflows/ci.yml)
+[![Documentation](https://readthedocs.org/projects/cutewindow/badge/?version=latest)](https://cutewindow.readthedocs.io/en/latest/)
 
-**QuteWindow** is a modern, cross-platform frameless window library for Python and Qt that provides native window controls and behaviors across different platforms. Create beautiful, frameless applications with ease!
+**CuteWindow** is a modern, cross-platform frameless window library for Python and Qt that provides native window controls and behaviors across different platforms. Create beautiful, frameless applications with ease!
 
 ## ✨ Features
 
@@ -24,10 +24,10 @@
 
 ### Installation
 
-Install QuteWindow with a single command:
+Install CuteWindow with a single command:
 
 ```bash
-pip install qutewindow
+pip install cutewindow
 ```
 
 ### Basic Usage
@@ -37,11 +37,11 @@ Creating a frameless window is as simple as:
 ```python
 import sys
 from PySide6.QtWidgets import QApplication
-from qutewindow import QuteWindow
+from cutewindow import CuteWindow
 
 if __name__ == "__main__":
     app = QApplication(sys.argv)
-    window = QuteWindow()
+    window = CuteWindow()
     window.setWindowTitle("My Frameless App")
     window.resize(800, 600)
     window.show()
@@ -50,23 +50,23 @@ if __name__ == "__main__":
 
 ### Window Types
 
-QuteWindow provides three main window types for different use cases:
+CuteWindow provides three main window types for different use cases:
 
-#### QuteWindow (Basic)
+#### CuteWindow (Basic)
 ```python
-from qutewindow import QuteWindow
+from cutewindow import CuteWindow
 
-window = QuteWindow()
+window = CuteWindow()
 window.setWindowTitle("Basic Window")
 window.show()
 ```
 
-#### QuteMainWindow (Advanced)
+#### CuteMainWindow (Advanced)
 ```python
-from qutewindow import QuteMainWindow
+from cutewindow import CuteMainWindow
 from PySide6.QtWidgets import QMenuBar, QMenu, QAction
 
-window = QuteMainWindow()
+window = CuteMainWindow()
 window.setWindowTitle("Main Window")
 
 # Add menu bar
@@ -80,12 +80,12 @@ window.setMenuBar(menubar)
 window.show()
 ```
 
-#### QuteDialog (Dialogs)
+#### CuteDialog (Dialogs)
 ```python
-from qutewindow import QuteDialog
+from cutewindow import CuteDialog
 from PySide6.QtWidgets import QPushButton, QVBoxLayout, QWidget
 
-dialog = QuteDialog()
+dialog = CuteDialog()
 dialog.setWindowTitle("Dialog")
 dialog.setModal(True)
 
@@ -107,9 +107,9 @@ dialog.exec()
 ### Styling the Title Bar
 
 ```python
-from qutewindow import QuteWindow
+from cutewindow import CuteWindow
 
-window = QuteWindow()
+window = CuteWindow()
 
 # Style the title bar using CSS
 window.setStyleSheet("""
@@ -126,7 +126,7 @@ window.show()
 
 ```python
 from PySide6.QtWidgets import QLabel, QPushButton, QHBoxLayout, QWidget
-from qutewindow import QuteWindow, TitleBar
+from cutewindow import CuteWindow, TitleBar
 
 class CustomTitleBar(TitleBar):
     def __init__(self, parent=None):
@@ -148,21 +148,21 @@ class CustomTitleBar(TitleBar):
         help_btn.setFixedSize(30, 20)
         layout.addWidget(help_btn)
 
-window = QuteWindow()
+window = CuteWindow()
 window.setTitleBar(CustomTitleBar(window))
 window.show()
 ```
 
 ## 🖼️ Screenshots
 
-### QuteWindow on macOS
+### CuteWindow on macOS
 <p align="center">
-  <img src="readme/mac_qute_window.gif" alt="QuteWindow on macOS" width="600">
+  <img src="readme/mac_qute_window.gif" alt="CuteWindow on macOS" width="600">
 </p>
 
-### QuteWindow on Windows
+### CuteWindow on Windows
 <p align="center">
-  <img src="readme/win32_qute_window.gif" alt="QuteWindow on Windows" width="600">
+  <img src="readme/win32_qute_window.gif" alt="CuteWindow on Windows" width="600">
 </p>
 
 ## 📋 Requirements
@@ -179,15 +179,15 @@ window.show()
 ### From PyPI (Recommended)
 
 ```bash
-pip install qutewindow
+pip install cutewindow
 ```
 
 ### From Source with Poetry (Recommended for Development)
 
 ```bash
 # Clone the repository
-git clone https://github.com/parhamoyan/qutewindow.git
-cd qutewindow
+git clone https://github.com/parhamoyan/cutewindow.git
+cd cutewindow
 
 # Install Poetry (if not already installed)
 curl -sSL https://install.python-poetry.org | python3 -
@@ -205,28 +205,28 @@ poetry run python scripts/setup_precommit.py
 ### From Source with pip
 
 ```bash
-git clone https://github.com/parhamoyan/qutewindow.git
-cd qutewindow
+git clone https://github.com/parhamoyan/cutewindow.git
+cd cutewindow
 pip install -e .
 ```
 
 ### Development Installation with pip
 
 ```bash
-git clone https://github.com/parhamoyan/qutewindow.git
-cd qutewindow
+git clone https://github.com/parhamoyan/cutewindow.git
+cd cutewindow
 pip install -e ".[dev]"
 pre-commit install
 ```
 
 ## 📚 Documentation
 
-Comprehensive documentation is available at [https://qutewindow.readthedocs.io](https://qutewindow.readthedocs.io)
+Comprehensive documentation is available at [https://cutewindow.readthedocs.io](https://cutewindow.readthedocs.io)
 
-- [Installation Guide](https://qutewindow.readthedocs.io/en/latest/installation.html)
-- [Quick Start Guide](https://qutewindow.readthedocs.io/en/latest/quickstart.html)
-- [API Reference](https://qutewindow.readthedocs.io/en/latest/api/index.html)
-- [Examples](https://qutewindow.readthedocs.io/en/latest/examples/index.html)
+- [Installation Guide](https://cutewindow.readthedocs.io/en/latest/installation.html)
+- [Quick Start Guide](https://cutewindow.readthedocs.io/en/latest/quickstart.html)
+- [API Reference](https://cutewindow.readthedocs.io/en/latest/api/index.html)
+- [Examples](https://cutewindow.readthedocs.io/en/latest/examples/index.html)
 
 ## 🎯 Examples
 
@@ -245,25 +245,25 @@ python examples/demo.py
 
 ## 🏗️ Architecture
 
-QuteWindow uses a clean, modular architecture:
+CuteWindow uses a clean, modular architecture:
 
 ```
-qutewindow/
+cutewindow/
 ├── __init__.py                 # Main package interface
 ├── base.py                     # Abstract base classes
 ├── Icon.py                     # Enhanced icon handling
 ├── platforms/                  # Platform-specific implementations
 │   ├── __init__.py            # Platform detection
 │   ├── mac/                   # macOS implementation
-│   │   ├── QuteWindow.py
-│   │   ├── QuteMainWindow.py
-│   │   ├── QuteDialog.py
+│   │   ├── CuteWindow.py
+│   │   ├── CuteMainWindow.py
+│   │   ├── CuteDialog.py
 │   │   ├── TitleBar.py
 │   │   └── utils.py
 │   └── windows/               # Windows implementation
-│       ├── QuteWindow.py
-│       ├── QuteMainWindow.py
-│       ├── QuteDialog.py
+│       ├── CuteWindow.py
+│       ├── CuteMainWindow.py
+│       ├── CuteDialog.py
 │       ├── TitleBar.py
 │       ├── utils.py
 │       ├── native_event.py
@@ -289,7 +289,7 @@ qutewindow/
 
 ## 🔄 CI/CD
 
-QuteWindow uses GitHub Actions for continuous integration and deployment:
+CuteWindow uses GitHub Actions for continuous integration and deployment:
 
 - **CI Pipeline**: Runs on every push and pull request to ensure code quality
   - Tests across multiple Python versions (3.8-3.12) and platforms (Windows, macOS, Linux)
@@ -320,8 +320,8 @@ We welcome contributions! Please see our [Contributing Guide](CONTRIBUTING.md) f
 ### Development Setup
 
 1. Fork the repository
-2. Clone your fork: `git clone https://github.com/your-username/qutewindow.git`
-3. Navigate to the project: `cd qutewindow`
+2. Clone your fork: `git clone https://github.com/your-username/cutewindow.git`
+3. Navigate to the project: `cd cutewindow`
 4. Install dependencies with Poetry: `poetry install --with dev`
 5. Set up pre-commit hooks: `poetry run python scripts/setup_precommit.py`
 6. Create your feature branch: `git checkout -b feature/amazing-feature`
@@ -367,9 +367,9 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 ## 📞 Support
 
 - 📧 **Email**: parhamoyan@yahoo.com
-- 🐛 **Issues**: [GitHub Issues](https://github.com/parhamoyan/qutewindow/issues)
-- 💬 **Discussions**: [GitHub Discussions](https://github.com/parhamoyan/qutewindow/discussions)
-- 📖 **Documentation**: [Read the Docs](https://qutewindow.readthedocs.io)
+- 🐛 **Issues**: [GitHub Issues](https://github.com/parhamoyan/cutewindow/issues)
+- 💬 **Discussions**: [GitHub Discussions](https://github.com/parhamoyan/cutewindow/discussions)
+- 📖 **Documentation**: [Read the Docs](https://cutewindow.readthedocs.io)
 
 ## 🗺️ Roadmap
 

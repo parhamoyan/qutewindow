@@ -1,13 +1,13 @@
 API Reference
 =============
 
-This section contains the complete API reference for QuteWindow, with detailed documentation of all public classes and methods.
+This section contains the complete API reference for CuteWindow, with detailed documentation of all public classes and methods.
 
 Core Classes
 ------------
 
-QuteWindow
-~~~~~~~~~~
+CuteWindow
+~~~~~~~~~
 
 The main frameless window class that provides a modern, borderless window with native window controls.
 
@@ -15,7 +15,7 @@ The main frameless window class that provides a modern, borderless window with n
 
 .. code-block:: python
 
-    QuteWindow(parent: Optional[QWidget] = None) -> None
+    CuteWindow(parent: Optional[QWidget] = None) -> None
 
 **Key Methods:**
 

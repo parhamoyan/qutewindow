@@ -1,6 +1,6 @@
 import platform
 
 if platform.system() == "Darwin":
-    from .mac import QuteDialog, QuteMainWindow, QuteWindow, TitleBar
+    from .mac import CuteDialog, CuteMainWindow, CuteWindow, TitleBar
 else:
-    from .windows import QuteDialog, QuteMainWindow, QuteWindow, TitleBar
+    from .windows import CuteDialog, CuteMainWindow, CuteWindow, TitleBar

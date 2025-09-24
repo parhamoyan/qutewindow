@@ -1,5 +1,5 @@
 """
-Comprehensive tests for QuteWindow functionality.
+Comprehensive tests for CuteWindow functionality.
 """
 
 from unittest.mock import patch
@@ -8,17 +8,17 @@ import pytest
 from PySide6.QtWidgets import QApplication
 
 
-class TestQuteWindowBasic:
-    """Test basic QuteWindow functionality."""
+class TestCuteWindowBasic:
+    """Test basic CuteWindow functionality."""
 
-    def test_qutewindow_import(self):
-        """Test that qutewindow can be imported successfully."""
+    def test_cutewindow_import(self):
+        """Test that cutewindow can be imported successfully."""
         try:
             import qutewindow
 
             assert qutewindow is not None
         except ImportError as e:
-            pytest.skip(f"Cannot import qutewindow: {e}")
+            pytest.skip(f"Cannot import cutewindow: {e}")
 
     def test_platform_detection(self):
         """Test that platform detection works."""
@@ -35,9 +35,9 @@ class TestQuteWindowBasic:
     def test_base_classes_exist(self):
         """Test that base classes can be imported."""
         try:
-            from qutewindow.base import BaseQuteWindow, BaseTitleBar
+            from qutewindow.base import BaseCuteWindow, BaseTitleBar
 
-            assert BaseQuteWindow is not None
+            assert BaseCuteWindow is not None
             assert BaseTitleBar is not None
         except ImportError:
             pytest.skip("Cannot import base classes")
@@ -75,25 +75,25 @@ class TestQuteWindowCreation:
     def test_window_creation(self, app):
         """Test basic window creation."""
         try:
-            from qutewindow import QuteWindow
+            from qutewindow import CuteWindow
 
-            window = QuteWindow()
+            window = CuteWindow()
             assert window is not None
             assert window.windowTitle() == ""
 
             # Clean up
             window.close()
         except ImportError:
-            pytest.skip("Cannot import QuteWindow")
+            pytest.skip("Cannot import CuteWindow")
         except Exception as e:
-            pytest.fail(f"Failed to create QuteWindow: {e}")
+            pytest.fail(f"Failed to create CuteWindow: {e}")
 
     def test_window_title(self, app):
         """Test window title functionality."""
         try:
-            from qutewindow import QuteWindow
+            from qutewindow import CuteWindow
 
-            window = QuteWindow()
+            window = CuteWindow()
             test_title = "Test Window"
 
             window.setWindowTitle(test_title)
@@ -109,9 +109,9 @@ class TestQuteWindowCreation:
     def test_window_resize(self, app):
         """Test window resize functionality."""
         try:
-            from qutewindow import QuteWindow
+            from qutewindow import CuteWindow
 
-            window = QuteWindow()
+            window = CuteWindow()
             test_size = (800, 600)
 
             window.resize(*test_size)
@@ -121,13 +121,13 @@ class TestQuteWindowCreation:
             # Clean up
             window.close()
         except ImportError:
-            pytest.skip("Cannot import QuteWindow")
+            pytest.skip("Cannot import CuteWindow")
         except Exception as e:
             pytest.fail(f"Failed to test window resize: {e}")
 
 
-class TestQuteMainWindow:
-    """Test QuteMainWindow functionality."""
+class TestCuteMainWindow:
+    """Test CuteMainWindow functionality."""
 
     @pytest.fixture
     def app(self):
@@ -140,9 +140,9 @@ class TestQuteMainWindow:
     def test_main_window_creation(self, app):
         """Test main window creation."""
         try:
-            from qutewindow import QuteMainWindow
+            from qutewindow import CuteMainWindow
 
-            window = QuteMainWindow()
+            window = CuteMainWindow()
             assert window is not None
 
             # Clean up
@@ -153,8 +153,8 @@ class TestQuteMainWindow:
             pytest.fail(f"Failed to create QuteMainWindow: {e}")
 
 
-class TestQuteDialog:
-    """Test QuteDialog functionality."""
+class TestCuteDialog:
+    """Test CuteDialog functionality."""
 
     @pytest.fixture
     def app(self):
@@ -167,17 +167,17 @@ class TestQuteDialog:
     def test_dialog_creation(self, app):
         """Test dialog creation."""
         try:
-            from qutewindow import QuteDialog
+            from qutewindow import CuteDialog
 
-            dialog = QuteDialog()
+            dialog = CuteDialog()
             assert dialog is not None
 
             # Clean up
             dialog.close()
         except ImportError:
-            pytest.skip("Cannot import QuteDialog")
+            pytest.skip("Cannot import CuteDialog")
         except Exception as e:
-            pytest.fail(f"Failed to create QuteDialog: {e}")
+            pytest.fail(f"Failed to create CuteDialog: {e}")
 
 
 class TestPlatformSpecific:

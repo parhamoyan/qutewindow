@@ -1,6 +1,6 @@
-# Contributing to QuteWindow
+# Contributing to CuteWindow
 
-We welcome contributions to QuteWindow! This guide will help you get started with contributing to the project.
+We welcome contributions to CuteWindow! This guide will help you get started with contributing to the project.
 
 ## Getting Started
 
@@ -15,14 +15,14 @@ We welcome contributions to QuteWindow! This guide will help you get started wit
 
 1. **Fork the Repository**
 
-   Fork the QuteWindow repository on GitHub:
-   https://github.com/parhamoyan/qutewindow
+   Fork the CuteWindow repository on GitHub:
+   https://github.com/parhamoyan/cutewindow
 
 2. **Clone Your Fork**
 
    ```bash
-   git clone https://github.com/your-username/qutewindow.git
-   cd qutewindow
+   git clone https://github.com/your-username/cutewindow.git
+   cd cutewindow
    ```
 
 3. **Install Dependencies with Poetry**
@@ -48,7 +48,7 @@ poetry run pre-commit install
 5. **Set Up Upstream Remote**
 
    ```bash
-   git remote add upstream https://github.com/parhamoyan/qutewindow.git
+   git remote add upstream https://github.com/parhamoyan/cutewindow.git
    ```
 
 ## Code Style and Quality
@@ -78,7 +78,7 @@ poetry run python scripts/format_code.py
 Check your code for issues:
 
 ```bash
-poetry run flake8 qutewindow/
+poetry run flake8 cutewindow/
 ```
 
 ### Type Checking
@@ -88,7 +88,7 @@ poetry run flake8 qutewindow/
 Run type checking:
 
 ```bash
-poetry run mypy qutewindow/
+poetry run mypy cutewindow/
 ```
 
 ### Security Scanning
@@ -99,7 +99,7 @@ poetry run mypy qutewindow/
 Run security checks:
 
 ```bash
-poetry run bandit -r qutewindow/
+poetry run bandit -r cutewindow/
 poetry run safety check
 ```
 
@@ -149,8 +149,8 @@ poetry run python scripts/quality_check.py
 # Or run individual checks
 poetry run black --check .
 poetry run isort --check-only .
-poetry run flake8 qutewindow/
-poetry run mypy qutewindow/
+poetry run flake8 cutewindow/
+poetry run mypy cutewindow/
 ```
 
 ### Committing Your Changes
@@ -204,20 +204,20 @@ poetry run python scripts/run_tests.py
 ### Running Tests with Coverage
 
 ```bash
-poetry run pytest --cov=qutewindow --cov-report=term-missing
+poetry run pytest --cov=cutewindow --cov-report=term-missing
 ```
 
 ### Running Specific Tests
 
 ```bash
 # Run specific test file
-poetry run pytest tests/test_qutewindow.py
+poetry run pytest tests/test_cutewindow.py
 
 # Run with verbose output
 poetry run pytest -v
 
 # Run specific test function
-poetry run pytest tests/test_qutewindow.py::test_window_creation
+poetry run pytest tests/test_cutewindow.py::test_window_creation
 ```
 
 ### Writing Tests
@@ -226,7 +226,7 @@ We use pytest for testing. Here's an example test:
 
 ```python
 import pytest
-from qutewindow import QuteWindow
+from cutewindow import CuteWindow
 from PySide6.QtWidgets import QApplication
 
 @pytest.fixture
@@ -240,14 +240,14 @@ def qapp():
 
 def test_window_creation(qapp):
     """Test basic window creation."""
-    window = QuteWindow()
+    window = CuteWindow()
     assert window is not None
     assert window.windowTitle() == ""
     window.close()
 
 def test_window_title(qapp):
     """Test window title setting."""
-    window = QuteWindow()
+    window = CuteWindow()
     window.setWindowTitle("Test Window")
     assert window.windowTitle() == "Test Window"
     window.close()
@@ -347,7 +347,7 @@ Use the following template for your pull request:
 
 When reporting bugs, please include:
 
-1. **Environment**: Python version, OS, QuteWindow version
+1. **Environment**: Python version, OS, CuteWindow version
 2. **Steps to Reproduce**: Clear steps to reproduce the issue
 3. **Expected Behavior**: What you expected to happen
 4. **Actual Behavior**: What actually happened
@@ -434,8 +434,8 @@ git commit --no-verify
 # Ensure dependencies are installed
 poetry install
 
-# Check if qutewindow can be imported
-poetry run python -c "import qutewindow; print('Import successful')"
+# Check if cutewindow can be imported
+poetry run python -c "import cutewindow; print('Import successful')"
 ```
 
 **Problem**: Tests fail with Qt/display issues
@@ -454,10 +454,10 @@ xvfb-run -a poetry run pytest
 **Problem**: MyPy reports type errors
 ```bash
 # Run MyPy with detailed output
-poetry run mypy qutewindow/ --show-error-codes --pretty
+poetry run mypy cutewindow/ --show-error-codes --pretty
 
 # Check specific file
-poetry run mypy qutewindow/windows/QuteWindow.py
+poetry run mypy cutewindow/windows/CuteWindow.py
 ```
 
 #### Code Quality Issues
@@ -471,7 +471,7 @@ poetry run mypy qutewindow/windows/QuteWindow.py
 ./format-code.sh
 
 # Check specific issues
-poetry run flake8 qutewindow/ --statistics
+poetry run flake8 cutewindow/ --statistics
 ```
 
 ### Getting Help
@@ -491,4 +491,4 @@ Contributors will be recognized in:
 - **CHANGELOG.md**: Credited for their contributions
 - **Release Notes**: Mentioned in relevant release notes
 
-Thank you for contributing to QuteWindow! 🎉
+Thank you for contributing to CuteWindow! 🎉

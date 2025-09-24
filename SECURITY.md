@@ -9,7 +9,7 @@
 
 ## Reporting a Vulnerability
 
-We take the security of QuteWindow seriously. If you believe you've found a security vulnerability, please follow these steps:
+We take the security of CuteWindow seriously. If you believe you've found a security vulnerability, please follow these steps:
 
 ### How to Report
 
@@ -37,10 +37,10 @@ Please include the following information in your report:
 
 ### Security Best Practices
 
-When using QuteWindow, follow these security best practices:
+When using CuteWindow, follow these security best practices:
 
 - Keep your dependencies up to date
-- Use the latest stable version of QuteWindow
+- Use the latest stable version of CuteWindow
 - Review the code before using in security-sensitive applications
 - Report any suspicious behavior immediately
 
@@ -54,7 +54,7 @@ We regularly scan our dependencies for known vulnerabilities using:
 
 ## Security Features
 
-QuteWindow includes several security features:
+CuteWindow includes several security features:
 
 - **Input Validation**: All user inputs are validated
 - **Safe Defaults**: Secure configuration by default
@@ -65,6 +65,6 @@ QuteWindow includes several security features:
 
 For security-related questions or concerns:
 - **Email**: parhamoyan@yahoo.com
-- **Subject**: Security Question - QuteWindow
+- **Subject**: Security Question - CuteWindow
 
-Thank you for helping keep QuteWindow secure!
+Thank you for helping keep CuteWindow secure!

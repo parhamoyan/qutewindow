@@ -1,7 +1,7 @@
 Customization
 =============
 
-QuteWindow provides several ways to customize the appearance and behavior of your frameless windows.
+CuteWindow provides several ways to customize the appearance and behavior of your frameless windows.
 
 Styling the Title Bar
 ---------------------
@@ -10,9 +10,9 @@ You can style the title bar using CSS stylesheets:
 
 .. code-block:: python
 
-    from qutewindow import QuteWindow
+    from qutewindow import CuteWindow
 
-    window = QuteWindow()
+    window = CuteWindow()
 
     # Style the title bar using CSS
     window.setStyleSheet("""
@@ -36,7 +36,7 @@ You can create a completely custom title bar by subclassing the TitleBar class:
 .. code-block:: python
 
     from PySide6.QtWidgets import QLabel, QPushButton, QHBoxLayout, QWidget
-    from qutewindow import QuteWindow, TitleBar
+    from qutewindow import CuteWindow, TitleBar
 
     class CustomTitleBar(TitleBar):
         def __init__(self, parent=None):
@@ -62,7 +62,7 @@ You can create a completely custom title bar by subclassing the TitleBar class:
         def show_help(self):
             print("Help clicked!")
 
-    window = QuteWindow()
+    window = CuteWindow()
     window.setTitleBar(CustomTitleBar(window))
     window.show()
 
@@ -73,9 +73,9 @@ Control whether the window can be resized:
 
 .. code-block:: python
 
-    from qutewindow import QuteWindow
+    from qutewindow import CuteWindow
 
-    window = QuteWindow()
+    window = CuteWindow()
 
     # Make window non-resizable
     window.setNonResizable()
@@ -98,9 +98,9 @@ On Windows, you can access additional Windows-specific features:
 
 .. code-block:: python
 
-    from qutewindow import QuteWindow
+    from qutewindow import CuteWindow
 
-    window = QuteWindow()
+    window = CuteWindow()
 
     # Windows-specific styling
     if sys.platform == 'win32':
@@ -120,9 +120,9 @@ On macOS, you can customize the traffic light buttons:
 
 .. code-block:: python
 
-    from qutewindow import QuteWindow
+    from qutewindow import CuteWindow
 
-    window = QuteWindow()
+    window = CuteWindow()
 
     # macOS-specific styling
     if sys.platform == 'darwin':
@@ -143,9 +143,9 @@ Set custom window icons:
 .. code-block:: python
 
     from PySide6.QtGui import QIcon
-    from qutewindow import QuteWindow, Icon
+    from qutewindow import CuteWindow, Icon
 
-    window = QuteWindow()
+    window = CuteWindow()
 
     # Set window icon
     icon = QIcon("path/to/icon.png")

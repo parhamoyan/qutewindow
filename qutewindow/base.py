@@ -1,5 +1,5 @@
 """
-Base classes and interfaces for QuteWindow components.
+Base classes and interfaces for CuteWindow components.
 
 This module provides the abstract base classes that define the common interface
 for all platform-specific implementations, as well as concrete base classes
@@ -8,19 +8,18 @@ common functionality across different window types while maintaining platform
 specificity.
 """
 
-from abc import ABC, abstractmethod
-from typing import Any, Optional
+from abc import abstractmethod
+from typing import Optional
 
-from PySide6.QtCore import QByteArray, Qt
 from PySide6.QtGui import QResizeEvent, QShowEvent
 from PySide6.QtWidgets import QWidget
 
 
-class BaseQuteWindow(QWidget):
+class BaseCuteWindow(QWidget):
     """
-    Abstract base class for all QuteWindow implementations.
+    Abstract base class for all CuteWindow implementations.
 
-    This class defines the common interface that all platform-specific QuteWindow
+    This class defines the common interface that all platform-specific CuteWindow
     implementations must follow. It provides the contract for window management
     functionality including title bar handling, resizing, and platform-specific setup.
 
@@ -115,7 +114,7 @@ class BaseTitleBar(QWidget):
         pass
 
 
-class QuteWindowMixin:
+class CuteWindowMixin:
     """
     Mixin class containing common functionality for QuteWindow implementations.
 

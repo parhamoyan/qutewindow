@@ -1,7 +1,7 @@
 Examples
 ========
 
-This section contains various examples demonstrating how to use QuteWindow.
+This section contains various examples demonstrating how to use CuteWindow.
 
 Available Examples
 ------------------
@@ -23,7 +23,7 @@ To run any example, use:
 Demo
 ----
 
-Basic usage example showing how to create a simple QuteWindow.
+Basic usage example showing how to create a simple CuteWindow.
 
 .. literalinclude:: ../../examples/demo.py
    :language: python

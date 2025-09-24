@@ -1,7 +1,7 @@
-QuteWindow
+CuteWindow
 ===========
 
-QuteWindow is a modern, cross-platform frameless window library for Python and Qt that provides native window controls and behaviors across different platforms.
+CuteWindow is a modern, cross-platform frameless window library for Python and Qt that provides native window controls and behaviors across different platforms.
 
 **Features:**
 
