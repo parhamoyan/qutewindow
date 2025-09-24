@@ -131,18 +131,18 @@ from qutewindow import QuteWindow, TitleBar
 class CustomTitleBar(TitleBar):
     def __init__(self, parent=None):
         super().__init__(parent)
-        
+
         # Create custom layout
         layout = QHBoxLayout(self)
         layout.setContentsMargins(10, 0, 10, 0)
-        
+
         # Add title label
         title_label = QLabel("Custom Title")
         title_label.setStyleSheet("color: white; font-weight: bold;")
         layout.addWidget(title_label)
-        
+
         layout.addStretch()
-        
+
         # Add custom buttons
         help_btn = QPushButton("?")
         help_btn.setFixedSize(30, 20)

@@ -29,7 +29,7 @@ The main frameless window class that provides a modern, borderless window with n
 .. code-block:: python
 
     from qutewindow import QuteWindow
-    
+
     window = QuteWindow()
     window.setWindowTitle("My App")
     window.resize(800, 600)
@@ -60,16 +60,16 @@ An advanced frameless window that supports menu bars and additional features typ
 
     from qutewindow import QuteMainWindow
     from PySide6.QtWidgets import QMenuBar, QMenu
-    
+
     window = QuteMainWindow()
     window.setWindowTitle("Main App")
-    
+
     # Add menu bar
     menubar = QMenuBar()
     file_menu = QMenu("File", menubar)
     menubar.addMenu(file_menu)
     window.setMenuBar(menubar)
-    
+
     window.show()
 
 QuteDialog
@@ -97,7 +97,7 @@ A frameless dialog window with modal support, perfect for dialogs, forms, and po
 .. code-block:: python
 
     from qutewindow import QuteDialog
-    
+
     dialog = QuteDialog()
     dialog.setWindowTitle("Settings")
     dialog.setModal(True)
@@ -147,7 +147,7 @@ Enhanced QIcon class with automatic high-DPI support for better icon rendering o
 .. code-block:: python
 
     from qutewindow import Icon
-    
+
     # Create icon with automatic high-DPI support
     icon = Icon("path/to/icon.png")
     window.setWindowIcon(icon)

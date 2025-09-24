@@ -28,10 +28,10 @@ We welcome contributions to QuteWindow! This guide will help you get started wit
 
    ```bash
    python -m venv venv
-   
+
    # On Windows
    venv\Scripts\activate
-   
+
    # On macOS/Linux
    source venv/bin/activate
    ```
