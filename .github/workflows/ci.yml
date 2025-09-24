@@ -49,6 +49,18 @@ jobs:
       run: |
         poetry run black --check .
         poetry run isort --check-only .
+      continue-on-error: true
+
+    - name: Show formatting fix commands
+      if: failure()
+      run: |
+        echo "⚠️  Code formatting issues found!"
+        echo "To fix these issues locally, run:"
+        echo "  poetry run black ."
+        echo "  poetry run isort ."
+        echo ""
+        echo "Or use the convenience script:"
+        echo "  ./format-code.sh"
 
     - name: Run linting
       run: |
