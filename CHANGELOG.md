@@ -7,6 +7,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.1.1] - 2024-09-25
+
+### Fixed
+- Updated release workflow to use Trusted Publishing instead of API tokens
+- Fixed missing dev dependencies in pyproject.toml
+- Added basic test structure for release validation
+
 ## [0.1.0] - 2024-09-24
 
 ### Added
