@@ -50,7 +50,12 @@ jobs:
 
     - name: Install dependencies
       if: steps.cached-poetry-dependencies.outputs.cache-hit != 'true'
-      run: poetry install --no-interaction --with dev
+      run: poetry install --no-interaction
+
+    - name: Verify pytest installation
+      run: |
+        poetry --version
+        poetry run pytest --version
 
     - name: Run tests
       run: |
