@@ -50,12 +50,13 @@ jobs:
 
     - name: Install dependencies
       if: steps.cached-poetry-dependencies.outputs.cache-hit != 'true'
-      run: poetry install --no-interaction
+      run: poetry install --with dev --no-interaction
 
-    - name: Verify pytest installation
+    - name: Verify dependencies installation
       run: |
         poetry --version
-        poetry run pytest --version
+        poetry show
+        poetry run python -c "import pytest; print(f'pytest version: {pytest.__version__}')"
 
     - name: Run tests
       run: |
@@ -79,6 +80,9 @@ jobs:
       run: |
         poetry config virtualenvs.create true
         poetry config virtualenvs.in-project true
+
+    - name: Install dependencies
+      run: poetry install --with dev --no-interaction
 
     - name: Build package
       run: poetry build
