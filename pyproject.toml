@@ -23,7 +23,7 @@ classifiers = [
     "Programming Language :: Python :: 3.13",
     "Topic :: Software Development :: Libraries :: Python Modules",
     "Topic :: Software Development :: User Interfaces",
-    Framework :: PySide6
+    "Framework :: PySide6"
 ]
 
 [tool.poetry.dependencies]
