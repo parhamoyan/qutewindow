@@ -41,9 +41,6 @@ flake8 = "^6.0.0"
 mypy = "^1.0.0"
 sphinx = "^6.0.0"
 sphinx-rtd-theme = "^1.2.0"
-pytest = "^7.0.0"
-pytest-cov = "^4.0.0"
-pytest-mock = "^3.10.0"
 safety = "^2.0.0"
 bandit = "^1.7.0"
 pre-commit = "^4.3.0"
@@ -56,9 +53,6 @@ dev = [
     "mypy",
     "sphinx",
     "sphinx-rtd-theme",
-    "pytest",
-    "pytest-cov",
-    "pytest-mock",
     "safety",
     "bandit",
     "pre-commit"

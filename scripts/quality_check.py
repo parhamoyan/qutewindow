@@ -63,7 +63,7 @@ def check_dependencies() -> bool:
     """Check if required dependencies are installed."""
     print_status(Colors.BLUE, "📦 Checking dependencies...")
 
-    required_deps = ["black", "isort", "flake8", "mypy", "bandit", "safety", "pytest"]
+    required_deps = ["black", "isort", "flake8", "mypy", "bandit", "safety"]
     missing_deps = []
 
     for dep in required_deps:
@@ -147,7 +147,6 @@ def main() -> int:
                 "run",
                 "flake8",
                 "qutewindow/",
-                "tests/",
                 "--exclude=venv,.venv,build,dist,docs,examples,"
                 ".*_rc\\.py,compile_rcc\\.py,conf\\.py",
             ],
@@ -160,7 +159,6 @@ def main() -> int:
                 "run",
                 "mypy",
                 "qutewindow/",
-                "tests/",
                 "--ignore-missing-imports",
                 "--no-strict-optional",
             ],

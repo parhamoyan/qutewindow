@@ -300,7 +300,7 @@ CuteWindow uses GitHub Actions for continuous integration and deployment:
   - Package building and installation testing
 
 - **Documentation**: Automatically builds and deploys documentation to Read the Docs
-- **Code Coverage**: Tracks test coverage with Codecov integration
+- **Code Quality**: Comprehensive quality checks and security scanning
 - **Automated Publishing**: Publishes to PyPI when new tags are created
 
 ### Quality Checks
@@ -311,7 +311,7 @@ The CI pipeline enforces the following quality standards:
 - **Type Safety**: Mypy static type checking
 - **Code Quality**: Flake8 linting with strict rules
 - **Security**: Dependency and code security scanning
-- **Testing**: Comprehensive test suite with coverage reporting
+- **Code Quality**: Comprehensive quality checks and security scanning
 
 ## 🤝 Contributing
 
@@ -325,7 +325,7 @@ We welcome contributions! Please see our [Contributing Guide](CONTRIBUTING.md) f
 4. Install dependencies with Poetry: `poetry install --with dev`
 5. Set up pre-commit hooks: `poetry run python scripts/setup_precommit.py`
 6. Create your feature branch: `git checkout -b feature/amazing-feature`
-7. Make your changes and ensure they pass tests: `poetry run pytest`
+7. Make your changes and ensure they pass quality checks: `poetry run python scripts/quality_check.py`
 8. Run quality checks: `poetry run python scripts/quality_check.py`
 9. Format your code: `poetry run python scripts/format_code.py` or `poetry run black . && poetry run isort .`
 10. Commit your changes: `git commit -m 'feat: add amazing feature'`
@@ -350,8 +350,8 @@ The project includes several convenience scripts:
 # Run comprehensive quality checks
 poetry run python scripts/quality_check.py
 
-# Run all tests
-poetry run python scripts/run_tests.py
+# Run quality checks
+poetry run python scripts/quality_check.py
 
 # Auto-format code
 poetry run python scripts/format_code.py

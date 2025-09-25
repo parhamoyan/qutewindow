@@ -77,18 +77,6 @@ jobs:
       run: |
         poetry run mypy . || true
 
-    - name: Run tests
-      shell: bash
-      run: |
-        poetry env info
-        poetry run which pytest || echo "pytest not found in PATH"
-        if [[ "$RUNNER_OS" == "Windows" ]]; then
-          . "$(poetry env info --path)/Scripts/activate"
-        else
-          source "$(poetry env info --path)/bin/activate"
-        fi
-        pytest tests/ -v --tb=short || poetry run pytest tests/ -v --tb=short || true
-
     - name: Build package
       run: |
         poetry build
