@@ -94,8 +94,20 @@ jobs:
         poetry build
 
     - name: Test installation
+      shell: bash
       run: |
-        poetry run pip install dist/*.whl || poetry run pip install $(ls dist/*.whl | head -1)
+        ls -la dist/ || echo "No dist directory found"
+        if [[ "$RUNNER_OS" == "Windows" ]]; then
+          wheel_file=$(ls dist/*.whl | head -1)
+          if [[ -n "$wheel_file" ]]; then
+            poetry run pip install "$wheel_file"
+          else
+            echo "No wheel file found"
+            exit 1
+          fi
+        else
+          poetry run pip install dist/*.whl
+        fi
         poetry run python -c "import cutewindow; print('CuteWindow imported successfully')"
 
   build-and-publish:
