@@ -1,5 +1,5 @@
 """
-Enhanced Icon class for QuteWindow with automatic high-DPI support.
+Enhanced Icon class for CuteWindow with automatic high-DPI support.
 
 This class extends QIcon to provide automatic high-DPI icon loading
 by selecting appropriate @2x.png files when needed.

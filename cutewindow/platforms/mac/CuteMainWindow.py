@@ -36,7 +36,7 @@ class CuteMainWindow(CuteWindowMixin, QMainWindow):
         _title_bar (TitleBar): The custom title bar widget.
 
     Example:
-        >>> main_window = QuteMainWindow()
+        >>> main_window = CuteMainWindow()
         >>> main_window.setWindowTitle("My Application")
         >>> main_window.setCentralWidget(QWidget())
         >>> main_window.show()
@@ -44,7 +44,7 @@ class CuteMainWindow(CuteWindowMixin, QMainWindow):
 
     def __init__(self, parent: Optional[QWidget] = None) -> None:
         """
-        Initialize the macOS QuteMainWindow.
+        Initialize the macOS CuteMainWindow.
 
         Args:
             parent (Optional[QWidget]): The parent widget, defaults to None.

@@ -36,7 +36,7 @@ class CuteDialog(CuteWindowMixin, QDialog):
         _title_bar (TitleBar): The custom title bar widget.
 
     Example:
-        >>> dialog = QuteDialog()
+        >>> dialog = CuteDialog()
         >>> dialog.setWindowTitle("Settings")
         >>> result = dialog.exec()  # Show as modal dialog
         >>> if result == QDialog.Accepted:
@@ -45,7 +45,7 @@ class CuteDialog(CuteWindowMixin, QDialog):
 
     def __init__(self, parent: Optional[QWidget] = None) -> None:
         """
-        Initialize the macOS QuteDialog.
+        Initialize the macOS CuteDialog.
 
         Args:
             parent (Optional[QWidget]): The parent widget, defaults to None.

@@ -28,9 +28,9 @@ The main customizable window class that provides a modern, borderless window wit
 
 .. code-block:: python
 
-    from cutewindow import QuteWindow
+    from cutewindow import CuteWindow
 
-    window = QuteWindow()
+    window = CuteWindow()
     window.setWindowTitle("My App")
     window.resize(800, 600)
     window.show()
@@ -155,7 +155,7 @@ Enhanced QIcon class with automatic high-DPI support for better icon rendering o
 Common Methods
 --------------
 
-All QuteWindow classes inherit from QWidget and provide these common methods:
+All CuteWindow classes inherit from QWidget and provide these common methods:
 
 Window Management
 ~~~~~~~~~~~~~~~~~
@@ -185,9 +185,9 @@ Platform Factory Functions
 For advanced usage, you can access platform factory functions:
 
 * ``get_platform_name() -> str`` - Get the current platform name ("mac", "windows", or "linux")
-* ``get_qute_window_class() -> Type[BaseQuteWindow]`` - Get the appropriate QuteWindow class for the current platform
-* ``get_qute_main_window_class() -> Type[BaseQuteWindow]`` - Get the appropriate QuteMainWindow class for the current platform
-* ``get_qute_dialog_class() -> Type[BaseQuteWindow]`` - Get the appropriate QuteDialog class for the current platform
+* ``get_qute_window_class() -> Type[BaseCuteWindow]`` - Get the appropriate CuteWindow class for the current platform
+* ``get_qute_main_window_class() -> Type[BaseCuteWindow]`` - Get the appropriate QuteMainWindow class for the current platform
+* ``get_qute_dialog_class() -> Type[BaseCuteWindow]`` - Get the appropriate QuteDialog class for the current platform
 * ``get_title_bar_class() -> Type[BaseTitleBar]`` - Get the appropriate TitleBar class for the current platform
 
 Base Classes (For Advanced Users)
@@ -195,8 +195,8 @@ Base Classes (For Advanced Users)
 
 These abstract base classes define the interface that all platform-specific implementations must follow:
 
-**BaseQuteWindow**
-  Abstract base class for all QuteWindow implementations
+**BaseCuteWindow**
+  Abstract base class for all CuteWindow implementations
 
 **BaseTitleBar**
   Abstract base class for all TitleBar implementations

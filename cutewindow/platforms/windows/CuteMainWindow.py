@@ -1,16 +1,16 @@
 """
-Windows-specific CuteWindow implementation.
+Windows-specific CuteMainWindow implementation.
 
-This module provides the Windows-specific implementation of the CuteWindow class,
-which creates a customizable window with native Windows styling and behavior.
-It integrates seamlessly with Windows window management while providing
-a customizable title bar with native window controls.
+This module provides the Windows-specific implementation of the CuteMainWindow class,
+which creates a customizable main window with native Windows styling and behavior.
+It extends QMainWindow functionality while providing a customizable title bar
+and native window management integration.
 """
 
 from typing import Optional
 
 from PySide6.QtCore import QByteArray
-from PySide6.QtWidgets import QWidget
+from PySide6.QtWidgets import QMainWindow, QWidget
 
 from cutewindow.base import CuteWindowMixin
 from cutewindow.platforms.windows.native_event import _nativeEvent
@@ -23,38 +23,41 @@ from cutewindow.platforms.windows.utils import (
 )
 
 
-class CuteWindow(CuteWindowMixin, QWidget):
+class CuteMainWindow(CuteWindowMixin, QMainWindow):
     """
-    Windows-specific customizable window implementation.
+    Windows-specific customizable main window implementation.
 
-    This class provides a customizable window for Windows with native styling and
-    window management integration. It uses Windows API calls to achieve
-    native appearance while maintaining the ability to customize the title bar.
+    This class provides a customizable main window for Windows with native styling and
+    window management integration. It extends QMainWindow to support menus,
+    toolbars, status bars, and central widgets while maintaining a customizable
+    appearance with custom title bar.
 
     The window automatically handles:
     - Native window shadows and animations
     - Proper window layering and z-ordering
     - Integration with Windows window management features
     - Custom title bar with window controls (close, minimize, maximize)
+    - QMainWindow features (menus, toolbars, dock widgets, etc.)
     - Native event handling for window operations
 
     Attributes:
         _title_bar (TitleBar): The custom title bar widget.
 
     Example:
-        >>> window = CuteWindow()
-        >>> window.setWindowTitle("My Application")
-        >>> window.show()
+        >>> main_window = CuteMainWindow()
+        >>> main_window.setWindowTitle("My Application")
+        >>> main_window.setCentralWidget(QWidget())
+        >>> main_window.show()
     """
 
-    def __init__(self, parent: Optional[QWidget] = None):
+    def __init__(self, parent: Optional[QWidget] = None) -> None:
         """
-        Initialize the Windows QuteWindow.
+        Initialize the Windows CuteMainWindow.
 
         Args:
             parent (Optional[QWidget]): The parent widget, defaults to None.
         """
-        super(CuteWindow, self).__init__(parent)
+        super().__init__(parent)
 
         self._title_bar = TitleBar(self)
         addShadowEffect(self.winId())
@@ -62,8 +65,14 @@ class CuteWindow(CuteWindowMixin, QWidget):
         self.resize(800, 800)
 
     def setNonResizable(self):
-        """Make the window non-resizable."""
+        """
+        Make the window non-resizable.
+
+        This method disables window resizing functionality by modifying the
+        window style and hiding the maximize button from the title bar.
+        """
         setWindowNonResizable(self.winId())
+        # Hide maximize button if it exists on the title bar
         if hasattr(self._title_bar, "maximize_button"):
             self._title_bar.maximize_button.hide()  # type: ignore
 

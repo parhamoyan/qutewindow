@@ -1,79 +1,79 @@
-QuteWindow
+CuteWindow
 ===========
 
-QuteWindow is a modern, cross-platform frameless window library for Python and Qt.
+CuteWindow is a modern, cross-platform frameless window library for Python and Qt.
 
-.. automodule:: qutewindow
+.. automodule:: cutewindow
    :members:
    :undoc-members:
    :show-inheritance:
 
-.. automodule:: qutewindow.base
+.. automodule:: cutewindow.base
    :members:
    :undoc-members:
    :show-inheritance:
 
-.. automodule:: qutewindow.platforms
+.. automodule:: cutewindow.platforms
    :members:
    :undoc-members:
    :show-inheritance:
 
-.. automodule:: qutewindow.platforms.mac
+.. automodule:: cutewindow.platforms.mac
    :members:
    :undoc-members:
    :show-inheritance:
 
-.. automodule:: qutewindow.platforms.mac.QuteWindow
+.. automodule:: cutewindow.platforms.mac.CuteWindow
    :members:
    :undoc-members:
    :show-inheritance:
 
-.. automodule:: qutewindow.platforms.mac.QuteMainWindow
+.. automodule:: cutewindow.platforms.mac.QuteMainWindow
    :members:
    :undoc-members:
    :show-inheritance:
 
-.. automodule:: qutewindow.platforms.mac.QuteDialog
+.. automodule:: cutewindow.platforms.mac.QuteDialog
    :members:
    :undoc-members:
    :show-inheritance:
 
-.. automodule:: qutewindow.platforms.mac.title_bar.TitleBar
+.. automodule:: cutewindow.platforms.mac.title_bar.TitleBar
    :members:
    :undoc-members:
    :show-inheritance:
 
-.. automodule:: qutewindow.platforms.windows
+.. automodule:: cutewindow.platforms.windows
    :members:
    :undoc-members:
    :show-inheritance:
 
-.. automodule:: qutewindow.platforms.windows.QuteWindow
+.. automodule:: cutewindow.platforms.windows.CuteWindow
    :members:
    :undoc-members:
    :show-inheritance:
 
-.. automodule:: qutewindow.platforms.windows.QuteMainWindow
+.. automodule:: cutewindow.platforms.windows.QuteMainWindow
    :members:
    :undoc-members:
    :show-inheritance:
 
-.. automodule:: qutewindow.platforms.windows.QuteDialog
+.. automodule:: cutewindow.platforms.windows.QuteDialog
    :members:
    :undoc-members:
    :show-inheritance:
 
-.. automodule:: qutewindow.platforms.windows.title_bar.TitleBar
+.. automodule:: cutewindow.platforms.windows.title_bar.TitleBar
    :members:
    :undoc-members:
    :show-inheritance:
 
-.. automodule:: qutewindow.Icon
+.. automodule:: cutewindow.Icon
    :members:
    :undoc-members:
    :show-inheritance:
 
-.. automodule:: qutewindow.platform_factory
+.. automodule:: cutewindow.platform_factory
    :members:
    :undoc-members:
    :show-inheritance:

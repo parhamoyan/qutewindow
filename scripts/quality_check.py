@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-Comprehensive quality check script for QuteWindow.
+Comprehensive quality check script for CuteWindow.
 
 This script runs various code quality checks including formatting,
 linting, type checking, and security scanning.
@@ -118,7 +118,7 @@ def get_fix_suggestions(check_name: str) -> List[str]:
 
 def main() -> int:
     """Main quality check execution."""
-    print("🔍 Running QuteWindow Quality Checks")
+    print("🔍 Running CuteWindow Quality Checks")
     print("=" * 50)
 
     # Check prerequisites
@@ -146,7 +146,7 @@ def main() -> int:
                 "poetry",
                 "run",
                 "flake8",
-                "qutewindow/",
+                "cutewindow/",
                 "--exclude=venv,.venv,build,dist,docs,examples,"
                 ".*_rc\\.py,compile_rcc\\.py,conf\\.py",
             ],
@@ -158,7 +158,7 @@ def main() -> int:
                 "poetry",
                 "run",
                 "mypy",
-                "qutewindow/",
+                "cutewindow/",
                 "--ignore-missing-imports",
                 "--no-strict-optional",
             ],
@@ -166,7 +166,7 @@ def main() -> int:
         ),
         (
             "Security Scan",
-            ["poetry", "run", "bandit", "-r", "qutewindow/", "--skip=B101"],
+            ["poetry", "run", "bandit", "-r", "cutewindow/", "--skip=B101"],
             "Security Scanning",
         ),
         (

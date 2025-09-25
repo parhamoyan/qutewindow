@@ -15,8 +15,8 @@ This project follows modern Python development best practices with comprehensive
 
 ```bash
 # Clone the repository
-git clone https://github.com/parhamoyan/qutewindow.git
-cd qutewindow
+git clone https://github.com/parhamoyan/cutewindow.git
+cd cutewindow
 
 # Install Poetry (if not already installed)
 curl -sSL https://install.python-poetry.org | python3 -
@@ -116,10 +116,10 @@ poetry run python scripts/format_code.py
 poetry run pytest
 
 # Run tests with coverage
-poetry run pytest --cov=qutewindow --cov-report=term-missing --cov-report=html
+poetry run pytest --cov=cutewindow --cov-report=term-missing --cov-report=html
 
 # Run specific test file
-poetry run pytest tests/test_qutewindow.py
+poetry run pytest tests/test_cutewindow.py
 
 # Run tests with verbose output
 poetry run pytest -v
@@ -140,7 +140,7 @@ poetry run python scripts/run_tests.py
 poetry run pytest tests/ -v
 
 # Run tests with coverage report
-poetry run pytest --cov=qutewindow --cov-report=html
+poetry run pytest --cov=cutewindow --cov-report=html
 open htmlcov/index.html  # View coverage report
 ```
 
@@ -207,13 +207,13 @@ poetry run black --check .
 poetry run isort --check-only .
 
 # Linting
-poetry run flake8 qutewindow/ tests/
+poetry run flake8 cutewindow/ tests/
 
 # Type checking
-poetry run mypy qutewindow/ tests/
+poetry run mypy cutewindow/ tests/
 
 # Security scan
-poetry run bandit -r qutewindow/
+poetry run bandit -r cutewindow/
 
 # Dependency safety
 poetry run safety check
@@ -302,7 +302,7 @@ poetry run pytest tests/test_file.py::test_function
 **Type Checking Errors**:
 ```bash
 # Run mypy with detailed output
-poetry run mypy qutewindow/ --show-error-codes --pretty
+poetry run mypy cutewindow/ --show-error-codes --pretty
 ```
 
 ## 📋 Current Code Quality Status

@@ -65,10 +65,10 @@ requires = ["poetry-core"]
 build-backend = "poetry.core.masonry.api"
 
 [tool.poetry.urls]
-"Bug Tracker" = "https://github.com/parhamoyan/qutewindow/issues"
-"Changelog" = "https://github.com/parhamoyan/qutewindow/blob/main/CHANGELOG.md"
+"Bug Tracker" = "https://github.com/parhamoyan/cutewindow/issues"
+"Changelog" = "https://github.com/parhamoyan/cutewindow/blob/main/CHANGELOG.md"
 "Documentation" = "https://pyside6-cutewindow.readthedocs.io"
-"Source" = "https://github.com/parhamoyan/qutewindow"
+"Source" = "https://github.com/parhamoyan/cutewindow"
 
 [tool.black]
 line-length = 88

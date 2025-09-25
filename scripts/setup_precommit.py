@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-Setup pre-commit hooks for QuteWindow project.
+Setup pre-commit hooks for CuteWindow project.
 
 This script installs and configures pre-commit hooks for the project.
 """
@@ -142,7 +142,7 @@ def verify_installation() -> bool:
 
 def main() -> int:
     """Main setup function."""
-    print("🔧 Setting up pre-commit hooks for QuteWindow")
+    print("🔧 Setting up pre-commit hooks for CuteWindow")
     print("=" * 50)
 
     # Check prerequisites

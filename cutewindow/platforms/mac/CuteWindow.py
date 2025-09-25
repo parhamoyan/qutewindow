@@ -41,7 +41,7 @@ class CuteWindow(CuteWindowMixin, QWidget):
 
     def __init__(self, parent: Optional[QWidget] = None) -> None:
         """
-        Initialize the macOS QuteWindow.
+        Initialize the macOS CuteWindow.
 
         Args:
             parent (Optional[QWidget]): The parent widget, defaults to None.

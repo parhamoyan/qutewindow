@@ -29,7 +29,7 @@ class BaseCuteWindow(QWidget):
 
     def __init__(self, parent: Optional[QWidget] = None) -> None:
         """
-        Initialize the base QuteWindow.
+        Initialize the base CuteWindow.
 
         Args:
             parent (Optional[QWidget]): The parent widget, defaults to None.
@@ -116,9 +116,9 @@ class BaseTitleBar(QWidget):
 
 class CuteWindowMixin:
     """
-    Mixin class containing common functionality for QuteWindow implementations.
+    Mixin class containing common functionality for CuteWindow implementations.
 
-    This mixin provides shared functionality for all QuteWindow implementations,
+    This mixin provides shared functionality for all CuteWindow implementations,
     including title bar management, event handling, and window state management.
     It eliminates code duplication across different window types and platforms.
 
@@ -133,7 +133,7 @@ class CuteWindowMixin:
 
     def __init__(self, *args, **kwargs):
         """
-        Initialize the QuteWindow mixin.
+        Initialize the CuteWindow mixin.
 
         Args:
             *args: Variable length argument list passed to parent class.
