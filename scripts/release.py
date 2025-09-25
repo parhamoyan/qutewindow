@@ -156,9 +156,11 @@ def test_package_installation() -> bool:
     wheel_file = dist_files[0]
     success, output = run_command(
         [
-            "test_env/bin/pip"
-            if sys.platform != "win32"
-            else "test_env\\Scripts\\pip.exe",
+            (
+                "test_env/bin/pip"
+                if sys.platform != "win32"
+                else "test_env\\Scripts\\pip.exe"
+            ),
             "install",
             str(wheel_file),
         ]
@@ -172,9 +174,11 @@ def test_package_installation() -> bool:
     # Test import
     success, output = run_command(
         [
-            "test_env/bin/python"
-            if sys.platform != "win32"
-            else "test_env\\Scripts\\python.exe",
+            (
+                "test_env/bin/python"
+                if sys.platform != "win32"
+                else "test_env\\Scripts\\python.exe"
+            ),
             "-c",
             "import cutewindow; print('CuteWindow imported successfully')",
         ]

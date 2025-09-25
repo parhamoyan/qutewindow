@@ -192,8 +192,8 @@ def main() -> int:
         print("📊 Quality Check Results:")
         print("   ✅ Code Formatting: Black")
         print("   ✅ Import Sorting: isort")
-         print("   ✅ Code Linting: Flake8")
-         print("   ✅ Type Checking: MyPy")
+print("   ✅ Code Linting: Flake8")
+        print("   ✅ Type Checking: MyPy")
         print()
         print("🚀 Your code is ready for commit!")
         return 0
@@ -204,7 +204,7 @@ def main() -> int:
         print("   ❌ Code Formatting: Black (fixable)")
         print("   ❌ Import Sorting: isort (fixable)")
         print("   ❌ Code Linting: Flake8 (manual fix required)")
-             print("   ❌ Type Checking: MyPy (manual fix required)")
+        print("   ❌ Type Checking: MyPy (manual fix required)")
         print()
         print_status(Colors.YELLOW, "💡 Fix the issues above and run this script again")
         print_status(
