@@ -45,10 +45,10 @@ jobs:
 
     - name: Install dependencies
       if: steps.cached-poetry-dependencies.outputs.cache-hit != 'true'
-      run: poetry install --no-interaction
+      run: poetry install --no-interaction --with dev
 
     - name: Install project
-      run: poetry install --no-interaction
+      run: poetry install --no-interaction --with dev
 
     - name: Run code formatting check
       run: |
@@ -78,8 +78,16 @@ jobs:
         poetry run mypy . || true
 
     - name: Run tests
+      shell: bash
       run: |
-        poetry run pytest tests/ -v --tb=short || true
+        poetry env info
+        poetry run which pytest || echo "pytest not found in PATH"
+        if [[ "$RUNNER_OS" == "Windows" ]]; then
+          . "$(poetry env info --path)/Scripts/activate"
+        else
+          source "$(poetry env info --path)/bin/activate"
+        fi
+        pytest tests/ -v --tb=short || poetry run pytest tests/ -v --tb=short || true
 
     - name: Build package
       run: |
