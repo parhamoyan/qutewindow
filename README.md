@@ -1,6 +1,6 @@
 # CuteWindow
 
-[![PyPI version](https://badge.fury.io/py/cutewindow.svg)](https://badge.fury.io/py/cutewindow)
+[![PyPI version](https://badge.fury.io/py/pyside6-cutewindow.svg)](https://badge.fury.io/py/pyside6-cutewindow)
 [![Python Support](https://img.shields.io/pypi/pyversions/pyside6-cutewindow.svg)](https://pypi.org/project/pyside6-cutewindow/)
 [![License](https://img.shields.io/github/license/parhamoyan/cutewindow.svg)](https://github.com/parhamoyan/cutewindow/blob/main/LICENSE)
 [![Code Style](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/psf/black)
