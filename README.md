@@ -1,11 +1,11 @@
 # CuteWindow
 
-[![PyPI version](https://badge.fury.io/py/pyside6-cutewindow.svg)](https://badge.fury.io/py/pyside6-cutewindow)
+[![PyPI version](https://badge.fury.io/py/cutewindow.svg)](https://badge.fury.io/py/cutewindow)
 [![Python Support](https://img.shields.io/pypi/pyversions/pyside6-cutewindow.svg)](https://pypi.org/project/pyside6-cutewindow/)
 [![License](https://img.shields.io/github/license/parhamoyan/cutewindow.svg)](https://github.com/parhamoyan/cutewindow/blob/main/LICENSE)
 [![Code Style](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/psf/black)
 [![CI](https://github.com/parhamoyan/cutewindow/workflows/CI/badge.svg)](https://github.com/parhamoyan/cutewindow/actions/workflows/ci.yml)
-[![Documentation](https://readthedocs.org/projects/pyside6-cutewindow/badge/?version=latest)](https://pyside6-cutewindow.readthedocs.io/en/latest/)
+[![Documentation](https://readthedocs.org/projects/cutewindow/badge/?version=latest)](https://pyside6-cutewindow.readthedocs.io/en/latest/)
 
 **CuteWindow** is a modern, cross-platform window library for Python and Qt that provides enhanced control and customization with native window controls and behaviors across different platforms. Create beautiful, customizable applications with ease!
 
