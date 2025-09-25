@@ -7,7 +7,7 @@
 [![CI](https://github.com/parhamoyan/cutewindow/workflows/CI/badge.svg)](https://github.com/parhamoyan/cutewindow/actions/workflows/ci.yml)
 [![Documentation](https://readthedocs.org/projects/cutewindow/badge/?version=latest)](https://pyside6-cutewindow.readthedocs.io/en/latest/)
 
-**CuteWindow** is a modern, cross-platform window library for Python and Qt that provides enhanced control and customization with native window controls and behaviors across different platforms. Create beautiful, customizable applications with ease!
+**CuteWindow** is a modern, cross-platform window library based on PySide6 that provides enhanced control and customization with native window controls and behaviors across different platforms. Create beautiful, customizable applications with ease!
 
 ## ✨ Features
 
