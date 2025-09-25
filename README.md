@@ -369,7 +369,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 - 📧 **Email**: parhamoyan@yahoo.com
 - 🐛 **Issues**: [GitHub Issues](https://github.com/parhamoyan/cutewindow/issues)
 - 💬 **Discussions**: [GitHub Discussions](https://github.com/parhamoyan/cutewindow/discussions)
-- 📖 **Documentation**: [Read the Docs](https://pyside6-cutewindow.readthedocs.io)
+- 📖 **Documentation**: [Read the Docs](https://cutewindow.readthedocs.io)
 
 ## 🗺️ Roadmap
 
