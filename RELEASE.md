@@ -6,7 +6,7 @@ This guide explains how to release new versions of CuteWindow to PyPI and GitHub
 
 CuteWindow uses an automated release process that handles:
 - Building the package
-- Running tests and quality checks
+ - Running quality checks
 - Publishing to PyPI
 - Creating GitHub releases
 - Generating changelog notes
@@ -106,7 +106,7 @@ The script will:
 - Check git status
 - Verify version consistency
 - Validate changelog
-- Run tests (unless skipped)
+
 - Run quality checks (unless skipped)
 - Build package
 - Test installation
@@ -138,7 +138,7 @@ Add suffix for prereleases:
 ## Release Checklist
 
 ### Before Release
-- [ ] All tests pass locally
+
 - [ ] Code quality checks pass
 - [ ] Documentation is updated
 - [ ] CHANGELOG.md is updated
@@ -171,12 +171,7 @@ Add suffix for prereleases:
 - Verify token has publish permissions
 - Ensure package name is not taken
 
-#### 2. Tests Fail
-**Symptom**: Tests fail during release workflow
-**Solution**:
-- Run tests locally: `poetry run pytest`
-- Check platform-specific issues
-- Fix failing tests before retrying
+
 
 #### 3. Version Mismatch
 **Symptom**: Workflow fails due to version inconsistency

@@ -34,29 +34,9 @@ pyobjc-framework-Quartz = { version = "*", markers = "sys_platform == 'darwin'" 
 pywin32 = { version = ">=304", markers = "sys_platform == 'win32'"}
 PySide6 = ">=6.0.0"
 
-[tool.poetry.group.dev.dependencies]
-black = "^23.0.0"
-isort = "^5.12.0"
-flake8 = "^6.0.0"
-mypy = "^1.0.0"
-sphinx = "^6.0.0"
-sphinx-rtd-theme = "^1.2.0"
-safety = "^2.0.0"
-bandit = "^1.7.0"
-pre-commit = "^4.3.0"
+ [tool.poetry.group.dev.dependencies]
 
-[tool.poetry.extras]
-dev = [
-    "black",
-    "isort",
-    "flake8",
-    "mypy",
-    "sphinx",
-    "sphinx-rtd-theme",
-    "safety",
-    "bandit",
-    "pre-commit"
-]
+ [tool.poetry.extras]
 
 
 

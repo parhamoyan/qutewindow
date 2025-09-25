@@ -187,71 +187,7 @@ poetry run mypy cutewindow/
    git push origin feature/your-feature-name
    ```
 
-## Testing
 
-### Running Tests
-
-Run the test suite:
-
-```bash
-# Using Poetry
-poetry run pytest
-
-# Or use the convenience script
-poetry run python scripts/run_tests.py
-```
-
-### Running Tests with Coverage
-
-```bash
-poetry run pytest --cov=cutewindow --cov-report=term-missing
-```
-
-### Running Specific Tests
-
-```bash
-# Run specific test file
-poetry run pytest tests/test_cutewindow.py
-
-# Run with verbose output
-poetry run pytest -v
-
-# Run specific test function
-poetry run pytest tests/test_cutewindow.py::test_window_creation
-```
-
-### Writing Tests
-
-We use pytest for testing. Here's an example test:
-
-```python
-import pytest
-from cutewindow import CuteWindow
-from PySide6.QtWidgets import QApplication
-
-@pytest.fixture
-def qapp():
-    """Fixture to provide QApplication instance."""
-    app = QApplication.instance()
-    if app is None:
-        app = QApplication([])
-    yield app
-    app.quit()
-
-def test_window_creation(qapp):
-    """Test basic window creation."""
-    window = CuteWindow()
-    assert window is not None
-    assert window.windowTitle() == ""
-    window.close()
-
-def test_window_title(qapp):
-    """Test window title setting."""
-    window = CuteWindow()
-    window.setWindowTitle("Test Window")
-    assert window.windowTitle() == "Test Window"
-    window.close()
-```
 
 ## Documentation
 
@@ -329,8 +265,7 @@ Use the following template for your pull request:
 - [ ] I have commented my code, particularly in hard-to-understand areas
 - [ ] I have made corresponding changes to the documentation
 - [ ] My changes generate no new warnings
-- [ ] I have added tests that prove my fix is effective or that my feature works
-- [ ] New and existing unit tests pass locally with my changes
+
 - [ ] Any dependent changes have been merged and published in downstream modules
 ```
 

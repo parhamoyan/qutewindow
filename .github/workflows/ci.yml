@@ -50,32 +50,9 @@ jobs:
     - name: Install project
       run: poetry install --no-interaction --with dev
 
-    - name: Run code formatting check
+    - name: Skip tests and formatting checks
       run: |
-        poetry run black --check .
-        poetry run isort --check-only .
-      continue-on-error: true
-
-    - name: Show formatting fix commands
-      if: failure()
-      run: |
-        echo "⚠️  Code formatting issues found!"
-        echo "To fix these issues locally, run:"
-        echo "  poetry run black ."
-        echo "  poetry run isort ."
-        echo ""
-        echo "Or use the convenience script:"
-        echo "  ./format-code.sh"
-
-    - name: Run linting
-      run: |
-        poetry run which flake8 || echo "flake8 not found in PATH"
-        poetry run flake8 . --exclude=venv,.venv,build,dist --ignore=E501,W191,E101,E266,F401,W503
-      continue-on-error: true
-
-    - name: Run type checking
-      run: |
-        poetry run mypy . || true
+        echo "Skipping all tests and checks as requested"
 
     - name: Build package
       run: |

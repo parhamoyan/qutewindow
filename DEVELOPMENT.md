@@ -107,70 +107,7 @@ poetry run isort .
 poetry run python scripts/format_code.py
 ```
 
-## 🧪 Testing
 
-### Running Tests
-
-```bash
-# Run all tests
-poetry run pytest
-
-# Run tests with coverage
-poetry run pytest --cov=cutewindow --cov-report=term-missing --cov-report=html
-
-# Run specific test file
-poetry run pytest tests/test_cutewindow.py
-
-# Run tests with verbose output
-poetry run pytest -v
-
-# Run tests with markers
-poetry run pytest -m unit          # Unit tests only
-poetry run pytest -m integration   # Integration tests only
-poetry run pytest -m "not slow"    # Exclude slow tests
-```
-
-### Test Scripts
-
-```bash
-# Comprehensive test runner (recommended)
-poetry run python scripts/run_tests.py
-
-# Quick test run
-poetry run pytest tests/ -v
-
-# Run tests with coverage report
-poetry run pytest --cov=cutewindow --cov-report=html
-open htmlcov/index.html  # View coverage report
-```
-
-### Test Configuration
-
-Tests are configured in `pytest.ini` with the following settings:
-- Test paths: `tests/`
-- Python files: `test_*.py`
-- Verbose output with short tracebacks
-- Color output and duration reporting
-- Custom markers: `slow`, `integration`, `unit`
-
-### Writing Tests
-
-- Use `pytest` for testing
-- Place tests in the `tests/` directory
-- Name test files with `test_` prefix
-- Use descriptive test function names
-- Mock external dependencies when necessary
-
-Example:
-```python
-def test_window_creation(qapp):
-    """Test basic window creation."""
-    from cutewindow import CuteWindow
-
-    window = CuteWindow()
-    assert window is not None
-    window.close()
-```
 
 ## 🔍 Quality Assurance
 
@@ -186,9 +123,6 @@ This script runs:
 - ✅ Code formatting (Black)
 - ✅ Import sorting (isort)
 - ✅ Code linting (Flake8)
-- ✅ Type checking (MyPy)
-- ✅ Security scanning (Bandit)
-- ✅ Dependency safety (Safety)
 
 The script provides:
 - Colored output for easy reading
@@ -208,15 +142,6 @@ poetry run isort --check-only .
 
 # Linting
 poetry run flake8 cutewindow/ tests/
-
-# Type checking
-poetry run mypy cutewindow/ tests/
-
-# Security scan
-poetry run bandit -r cutewindow/
-
-# Dependency safety
-poetry run safety check
 ```
 
 ## 📚 Documentation
@@ -251,13 +176,10 @@ The same tools run in CI/CD pipelines. If formatting checks fail, the pipeline w
 - **CI Pipeline**: `.github/workflows/ci.yml`
 - **Quality Pipeline**: `.github/workflows/quality.yml`
 - **Documentation Pipeline**: `.github/workflows/docs.yml`
-- **Coverage Pipeline**: `.github/workflows/coverage.yml`
 
 ### Quality Gates
 
 - ✅ Code formatting must pass
-- ✅ Tests must pass on all supported Python versions
-- ✅ Security scans must pass
 - ✅ Documentation must build successfully
 - ⚠️ Linting and type checking provide guidance but don't block
 

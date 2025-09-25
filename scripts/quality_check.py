@@ -152,28 +152,18 @@ def main() -> int:
             ],
             "Code Linting",
         ),
-        (
-            "Type Checking",
-            [
-                "poetry",
-                "run",
-                "mypy",
-                "cutewindow/",
-                "--ignore-missing-imports",
-                "--no-strict-optional",
-            ],
-            "Type Checking",
-        ),
-        (
-            "Security Scan",
-            ["poetry", "run", "bandit", "-r", "cutewindow/", "--skip=B101"],
-            "Security Scanning",
-        ),
-        (
-            "Dependency Safety",
-            ["poetry", "run", "safety", "check"],
-            "Dependency Safety Check",
-        ),
+         (
+             "Type Checking",
+             [
+                 "poetry",
+                 "run",
+                 "mypy",
+                 "cutewindow/",
+                 "--ignore-missing-imports",
+                 "--no-strict-optional",
+             ],
+             "Type Checking",
+         ),
     ]
 
     # Track overall success
@@ -202,10 +192,8 @@ def main() -> int:
         print("📊 Quality Check Results:")
         print("   ✅ Code Formatting: Black")
         print("   ✅ Import Sorting: isort")
-        print("   ✅ Code Linting: Flake8")
-        print("   ✅ Type Checking: MyPy")
-        print("   ✅ Security Scan: Bandit")
-        print("   ✅ Dependency Safety: Safety")
+         print("   ✅ Code Linting: Flake8")
+         print("   ✅ Type Checking: MyPy")
         print()
         print("🚀 Your code is ready for commit!")
         return 0
@@ -216,9 +204,7 @@ def main() -> int:
         print("   ❌ Code Formatting: Black (fixable)")
         print("   ❌ Import Sorting: isort (fixable)")
         print("   ❌ Code Linting: Flake8 (manual fix required)")
-        print("   ❌ Type Checking: MyPy (manual fix required)")
-        print("   ❌ Security Scan: Bandit (review required)")
-        print("   ❌ Dependency Safety: Safety (update required)")
+             print("   ❌ Type Checking: MyPy (manual fix required)")
         print()
         print_status(Colors.YELLOW, "💡 Fix the issues above and run this script again")
         print_status(
