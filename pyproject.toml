@@ -1,15 +1,14 @@
-[tool.poetry]
+[project]
 name = "pyside6-cutewindow"
 version = "0.1.1"
 description = "Cross-platform customizable window library based on PySide6 with enhanced control"
-authors = ["Parham Oyan <parhamoyan@yahoo.com>"]
-license = "MIT"
+authors = [
+    {name = "Parham Oyan", email = "parhamoyan@yahoo.com"}
+]
+license = {text = "MIT"}
 readme = "README.md"
-repository = "https://github.com/parhamoyan/cutewindow"
-documentation = "https://pyside6-cutewindow.readthedocs.io"
+requires-python = ">=3.9,<3.14"
 keywords = ["qt", "pyqt", "pyqt6", "pyqt5", "pyside", "pyside2", "pyside6", "customizable-window", "cross-platform", "gui", "window-customization", "pyside6-cutewindow"]
-packages = [{include = "cutewindow"}]
-include = ["CHANGELOG.md", "LICENSE", "README.md"]
 classifiers = [
     "Development Status :: 4 - Beta",
     "Intended Audience :: Developers",
@@ -24,37 +23,35 @@ classifiers = [
     "Topic :: Software Development :: Libraries :: Python Modules",
     "Topic :: Software Development :: User Interfaces"
 ]
+dependencies = [
+    "PySide6>=6.0.0",
+    "pyobjc-framework-Cocoa>=9.0.1; sys_platform == 'darwin'",
+    "pyobjc-framework-Quartz; sys_platform == 'darwin'",
+    "pywin32>=304; sys_platform == 'win32'"
+]
 
-[tool.poetry.dependencies]
-python = ">=3.9,<3.14"
-pyobjc-framework-Cocoa = { version = ">=9.0.1", markers = "sys_platform == 'darwin'" }
-pyobjc-framework-Quartz = { version = "*", markers = "sys_platform == 'darwin'" }
-pywin32 = { version = ">=304", markers = "sys_platform == 'win32'"}
-PySide6 = ">=6.0.0"
+[project.urls]
+Homepage = "https://github.com/parhamoyan/cutewindow"
+Repository = "https://github.com/parhamoyan/cutewindow"
+Documentation = "https://cutewindow.readthedocs.io/en/latest/"
+"Bug Tracker" = "https://github.com/parhamoyan/cutewindow/issues"
+Changelog = "https://github.com/parhamoyan/cutewindow/blob/main/CHANGELOG.md"
 
- [tool.poetry.group.dev.dependencies]
-pytest = "^7.0"
-pytest-cov = "^4.0"
-black = "^23.0"
-isort = "^5.0"
-flake8 = "^6.0"
-mypy = "^1.0"
-bandit = "^1.7"
-safety = "^2.0"
-
- [tool.poetry.extras]
-
-
+[project.optional-dependencies]
+dev = [
+    "pytest>=7.0",
+    "pytest-cov>=4.0",
+    "black>=23.0",
+    "isort>=5.0",
+    "flake8>=6.0",
+    "mypy>=1.0",
+    "bandit>=1.7",
+    "safety>=2.0"
+]
 
 [build-system]
 requires = ["poetry-core"]
 build-backend = "poetry.core.masonry.api"
-
-[tool.poetry.urls]
-"Bug Tracker" = "https://github.com/parhamoyan/cutewindow/issues"
-"Changelog" = "https://github.com/parhamoyan/cutewindow/blob/main/CHANGELOG.md"
-"Documentation" = "https://pyside6-cutewindow.readthedocs.io"
-"Source" = "https://github.com/parhamoyan/cutewindow"
 
 [tool.black]
 line-length = 88
