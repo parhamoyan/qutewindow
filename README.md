@@ -292,7 +292,7 @@ cutewindow/
 CuteWindow uses GitHub Actions for continuous integration and deployment:
 
 - **CI Pipeline**: Runs on every push and pull request to ensure code quality
-  - Tests across multiple Python versions (3.8-3.12) and platforms (Windows, macOS, Linux)
+  - Tests across multiple Python versions (3.8-3.12) and platforms (Windows, macOS)
   - Code formatting checks (Black, isort)
   - Linting (flake8)
   - Type checking (mypy)
