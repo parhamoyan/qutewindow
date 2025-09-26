@@ -28,7 +28,7 @@ jobs:
 
     - name: Check poetry.lock is up to date
       run: |
-        poetry lock --check || (echo "poetry.lock is outdated. Run \"poetry lock\" to update it." && exit 1)
+        poetry check --lock || (echo "poetry.lock is outdated. Run \"poetry lock\" to update it." && exit 1)
 
     - name: Install dependencies
       run: |
