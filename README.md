@@ -157,12 +157,12 @@ window.show()
 
 ### CuteWindow on macOS
 <p align="center">
-  <img src="readme/mac_qute_window.gif" alt="CuteWindow on macOS" width="600">
+  <img src="assets/mac_qute_window.gif" alt="CuteWindow on macOS" width="600">
 </p>
 
 ### CuteWindow on Windows
 <p align="center">
-  <img src="readme/win32_qute_window.gif" alt="CuteWindow on Windows" width="600">
+  <img src="assets/win32_qute_window.gif" alt="CuteWindow on Windows" width="600">
 </p>
 
 ## 📋 Requirements

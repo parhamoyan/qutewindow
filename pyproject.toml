@@ -58,6 +58,7 @@ flake8 = "^6.0"
 mypy = "^1.0"
 bandit = "^1.7"
 safety = "^2.0"
+pre-commit = "^4.3.0"
 
 [tool.poetry]
 name = "pyside6-cutewindow"
