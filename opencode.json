@@ -1,0 +1,22 @@
+{
+  "agent": {
+    "commit-agent": {
+      "prompt": "Analyze the current git changes and create a conventional commit message following the Conventional Commits specification. Then commit the changes and push to GitHub if requested.",
+      "description": "Handles conventional commits for the CuteWindow project",
+      "conventional_commit_types": {
+        "feat": "New feature or functionality",
+        "fix": "Bug fix",
+        "docs": "Documentation changes",
+        "style": "Code formatting, styling changes",
+        "refactor": "Code refactoring without functionality changes",
+        "test": "Test additions or modifications",
+        "chore": "Maintenance tasks, dependency updates",
+        "ci": "CI/CD configuration changes",
+        "build": "Build system or dependency changes"
+      },
+      "commit_format": "<type>(<scope>): <description>",
+      "auto_push": false
+    }
+  },
+  "$schema": "https://opencode.ai/config.json"
+}
