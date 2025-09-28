@@ -223,8 +223,8 @@ pre-commit install
 
 Comprehensive documentation is available at [https://cutewindow.readthedocs.io](https://cutewindow.readthedocs.io)
 
-- [Installation Guide](https://cutewindow.readthedocs.io/en/latest/installation.html)
-- [Quick Start Guide](https://cutewindow.readthedocs.io/en/latest/quickstart.html)
+- [Getting Started](https://cutewindow.readthedocs.io/en/latest/getting_started.html)
+- [Customization](https://cutewindow.readthedocs.io/en/latest/customization.html)
 - [API Reference](https://cutewindow.readthedocs.io/en/latest/api/index.html)
 - [Examples](https://cutewindow.readthedocs.io/en/latest/examples/index.html)
 
