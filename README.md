@@ -5,7 +5,7 @@
 [![License](https://img.shields.io/github/license/parhamoyan/cutewindow.svg)](https://github.com/parhamoyan/cutewindow/blob/main/LICENSE)
 [![Code Style](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/psf/black)
 [![CI](https://github.com/parhamoyan/cutewindow/workflows/CI/badge.svg)](https://github.com/parhamoyan/cutewindow/actions/workflows/ci.yml)
-[![Documentation](https://readthedocs.org/projects/cutewindow/badge/?version=latest)](https://pyside6-cutewindow.readthedocs.io/en/latest/)
+[![Documentation](https://readthedocs.org/projects/cutewindow/badge/?version=latest)](https://cutewindow.readthedocs.io/en/latest/)
 
 **CuteWindow** is a modern, cross-platform window library based on PySide6 that provides enhanced control and customization with native window controls and behaviors across different platforms. Create beautiful, customizable applications with ease!
 
@@ -221,12 +221,12 @@ pre-commit install
 
 ## 📚 Documentation
 
-Comprehensive documentation is available at [https://pyside6-cutewindow.readthedocs.io](https://pyside6-cutewindow.readthedocs.io)
+Comprehensive documentation is available at [https://cutewindow.readthedocs.io](https://cutewindow.readthedocs.io)
 
-- [Installation Guide](https://pyside6-cutewindow.readthedocs.io/en/latest/installation.html)
-- [Quick Start Guide](https://pyside6-cutewindow.readthedocs.io/en/latest/quickstart.html)
-- [API Reference](https://pyside6-cutewindow.readthedocs.io/en/latest/api/index.html)
-- [Examples](https://pyside6-cutewindow.readthedocs.io/en/latest/examples/index.html)
+- [Installation Guide](https://cutewindow.readthedocs.io/en/latest/installation.html)
+- [Quick Start Guide](https://cutewindow.readthedocs.io/en/latest/quickstart.html)
+- [API Reference](https://cutewindow.readthedocs.io/en/latest/api/index.html)
+- [Examples](https://cutewindow.readthedocs.io/en/latest/examples/index.html)
 
 ## 🎯 Examples
 
